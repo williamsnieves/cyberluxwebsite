@@ -29,6 +29,9 @@
 
 Route::get('user/{id}', 'UserController@index');*/
 Route::get('home', 'PageController@index');
+Route::get('test', function(){
+	return view('test');
+});
 Route::get('about', 'PageController@about');
 Route::get('products', 'PageController@products');
 Route::get('news', 'PageController@news');
