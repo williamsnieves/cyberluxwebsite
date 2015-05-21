@@ -9,9 +9,7 @@
 	
 	
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-	<link href="{{ asset('/css/jasny-bootstrap.min.css') }}" rel="stylesheet">
-	
-
+	{!! HTML::style('css/appstyles.css'); !!}
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
@@ -21,27 +19,38 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	
 </head>
 <body>
-	<div id='slider'>Hello World!!</div>
-	<nav class="navbar" style="background:#ccc; box-shadow: 0.2em 0.3em 0.5em; margin-top:1em;">
-		<div class="brand-logo" style="position: absolute; top: -1em; left: 0; z-index: 999">
+	<div id='slider'>
+		<ul>
+			<li><a href="{{ URL::to('/') }}/home">Inicio</a></li>
+			<li><a href="{{ URL::to('/') }}/about">Nuestra Empresa</a></li>
+			<li><a href="{{ URL::to('/') }}/products">Productos</a></li>
+			<li><a href="{{ URL::to('/') }}/news">Noticias</a></li>
+			<li><a href="{{ URL::to('/') }}/locations">Sedes</a></li>
+			<li><a href="{{ URL::to('/') }}/gallery">Galeria</a></li>
+			<li><a href="{{ URL::to('/') }}/contact">Contactenos</a></li>
+		</ul>
+	</div>
+	<nav class="navbar">
+		<div class="brand-logo">
 		  	  	<img src="{{ URL::to('/') }}/img/bg_brand.png" alt="brand" />
-		  	  	<img src="{{ URL::to('/') }}/img/brand.png" alt="cyberlux" style="position: absolute;top: 0; margin-left: 1em; margin-top: 3em;" />
-		  	</div>
+		  	  	<img src="{{ URL::to('/') }}/img/brand.png" alt="cyberlux" />
+		</div>
 		<div class="container">
-			<span style="position: absolute; top:0 rigth: 0">
-				<i class="glyphicon-menu-hamburger"></i>
+			<span id="trigger" class="menu-hamburguer icon-th-menu">			
 			</span>
 		</div>
 	</nav>
-	<button id='trigger' style="float:right">Trigger</button>
-	
-	
 	
   	
 	
 	@yield('content')
+
+	<footer>
+		@include('footer')
+	</footer>
 
 	<!-- Scripts -->
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>	
