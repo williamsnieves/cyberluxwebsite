@@ -23,20 +23,21 @@
 	<![endif]-->
 </head>
 <body>
-	<div class="navmenu navmenu-default navmenu-fixed-right offcanvas">
-
-        <a class="navmenu-brand" href="#">Project name</a>        
-    </div>
-
-    <div class="navbar navbar-default navbar-fixed-top" style="box-shadow: 0.2em 0.2em 0.5em;">
-      
-      <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="html">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-
+	<div id='slider'>Hello World!!</div>
+	<nav class="navbar" style="background:#ccc; box-shadow: 0.2em 0.3em 0.5em; margin-top:1em;">
+		<div class="brand-logo" style="position: absolute; top: -1em; left: 0; z-index: 999">
+		  	  	<img src="{{ URL::to('/') }}/img/bg_brand.png" alt="brand" />
+		  	  	<img src="{{ URL::to('/') }}/img/brand.png" alt="cyberlux" style="position: absolute;top: 0; margin-left: 1em; margin-top: 3em;" />
+		  	</div>
+		<div class="container">
+			<span style="position: absolute; top:0 rigth: 0">
+				<i class="glyphicon-menu-hamburger"></i>
+			</span>
+		</div>
+	</nav>
+	<button id='trigger' style="float:right">Trigger</button>
+	
+	
 	
   	
 	
@@ -44,7 +45,8 @@
 
 	<!-- Scripts -->
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>	
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<script href="{{ URL::to('/') }}/js/scotchPanels.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+	{!! HTML::script('js/jquery.slidereveal.js'); !!}	
+	{!! HTML::script('js/test.js'); !!}
 </body>
 </html>

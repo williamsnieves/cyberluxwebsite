@@ -17,6 +17,11 @@ class PageController extends Controller {
 		return view('pages.home');
 	}
 
+	public function test()	{
+
+		return view('test');
+	}
+
 	public function about(){
 		return view('pages.about');
 	}

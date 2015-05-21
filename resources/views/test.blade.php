@@ -24,162 +24,30 @@
 
 	<style>
 
-		/*==================================
-=            SITE STUFF            =
-==================================*/
-a {
-    text-decoration: none !important;
-    -webkit-transition: all 225ms ease;
-    -moz-transition: all 225ms ease;
-    transition: all 225ms ease;
-}
-header {
-    position: relative;
-    background: #222;
-    height: 50px;
-}
-header a {
-    color: #777;
-}
-header a:hover {
-    color: #fff;
-}
-header .logo {
-    float: left;
-    height: 50px;
-    line-height: 50px;
-}
-header .toggle-panel {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 25px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    background: #333;
+      	#slider{
+      		background: #ccc;
+      	}
 
-    display: none;
-}
-header ul {
-    float: right;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-header ul li {
-    display: inline-block;
-}
-header ul li a {
-    display: block;
-    height: 50px;
-    line-height: 50px;
-    margin: 0 10px;
-}
-article {
-    height: 5000px;
-}
-
-
-
-/*====================================
-=            PANEL STYLES            =
-====================================*/
-#scotch-panel {
-    background: #444;
-}
-#scotch-panel ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-#scotch-panel ul li a {
-    display: block;
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    background: transparent;
-    color: #fff;
-}
-#scotch-panel ul li a:hover {
-    background: #555;
-}
-
-
-
-
-
-
-
-
-/*=======================================
-=            MOBILE SNIPPETS            =
-=======================================*/
-@media only screen and (max-width : 768px) {
-    header .toggle-panel {
-        display: block;
-    }
-    header ul {
-        display: none;
-    }
-}
 	</style>
 </head>
 <body>
 	
-	<div id="scotch-panel">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contacts</a></li>
-        </ul>
-    </div>
+	
+    
+    <!--<div id='slider'>Hello World!!</div>
+	<button id='trigger'>Trigger</button>
+	<a href="{{ URL::asset('js/jquery.slidereveal.js') }}">sdfsdf</a>-->
 
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 clearfix">
-                    <a href="/" class="logo">Scotch Panels</a>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                    <a href="#" class="toggle-panel"><i class="fa fa-bars"></i></a>
-                </div>
-            </div>
-        </div>
-    </header>
+	<div id='slider'>Hello World!!</div>
+	<button id='trigger'>Trigger</button>
 
 	
 
 	<!-- Scripts -->
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>	
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<script href="{{ URL::to('/') }}/js/scotchPanels.js"></script>
-
-	<script>
-		$(function() {
-		    var scotchPanel = $('#scotch-panel').scotchPanel({
-		        containerSelector: 'body',
-		        direction: 'right',
-		        duration: 300,
-		        transition: 'ease',
-		        clickSelector: '.toggle-panel',
-		        distanceX: '70%',
-		        enableEscapeKey: true
-		    });
-
-		    $(window).resize(function() {
-		        if ($(window).width() >= 769 && $('.scotch-panel-canvas').hasClass('scotch-is-showing')) {
-		            scotchPanel.close();
-		        }
-		    });
-		});
-	</script>
+	{!! HTML::script('js/jquery.slidereveal.js'); !!}	
+	{!! HTML::script('js/test.js'); !!}
+	
 </body>
 </html>
