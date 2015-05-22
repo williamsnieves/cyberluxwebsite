@@ -36,6 +36,7 @@ Route::get('news', 'PageController@news');
 Route::get('locations', 'PageController@locations');
 Route::get('gallery', 'PageController@gallery');
 Route::get('contact', 'PageController@contact');
+Route::get('social', 'PageController@social');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

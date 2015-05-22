@@ -46,6 +46,10 @@ class PageController extends Controller {
 		return view('pages.contact');
 	}
 
+	public function social(){
+		return view('pages.social');
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

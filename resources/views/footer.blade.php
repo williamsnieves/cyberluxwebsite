@@ -1,28 +1,25 @@
 <section class="container footer">
-	<section class="row">		
+	<section class="row">
+		<h4 class="col-md-12" >Siguenos en: </h4>		
 		<ul class="col-md-12">
-			<li>
-				<span>Siguenos en facebook</span>
+			<li>				
 				<figure>
-					<img src="{{ URL::to('/') }}/img/facebook_btn.png" alt="">
+					<img src="{{ URL::to('/') }}/img/facebook.png" alt="">
 				</figure>
 			</li>
-			<li>
-				<span>Siguenos en twitter</span>
+			<li>				
 				<figure>
-					<img src="{{ URL::to('/') }}/img/twitter_btn.png" alt="">
+					<img src="{{ URL::to('/') }}/img/twitter.png" alt="">
 				</figure>
 			</li>
-			<li>
-				<span>Siguenos en instagram</span>
+			<li>				
 				<figure>
-					<img src="{{ URL::to('/') }}/img/insta_btn.png" alt="">
+					<img src="{{ URL::to('/') }}/img/instagram.png" alt="">
 				</figure>
 			</li>
-			<li>
-				<span>Siguenos en youtube</span>
+			<li>				
 				<figure>
-					<img src="{{ URL::to('/') }}/img/youtube_btn.png" alt="">
+					<img src="{{ URL::to('/') }}/img/youtube.png" alt="">
 				</figure>
 			</li>
 		</ul>
