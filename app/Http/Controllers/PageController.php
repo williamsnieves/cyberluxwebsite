@@ -50,6 +50,29 @@ class PageController extends Controller {
 		return view('pages.social');
 	}
 
+	public function newsdetail($id){
+		switch ($id) {
+			case '1':
+				return view('pages.news1');
+				break;
+			case '2':			
+				return view('pages.news2');
+				break;
+		}
+	}
+
+	public function typeProducts($name){
+		switch ($name) {
+			case 'cyberlux':
+				return view('pages.brownproducts');
+				break;
+			
+			case 'frigilux':
+				return view('pages.whiteproducts');
+				break;
+		}
+	} 
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

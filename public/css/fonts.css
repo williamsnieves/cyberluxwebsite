@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('../onts/icomoon.eot?-k4hs2i');
-	src:url('../fonts/icomoon.eot?#iefix-k4hs2i') format('embedded-opentype'),
-		url('../fonts/icomoon.woff?-k4hs2i') format('woff'),
-		url('../fonts/icomoon.ttf?-k4hs2i') format('truetype'),
-		url('../fonts/icomoon.svg?-k4hs2i#icomoon') format('svg');
+	src:url('../fonts/icomoon.eot?woeyci');
+	src:url('../fonts/icomoon.eot?#iefixwoeyci') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?woeyci') format('truetype'),
+		url('../fonts/icomoon.woff?woeyci') format('woff'),
+		url('../fonts/icomoon.svg?woeyci#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -60,4 +60,23 @@
 .icon-globe:before {
 	content: "\e604";
 }
+.icon-search:before {
+	content: "\e606";
+}
+
+.icon-keyboard-arrow-right:before {
+	content: "\e607";
+	color: #000;
+	font-size: 5em;
+	text-shadow: 3px 2px 6px #000;
+}
+
+.icon-keyboard-arrow-right-green:before {
+	content: "\e607";
+	color: #1f9729;
+	font-size: 5em;
+	text-shadow: 3px 2px 6px #000;
+}
+
+
 

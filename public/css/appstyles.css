@@ -314,10 +314,561 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 } 
 
 
+/* contact section */
+
+
+.wrapper-map{
+  position: relative;
+  height: 400px;
+    margin: -1em 0 0 -3em;
+}
+
+.wrapper-map:before{
+    content: "";
+  /* border-bottom: 16em solid transparent; */
+  /* border-right: 0 solid transparent; */
+  border-right: 21em solid transparent;
+  border-top: 262px solid transparent;
+  margin-left: .4em;
+  display: inline-block;
+  height: 16em;
+  background: url('../img/map.png');
+
+}
+
+
+.map-bg{
+  background: url('../img/map.png');
+  height: 323px;
+  background-repeat: no-repeat;
+}
+
+
+.wrapper-contact{
+  padding: 0;
+}
+
+
+
+.pageOption {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 27em;
+  top: -4em;
+}
+.option, .option img { width: 100%; }
+.option {
+  overflow: hidden;
+  position: absolute;  
+  /* arctan(27 / 40) = 34.01935deg 
+   * need to skew by 90deg - 34.01935deg = 55.98065deg
+  */
+  transform: skewX(-55.98deg);
+}
+.option:first-child {
+  left: -.25em;
+  transform-origin: 1em 3em;
+}
+.option:last-child {
+  right: -.25em;
+}
+.option img {
+  transform: skewX(55.98deg);
+  transform-origin: inherit;
+}
+
+
+.wrapper-contact h2{
+  text-align: right;
+  margin: 6em 0.5em 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+
+.custom-label-form{
+  padding: 0 0 0 0.4em;
+  margin-right: 0
+}
+
+.custom-input-form{
+  margin: 0 0 0 0;
+  padding: 0;
+}
+
+.custom-input-form input,textarea{
+  border-radius: 0 !important;
+  border: 1px solid black !important;
+  outline: 0 none !important;
+}
+
+.custom-input-form input:focus{
+  outline: 0 none !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.custom-input-form textarea:focus{
+  outline: 0 none !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-custom{
+  margin: 0.5em 1em 0 0 !important;
+}
+
+.custom-buttom-form button{
+  width: 50% !important;
+  margin: 1em 0 0 0 !important;
+  border-radius: 0 !important;
+  outline: 0 none !important;
+  background-color: #eaae1a;
+  background: #eaae1a;
+  color: #000;
+  box-shadow: 0.4em 0.3em 0.9em rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  outline: 0 none !important;
+  border: 0 !important;
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+.custom-buttom-form button:hover{
+    background-color: #eaae1a;
+    background: #eaae1a;
+    outline: 0 none !important;
+    border: 0 !important;
+}
+
+.main-address p{
+  text-align: center;
+  font-size: 0.8em;
+  margin: 0;
+  font-weight: bold;
+}
+
+.custom-form-position{
+  position: relative;
+  top: 0;
+  right: 0;
+  margin: -15em 0 0 0;
+}
+
+
+
+/* NEWS SECTION */
+
+.wrapper-news{
+  z-index: 9998;
+  padding: 0;
+}
+
+.wrapper-news h1{
+  text-align: right;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 4em;
+  padding: 0 1em 0 0;
+}
+
+.wrapper-news h5{
+  font-size: 0.9em;  
+  text-transform: uppercase;
+  margin: 2em 0 0 0;
+}
+
+.wrapper-news p{
+  text-align: justify;
+}
+
+.wrapper-news div{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+}
+
+.wrapper-news div h2{
+  font-size: 1.1em;
+  font-weight: bold;  
+  padding: 0 1em 0 1em;
+}
+
+.wrapper-news div a{
+  color: #000;
+}
+
+.wrapper-news div a:hover{
+  color: #000;
+  text-decoration: none;
+}
+
+.wrapper-news div p{ 
+  padding: 0 1em 0 1em;
+}
+
+
+.wrapper-news div span{ 
+  padding: 0 1em 1em 1em;
+  display: inline;
+  text-align: right;
+  float: right;
+}
+
+.wrapper-news div:nth-child(even){
+  background: #f3f3f3;
+}
+
+.wrapper-news div:nth-child(odd){
+  background: #fff;
+}
+
+.filter-tool{
+  padding: 0;
+}
+
+.filter-tool ul{
+  list-style: none;
+  background: #838383;
+  padding: 0 0 2em 0;
+}
+.filter-tool ul li{
+  display: inline-block;
+  width: 49%;
+  margin-top: -1.5em;
+}
+
+.relative-form{
+  position: relative;
+}
+
+
+.search-icon{
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0.5em 0 0 9em;
+  z-index: 9;
+}
+
+.filter-tool ul li:first-child h4{
+  margin: 2.5em 0 0 1em;
+}
+
+.filter-tool ul li:first-child input[type=checkbox]{
+  margin: 0.5em 0 0 1em;
+}
+
+.filter-tool ul li:first-child form{
+  margin: 0.5em 0 0 0.5em;
+}
+
+
+
+.filter-tool ul li:last-child{
+  margin: 0 0 0 1em;
+  position: absolute;
+}
+
+.filter-tool ul li:last-child h5{
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+.filter-tool ul li:last-child label{
+  font-size: 0.8em;
+  padding: 0 0 0 0.3em;
+}
+
+.custom-search{
+  width: 147px;
+}
+
+
+
+/* SECTION NEWS DETAILS*/
+
+.wrapper-news-details h1{
+  text-align: center;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 4em;
+  padding: 0 1em 0 0;
+}
+
+
+.gallery-news-thumbs{
+  margin: -3em 0 2em 0;
+}
+
+.gallery-news-thumbs a img{
+  border: 1px solid #ccc;
+}
+
+
+/* products section */
+
+
+/*.wrapper-products {
+  background: url('../img/bg_products.png');
+  background-size:cover;
+  height: 45em;
+  background-position:center;
+  background-repeat: no-repeat;
+}*/
+
+.wrapper-products{
+  padding: 0;
+  position: relative;
+}
+
+.wrapper-products figure img{
+    width: 100%
+}
+
+.wrapper-products a{
+    text-decoration: none;
+    color: #000;
+}
+
+.wrapper-products a:hover{
+    text-decoration: none;
+    color: #000;
+}
+
+.wrapper-products a.brown-pro{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 27.5em 12.5em 0 0;
+}
+
+.wrapper-products a.white-pro{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 9.5em 7.5em 0 0;
+}
+
+.wrapper-products a.white-pro h2{
+   font-size: 1.2em;
+   font-style: italic;
+   font-weight: bold;
+}
+
+.wrapper-products a.brown-pro h2{
+   font-size: 1.2em;
+   font-style: italic;
+   font-weight: bold;
+}
+
+.arrow-right-frigi{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 7em 0 0 0;
+}
+
+.arrow-right-cyber{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 25em 4em 0 0;
+}
+
+.frigi-brand{
+  position: absolute;
+  top:  0;
+  right: 0;
+  margin: 9em 4em 0 0;
+}
+
+.cyber-brand{
+  position: absolute;
+  top:  0;
+  right: 0;
+  margin: 27em 7.5em 0 0;
+}
+
+.frigi-brand img{
+  width: 100% !important;
+}
+
+.cyber-brand img{
+  width: 100% !important;
+}
+
+
+/* products cyberlux section */
+
+.wrapper-detailproducts{
+    z-index: 9998;
+}
+
+.wrapper-detailproducts figure{
+  text-align: right;
+  margin: 5em 0 2em 0;
+}
+
+.wrapper-detailproducts p{
+  text-align: justify;
+}
 
 
 @media screen and (max-width: 411px){
     .social-commitment{
       font-size: 0.7em;
+    }
+}
+
+
+
+/*MEDIA QUERIES FOR PRODUCTS SECTION*/
+
+@media screen and (min-width: 360px){
+    body{
+      background: red;
+    }
+    .arrow-right-frigi{      
+      margin: 7em 0 0 0;
+    }
+
+    .arrow-right-cyber{      
+      margin: 27em 4em 0 0;
+    }
+
+    .frigi-brand{     
+      margin: 9em 4em 0 0;
+    }
+
+    .cyber-brand{      
+      margin: 29em 7.5em 0 0
+    }
+
+    .wrapper-products a.brown-pro{       
+        margin: 29.5em 12.5em 0 0;
+    }
+
+    .wrapper-products a.white-pro{        
+        margin: 9.5em 7.5em 0 0;
+    }
+}
+
+
+@media screen and (min-width: 375px){
+    body{
+      background: gray;
+    }    
+
+    .arrow-right-cyber{      
+      margin: 31em 5.5em 0 0;
+    } 
+
+    .cyber-brand{      
+      margin: 33em 9.5em 0 0;
+    }
+
+    .wrapper-products a.brown-pro{       
+       margin: 33.5em 14.5em 0 0;
+    }
+  
+}
+
+
+@media screen and (min-width: 414px){
+    body{
+      background: yellow;
+    }
+    .arrow-right-frigi{      
+      margin: 9em 0 0 0;
+    }
+
+    .arrow-right-cyber{      
+      margin: 32em 5.5em 0 0;
+    }
+
+    .frigi-brand{     
+      margin: 11em 4em 0 0;
+    }
+
+    .cyber-brand{      
+      margin: 34em 9.5em 0 0;
+    }
+
+    .wrapper-products a.brown-pro{       
+        margin: 34.5em 14.5em 0 0;
+    }
+
+    .wrapper-products a.white-pro{        
+        margin: 11.5em 7.5em 0 0;
+    }
+}
+
+@media screen and (min-width: 480px){
+    body{
+      background: green;
+    }
+    .arrow-right-frigi{      
+      margin: 9em 0 0 0;
+    }
+
+    .arrow-right-cyber{      
+      margin: 39em 6.5em 0 0;
+    }
+
+    .frigi-brand{     
+      margin: 11em 4em 0 0;
+    }
+
+    .cyber-brand{      
+      margin: 41em 11.5em 0 0;
+    }
+
+    .wrapper-products a.brown-pro{       
+        margin: 41.5em 16.5em 0 0;
+    }
+
+    .wrapper-products a.white-pro{        
+        margin: 11.5em 7.5em 0 0;
+    }
+}
+
+@media screen and (min-width: 600px){
+    body{
+      background: green;
+    }
+    .arrow-right-frigi{      
+      margin: 12em 0 0 0;
+    }
+
+    .arrow-right-cyber{      
+      margin: 48em 9.5em 0 0;
+    }
+
+    .frigi-brand{     
+      margin: 14em 4em 0 0;
+    }
+
+    .cyber-brand{      
+      margin: 50em 14.5em 0 0;
+    }
+
+    .wrapper-products a.brown-pro{       
+        margin: 50.5em 19.5em 0 0;
+    }
+
+    .wrapper-products a.white-pro{        
+        margin: 14.5em 7.5em 0 0;
     }
 }

@@ -17,7 +17,7 @@
 				</h4>
 				<p>
 					Destinada a la produccion  de equipos tipo Split y ventana marca FRIGILUX, Esta línea contara con una capacidad instalada de más de 500.000 Unds al año, generando más de 100 empleos directos entre obreros y técnicos especializados.
-				</p>
+				</p>				
 			</section>		
 
 			

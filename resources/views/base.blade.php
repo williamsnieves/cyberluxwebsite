@@ -9,7 +9,8 @@
 	
 	
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-	{!! HTML::style('css/appstyles.css'); !!}
+	{!! HTML::style('css/appstyles.css'); !!}	
+	{!! HTML::style('css/jquery.bxslider.css'); !!}
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
@@ -55,7 +56,8 @@
 	<!-- Scripts -->
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>	
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
-	{!! HTML::script('js/jquery.slidereveal.js'); !!}	
+	{!! HTML::script('js/jquery.slidereveal.js'); !!}
+	{!! HTML::script('js/jquery.bxslider.js'); !!}
 	{!! HTML::script('js/test.js'); !!}
 </body>
 </html>

@@ -15,5 +15,11 @@ $(function() {
 
       $(".open").on("click", function(){
         $('.collapse').collapse('toogle')
-      })        
+      }) 
+
+      $('.bxslider').bxSlider({
+          pagerCustom: '#bx-pager'
+        });
+
+
 });
