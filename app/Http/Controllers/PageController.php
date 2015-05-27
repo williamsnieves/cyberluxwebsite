@@ -71,7 +71,12 @@ class PageController extends Controller {
 				return view('pages.whiteproducts');
 				break;
 		}
-	} 
+	}
+
+
+	public function televisors($name, $product){
+		return view('pages.televisores');
+	}
 
 	/**
 	 * Show the form for creating a new resource.

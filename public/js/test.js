@@ -9,17 +9,15 @@ $(function() {
           },
         });
 
-      $("html").on("mousedown", function(){
-        slider.slideReveal("hide");
-      })
+          $("html").on("mousedown", function(){
+            slider.slideReveal("hide");
+          })
 
-      $(".open").on("click", function(){
-        $('.collapse').collapse('toogle')
-      }) 
+          $(".open").on("click", function(){
+            $('.collapse').collapse('toogle')
+          }) 
 
-      $('.bxslider').bxSlider({
-          pagerCustom: '#bx-pager'
-        });
-
-
+          $('.bxslider').bxSlider({
+              pagerCustom: '#bx-pager'
+         });
 });

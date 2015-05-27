@@ -6,7 +6,7 @@
 		<div class="col-xs-12 wrapper-contact">
 			<div class='pageOption'>
 			  <a href='#' class='option' data-inf='photo'>
-			    <img src="{{ URL::to('/') }}/img/map.png">
+			    <img src="{{ URL::to('/') }}/img/mapa.png">
 			  </a>			
 			</div>
 
@@ -30,10 +30,8 @@
 			      <textarea class="form-control" rows="6"></textarea>
 			    </div>
 			  </div>			  
-			  <div class="form-group">
-			    <div class="col-xs-6">			      
-			    </div>
-			    <div class="col-xs-6 custom-buttom-form">
+			  <div class="form-group">			    
+			    <div class="col-xs-12 custom-buttom-form">
 			      <button type="submit" class="btn btn-default">enviar</button>
 			    </div>
 			  </div>

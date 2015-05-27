@@ -11,6 +11,7 @@
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	{!! HTML::style('css/appstyles.css'); !!}	
 	{!! HTML::style('css/jquery.bxslider.css'); !!}
+	{!! HTML::style('css/ekko-lightbox.min.css'); !!}
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
@@ -58,6 +59,8 @@
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
 	{!! HTML::script('js/jquery.slidereveal.js'); !!}
 	{!! HTML::script('js/jquery.bxslider.js'); !!}
+	{!! HTML::script('js/ekko-lightbox.min.js'); !!}
 	{!! HTML::script('js/test.js'); !!}
+	{!! HTML::script('js/modal.js'); !!}
 </body>
 </html>

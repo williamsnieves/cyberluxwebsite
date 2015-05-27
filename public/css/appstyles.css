@@ -355,9 +355,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
   position: relative;
   width: 100%;
   height: 27em;
-  top: -4em;
+  top: -2em;
 }
-.option, .option img { width: 100%; }
+.option, .option img { width: 107%; }
 .option {
   overflow: hidden;
   position: absolute;  
@@ -391,6 +391,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
   font-weight: bold;
 }
 
+.wrapper-contact form{
+  margin: -14em 0 0 0;
+}
 
 .custom-label-form{
   padding: 0 0 0 0.4em;
@@ -420,13 +423,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
   box-shadow: none;
 }
 
-.form-custom{
-  margin: 0.5em 1em 0 0 !important;
-}
 
+.custom-buttom-form{
+  text-align: center;
+}
 .custom-buttom-form button{
-  width: 50% !important;
-  margin: 1em 0 0 0 !important;
+  width: 30% !important;
+  margin: 1em 0 2em 0 !important;
   border-radius: 0 !important;
   outline: 0 none !important;
   background-color: #eaae1a;
@@ -710,7 +713,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 }
 
 
-/* products cyberlux section */
+/* products details cyberlux section */
 
 .wrapper-detailproducts{
     z-index: 9998;
@@ -725,6 +728,92 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
   text-align: justify;
 }
 
+.title-thumb{
+  color: #000;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin: 0.5em 0 1em 0;
+  text-transform: uppercase;
+  height: 28px;
+}
+
+.title-thumb:hover{
+  color: #000;
+}
+
+.custom-thumb{
+  margin-bottom: 0 !important;
+  border-radius: 0 !important;
+  border: 2px solid #a4acb0 !important;
+}
+
+.custom-thumb:hover{
+  border: 2px solid #a4acb0 !important;
+}
+
+.thumb-container:nth-child(6) {
+  clear: left;
+}
+
+.wrapper-thumb:nth-child(8) {
+  clear: left;
+}
+
+/* televisores section */
+
+.wrapper-detailproducts h1{
+  text-align: right;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 4em;
+  padding: 0 1em 0 0;
+}
+
+
+
+/* gallery section */
+
+
+.wrapper-gallery h1{
+  text-align: right;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 4em;
+  padding: 0 1em 0 0;
+}
+
+
+.custom-thumb-gallery{
+  border-radius: 0 !important;
+  border: 4px solid #a4acb0 !important;
+  padding: 0;
+  box-shadow: 0.3em 0.3em 0.9em rgba(0,0,0,0.5);
+}
+
+.custom-thumb-gallery:hover{
+  border: 2px solid #a4acb0 !important;
+}
+
+.wrapper-gallery{
+  padding: 0;
+}
+
+.wrapper-gallery h2{
+  text-align: left;
+  margin: 1em 0.5em 1em 0.7em;
+  position: relative;
+  top: 0;
+  right: 0;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  font-weight: bold;
+}
 
 @media screen and (max-width: 411px){
     .social-commitment{
@@ -737,9 +826,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 /*MEDIA QUERIES FOR PRODUCTS SECTION*/
 
 @media screen and (min-width: 360px){
-    body{
-      background: red;
-    }
+  
     .arrow-right-frigi{      
       margin: 7em 0 0 0;
     }
@@ -763,13 +850,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
     .wrapper-products a.white-pro{        
         margin: 9.5em 7.5em 0 0;
     }
-}
+
+    .pageOption {      
+      top: -3em;
+    }
+    .option, .option img { width: 111%; }
+    }
+
+    .wrapper-contact form{
+      margin: -11em 0 0 0;
+    }
 
 
 @media screen and (min-width: 375px){
-    body{
-      background: gray;
-    }    
 
     .arrow-right-cyber{      
       margin: 31em 5.5em 0 0;
@@ -787,9 +880,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 
 
 @media screen and (min-width: 414px){
-    body{
-      background: yellow;
-    }
     .arrow-right-frigi{      
       margin: 9em 0 0 0;
     }
@@ -813,12 +903,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
     .wrapper-products a.white-pro{        
         margin: 11.5em 7.5em 0 0;
     }
+    .wrapper-contact form{
+      margin: -9em 0 0 0;
+    }
 }
 
 @media screen and (min-width: 480px){
-    body{
-      background: green;
-    }
     .arrow-right-frigi{      
       margin: 9em 0 0 0;
     }
@@ -842,12 +932,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
     .wrapper-products a.white-pro{        
         margin: 11.5em 7.5em 0 0;
     }
+
+    .wrapper-contact form{
+      margin: -6em 0 0 0;
+    }
 }
 
 @media screen and (min-width: 600px){
-    body{
-      background: green;
-    }
     .arrow-right-frigi{      
       margin: 12em 0 0 0;
     }
@@ -870,5 +961,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 
     .wrapper-products a.white-pro{        
         margin: 14.5em 7.5em 0 0;
+    }
+    .wrapper-contact form{
+      margin: -4em 0 0 0;
+    }
+
+    .pageOption {      
+      top: -3em;
+      height: 31em;
+    }
+
+    .wrapper-contact h2 {      
+      margin: 9em 0.5em 0 0;      
     }
 }
