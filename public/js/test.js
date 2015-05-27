@@ -20,4 +20,8 @@ $(function() {
           $('.bxslider').bxSlider({
               pagerCustom: '#bx-pager'
          });
+
+          $('.collapse-header').on('click', function () {
+            $($(this).data('target')).collapse('toggle');
+        });
 });

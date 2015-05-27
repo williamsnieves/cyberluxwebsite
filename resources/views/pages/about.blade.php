@@ -19,9 +19,9 @@ Iniciamos operaciones en enero del 2004 en Morón Estado Carabobo. Para el año 
 				Nuestros productos son sinónimo de garantía, porque le ofrecemos un excelente servicio post-venta con más de 350 talleres autorizados en todo el territorio nacional. Es así como podemos garantizarle al mercado venezolano que puede contar con productos con altos estándares de calidad y reconocimiento en diferentes partes del mundo, que satisfacen plenamente los gustos y exigencias de todos nuestros usuarios.
 			</p>
 
-			<div class="panel-group panel-mision" id="accordion" role="tablist" aria-multiselectable="true">
+			<div class="panel-group panel-mision" id="accordionMision" role="tablist" aria-multiselectable="true">
 			  <div class="panel panel-default">
-			    <div class="panel-heading custom-collapse" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" data-target="#collapseMision">
+			    <div class="panel-heading custom-collapse collapse-header" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordionMision" data-target="#collapseMision">
 			      <h4 class="panel-title">
 			        Misi&oacute;n
 			      </h4>
@@ -36,9 +36,9 @@ Iniciamos operaciones en enero del 2004 en Morón Estado Carabobo. Para el año 
 			  </div>			  
 			</div>
 
-			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+			<div class="panel-group" id="accordionVision" role="tablist" aria-multiselectable="true">
 			  <div class="panel panel-default">
-			    <div class="panel-heading custom-collapse" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" data-target="#collapseVision">
+			    <div class="panel-heading custom-collapse collapse-header" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordionVision" data-target="#collapseVision">
 			      <h4 class="panel-title">
 			        Visi&oacute;n
 			      </h4>
