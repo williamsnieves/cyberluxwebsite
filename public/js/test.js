@@ -6,6 +6,10 @@ $(function() {
             $(this).addClass('active');                
         });*/
 
+      var newsHeight = $("#newsContentDesktop").height();
+
+      $(".wrapper-filter-news").height(newsHeight + 32);
+
       var url = window.location;
       // Will only work if string in href matches with location
       $('ul.nav > li').removeClass('active');
