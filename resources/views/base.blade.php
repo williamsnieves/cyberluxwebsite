@@ -35,7 +35,8 @@
 			<li><a href="{{ URL::to('/') }}/contact">Contactenos</a></li>
 		</ul>
 	</div>
-	<nav class="navbar">
+
+	<nav class="navbar navbar-mobile">
 		<div class="brand-logo">
 		  	  	<img src="{{ URL::to('/') }}/img/bg_brand.png" alt="brand" />
 		  	  	<img src="{{ URL::to('/') }}/img/brand.png" alt="cyberlux" />
@@ -45,6 +46,27 @@
 			</span>
 		</div>
 	</nav>
+	<header class="container navbar-desktop">
+		<section class="row">
+			<img class="bg-brand" src="{{ URL::to('/') }}/img/bg-brand.png" alt="brand" />
+			<nav class="navbar navbar-default custom-wrapper-navbar">
+				<div class="brand-logo">				  	  	
+				  	  	<img class="brand-shape" src="{{ URL::to('/') }}/img/bg-shape.png" alt="brand" />
+				  	  	<img src="{{ URL::to('/') }}/img/brand-desktop.png" alt="cyberlux" />
+				</div>
+				<ul class="nav navbar-nav custom-nav-list">
+			        <li class="active"><a href="{{ URL::to('/') }}/home">Inicio</a></li>
+					<li><a href="{{ URL::to('/') }}/about">Nuestra Empresa</a></li>
+					<li><a href="{{ URL::to('/') }}/products">Productos</a></li>
+					<li><a href="{{ URL::to('/') }}/news">Noticias</a></li>
+					<li><a href="{{ URL::to('/') }}/locations">Sedes</a></li>
+					<li><a href="{{ URL::to('/') }}/gallery">Galeria</a></li>
+					<li><a href="{{ URL::to('/') }}/contact">Contactenos</a></li>		       
+			      </ul>
+			</nav>
+		</section>
+	</header>
+	
 	
   	
 	

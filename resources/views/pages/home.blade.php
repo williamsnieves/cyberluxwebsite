@@ -3,11 +3,15 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12 wrapper-home">
+		<div class="col-xs-12 col-sm-12 col-md-12 wrapper-home">
 
 			<section class="carousel-side">
-				<figure>
+				<figure class="banner-main-mobile">
 					<img src="{{ URL::to('/') }}/img/products_banner.png" alt="">
+				</figure>
+
+				<figure class="banner-main-desktop">
+					<img src="{{ URL::to('/') }}/img/banner-img-desktop.png" alt="">
 				</figure>
 			</section>
 			<section class="events-side">

@@ -22,7 +22,7 @@ Es por ello que hemos participado en múltiples actividades que persiguen fines 
 
 			<div class="panel-group panel-social-labor" id="accordion" role="tablist" aria-multiselectable="true">
 			  <div class="panel panel-default">
-			    <div class="panel-heading custom-collapse-social" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" data-target="#collapseSocialLabor">
+			    <div class="panel-heading custom-collapse-social collapse-header" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" data-target="#collapseSocialLabor">
 			      <h4 class="panel-title">
 			        Labor Social
 			      </h4>

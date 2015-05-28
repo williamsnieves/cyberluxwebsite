@@ -39,7 +39,7 @@ Firmes en tierras venezolanas, con gran fe en su futuro y en los frutos que este
 
 			<div class="panel-group panel-assembler" id="accordion" role="tablist" aria-multiselectable="true">
 			  <div class="panel panel-default">
-			    <div class="panel-heading custom-collapse-locations" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" data-target="#collapseMision">
+			    <div class="panel-heading custom-collapse-locations collapse-header" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" data-target="#collapseMision">
 			      <h4 class="panel-title">
 			        Ensambladoras
 			      </h4>

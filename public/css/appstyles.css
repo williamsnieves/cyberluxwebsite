@@ -1,11 +1,28 @@
 @import url('fonts.css');
 
+/* MENU */
+
+.navbar-desktop{
+  display: none;
+}
+
+img.brand-shape{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 /* section Home */
+
+.banner-main-desktop{
+  display: none;
+}
 
 #slider {
   background: #a4acb0;
   z-index: 9999;
   width: 180px;
+  display: none;
 
 }
 
@@ -974,5 +991,66 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 
     .wrapper-contact h2 {      
       margin: 9em 0.5em 0 0;      
+    }
+}
+
+
+/*DESKTOP MEDIAQUERIES*/
+
+
+@media screen and (min-width: 992px){
+    .navbar-desktop{
+      display: block;
+    }
+
+    .navbar-mobile{
+      display: none;
+    }
+
+    .custom-wrapper-navbar{
+      border-radius: 0;
+      box-shadow: 0 0.3em 0.5em;
+      border: 1px solid #ccc !important;
+    }
+
+    .custom-nav-list{
+      margin: 0 0 0 23em;
+    }
+
+    .custom-nav-list li a{
+      color: #000;
+      text-decoration: none;
+    }
+
+
+    .custom-nav-list li:first-child{
+      z-index: 9999;
+    }
+
+    .bg-brand{     
+      z-index: 9;
+      position: absolute;
+      top: 0;
+    }
+
+    .brand-logo img:last-child {     
+      width: 213px;
+    }
+
+    .custom-nav-list li.active a{
+      background: #e9ad24 !important;
+      color: #fff !important;
+      padding: 1em;
+      display: block;     
+    }
+
+
+    /*home*/
+    .banner-main-mobile{
+      display: none;
+    }
+
+    .banner-main-desktop{
+      display: block;
     }
 }

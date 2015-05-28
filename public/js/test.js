@@ -1,4 +1,20 @@
-$(function() {			
+$(function() {
+      $("#slider").show();
+      /*$('ul.nav > li').click(function (e) {
+            e.preventDefault();
+            $('ul.nav > li').removeClass('active');
+            $(this).addClass('active');                
+        });*/
+
+      var url = window.location;
+      // Will only work if string in href matches with location
+      $('ul.nav > li').removeClass('active');
+      $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+
+      // Will also work for relative and absolute hrefs
+      $('ul.nav a').filter(function() {
+          return this.href == url;
+      }).parent().addClass('active');
       var slider =  $('#slider').slideReveal({
           trigger: $("#trigger"),   
           push:false,
