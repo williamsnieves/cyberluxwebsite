@@ -5,7 +5,8 @@
 	<div class="row">
 		<div class="col-xs-12 wrapper-detailproducts">
 			<figure>
-				<img src="{{ URL::to('/') }}/img/cyber_logo.png" alt="">
+				<img class="logo_desktop" src="{{ URL::to('/') }}/img/cyberlux_desktop.png" alt="">
+				<img class="logo_mobile" src="{{ URL::to('/') }}/img/cyber_logo.png" alt="">
 			</figure>
 			<p>
 				Basándonos en la tendencia tecnológica, incorporamos a nuestro grupo de productos la línea marrón conocida como electrónica, la cual está conformada por electrodomésticos dirigidos al hogar o sector empresarial.
@@ -15,19 +16,19 @@
 			</p>
 			<div class="col-xs-6 col-md-3 wrapper-thumb">
 				<a href="#" class="thumbnail custom-thumb">
-      				<img src="http://placehold.it/200X200" alt="">
+      				<img src="{{ URL::to('/') }}/img/televisor.png" alt="">
     			</a>
     			<a class="title-thumb" href="{{ URL::to('/') }}/products/cyberlux/televisores">Televisores</a>
 			</div>
 			<div class="col-xs-6 col-md-3">
 				<a href="#" class="thumbnail custom-thumb">
-      				<img src="http://placehold.it/200X200" alt="">
+      				<img src="{{ URL::to('/') }}/img/tablet.png" alt="">
     			</a>
     			<a class="title-thumb" href="">Tabletas</a>
 			</div>
 			<div class="col-xs-6 col-md-3">
 				<a href="#" class="thumbnail custom-thumb">
-      				<img src="http://placehold.it/200X200" alt="">
+      				<img src="{{ URL::to('/') }}/img/reproductor.png" alt="">
     			</a>
     			<a class="title-thumb" href="">Reproductores</a>
 			</div>			

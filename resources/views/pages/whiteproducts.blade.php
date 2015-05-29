@@ -5,7 +5,8 @@
 	<div class="row">
 		<div class="col-xs-12 wrapper-detailproducts">
 			<figure>
-				<img src="{{ URL::to('/') }}/img/frigi_logo.png" alt="">
+			<img class="logo_desktop" src="{{ URL::to('/') }}/img/frigilux_desktop.png" alt="">
+			<img class="logo_mobile" src="{{ URL::to('/') }}/img/frigi_logo.png" alt="">
 			</figure>
 			<p>
 				Basándonos en la tendencia tecnológica, incorporamos a nuestro grupo de productos la línea marrón conocida como electrónica, la cual está conformada por electrodomésticos dirigidos al hogar o sector empresarial.
@@ -81,39 +82,57 @@
 
 			<div class="col-xs-6 col-md-3 wrapper-thumb">
 				<a href="#" class="thumbnail custom-thumb">
-      				<img src="http://placehold.it/200X200" alt="">
+      				<img src="{{ URL::to('/') }}/img/aire.png" alt="">
     			</a>
     			<a class="title-thumb" href="">Aires acondicionados</a>
 			</div>
 			<div class="col-xs-6 col-md-3">
 				<a href="#" class="thumbnail custom-thumb">
-      				<img src="http://placehold.it/200X200" alt="">
+      				<img src="{{ URL::to('/') }}/img/congelador.png" alt="">
     			</a>
     			<a class="title-thumb" href="">refrigeradores</a>
 			</div>
 			<div class="col-xs-6 col-md-3">
 				<a href="#" class="thumbnail custom-thumb">
-      				<img src="http://placehold.it/200X200" alt="">
+      				<img src="{{ URL::to('/') }}/img/dispensador.png" alt="">
     			</a>
     			<a class="title-thumb" href="">dispensadores de agua</a>
 			</div>
 			<div class="col-xs-6 col-md-3 wrapper-thumb">
 				<a href="#" class="thumbnail custom-thumb">
-      				<img src="http://placehold.it/200X200" alt="">
+      				<img src="{{ URL::to('/') }}/img/lavadora.png" alt="">
+    			</a>
+    			<a class="title-thumb" href="">lavadoras</a>
+			</div>
+			<div class="col-xs-6 col-md-3 wrapper-thumb">
+				<a href="#" class="thumbnail custom-thumb">
+      				<img src="{{ URL::to('/') }}/img/microonda.png" alt="">
     			</a>
     			<a class="title-thumb" href="">hornos microondas</a>
 			</div>
 			<div class="col-xs-6 col-md-3">
 				<a href="#" class="thumbnail custom-thumb">
-      				<img src="http://placehold.it/200X200" alt="">
+      				<img src="{{ URL::to('/') }}/img/horno.png" alt="">
     			</a>
     			<a class="title-thumb" href="">hornos</a>
 			</div>
 			<div class="col-xs-6 col-md-3">
 				<a href="#" class="thumbnail custom-thumb">
-      				<img src="http://placehold.it/200X200" alt="">
+      				<img src="{{ URL::to('/') }}/img/cocina.png" alt="">
     			</a>
     			<a class="title-thumb" href="">cocinas</a>
+			</div>
+			<div class="col-xs-6 col-md-3">
+				<a href="#" class="thumbnail custom-thumb">
+      				<img src="{{ URL::to('/') }}/img/campana.png" alt="">
+    			</a>
+    			<a class="title-thumb" href="">campanas</a>
+			</div>
+			<div class="col-xs-6 col-md-3">
+				<a href="#" class="thumbnail custom-thumb">
+      				<img src="{{ URL::to('/') }}/img/nevera.png" alt="">
+    			</a>
+    			<a class="title-thumb" href="">neveras</a>
 			</div>
 		</div>
 	</div>
