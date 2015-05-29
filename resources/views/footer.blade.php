@@ -34,7 +34,7 @@
 			</li>			
 		</ul>
 		<hr class="separate-footer" />
-		<p>@2015 CYBERLUX. ALL RIGHT RESERVED    Powered By                  “It & Digital Media Solutions”</p>
+		<p>@2015 CYBERLUX. ALL RIGHT RESERVED Powered By <a href=""><img src="{{ URL::to('/') }}/img/3wv_logo.png" alt=""></a> “It & Digital Media Solutions”</p>
 	</section>
 </section>
 
