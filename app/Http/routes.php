@@ -41,6 +41,21 @@ Route::get('news/{id}', 'PageController@newsdetail');
 Route::get('products/{name}', 'PageController@typeProducts');
 Route::get('products/{name}/{product}', 'PageController@televisors');
 
+
+/* admin area */
+
+Route::get('admin', function () {
+  return redirect('/admin/dashboard');
+});
+
+Route::group([
+  'namespace' => 'Admin'
+  /*'middleware' => 'auth',*/
+], function () {
+  Route::get('admin/dashboard', 'DashboardController');	
+  Route::resource('admin/news', 'NewsController');
+});
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
