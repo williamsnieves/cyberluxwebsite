@@ -6,7 +6,7 @@
 		<div class="col-xs-12 wrapper-location wrapper-location-mobile">
 			<h1>nuestras sedes</h1>
 
-			<h5>Ifraestructuras</h5>
+			<h5>Infraestructuras</h5>
 			
 			<p>			
 
@@ -95,7 +95,7 @@ Firmes en tierras venezolanas, con gran fe en su futuro y en los frutos que este
 			<div class="col-md-6">
 				<h1>nuestras sedes</h1>
 
-			<h5>Ifraestructuras</h5>
+			<h5>Infraestructuras</h5>
 			
 			<p>			
 

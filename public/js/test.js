@@ -1,4 +1,6 @@
 $(function() {
+      var isDown = false;
+
       $("#slider").show();
       /*$('ul.nav > li').click(function (e) {
             e.preventDefault();
@@ -29,8 +31,20 @@ $(function() {
           },
         });
 
-          $("html").on("mousedown", function(){
-            slider.slideReveal("hide");
+          $("#slider").on("mousedown", function(){
+            //alert("aquiii");
+            isDown = true;
+            return;           
+            
+          })
+
+          $(document).on("mousedown", function(){
+            if(isDown){
+              isDown = fasle;
+              return;
+            }else{
+              slider.slideReveal("hide");
+            }
           })
 
           $(".open").on("click", function(){

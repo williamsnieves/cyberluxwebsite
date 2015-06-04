@@ -3,65 +3,65 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12 wrapper-gallery">
+		<div id = "loading-area" class="col-xs-12 col-sm-12 col-md-12 wrapper-gallery">
 			<h1>Galería</h1>
 
 			<h2>Líneas de ensamblaje</h2>
 
 			<div class="col-xs-6 col-md-3">
 				<a href="{{ URL::to('/') }}/img/galeria1.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
-      				<img src="{{ URL::to('/') }}/img/galeria1.jpg" width="400" height="300" alt="">
+      				<img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria1.jpg" width="400" height="300" alt="">
     			</a>    			
 			</div>
 			<div class="col-xs-6 col-md-3">
 				<a href="{{ URL::to('/') }}/img/galeria2.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
-      				<img src="{{ URL::to('/') }}/img/galeria2.jpg" width="400" height="300" alt="">
+      				<img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria2.jpg" width="400" height="300" alt="">
     			</a>    			
 			</div>
 			<div class="col-xs-6 col-md-3">
 				<a href="{{ URL::to('/') }}/img/galeria3.png" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
-      				<img src="{{ URL::to('/') }}/img/galeria3.png" width="400" height="300" alt="">
+      				<img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria3.png" width="400" height="300" alt="">
     			</a>
     			
 			</div>
 			<div class="col-xs-6 col-md-3">
 				<a href="{{ URL::to('/') }}/img/galeria4.png" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
-      				<img src="{{ URL::to('/') }}/img/galeria4.png" width="400" height="300" alt="">
+      				<img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria4.png" width="400" height="300" alt="">
     			</a>    			
 			</div>
 			<div class="col-xs-6 col-md-3">
 				<a href="{{ URL::to('/') }}/img/galeria5.png" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
-      				<img src="{{ URL::to('/') }}/img/galeria5.png" width="400" height="300" alt="">
+      				<img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria5.png" width="400" height="300" alt="">
     			</a>    			
 			</div>
 			<div class="col-xs-6 col-md-3">
 				<a href="{{ URL::to('/') }}/img/galeria6.png" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
-      				<img src="{{ URL::to('/') }}/img/galeria6.png" width="400" height="300" alt="">
+      				<img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria6.png" width="400" height="300" alt="">
     			</a>    			
 			</div>
             <div class="col-xs-6 col-md-3">
                 <a href="{{ URL::to('/') }}/img/galeria7.png" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
-                    <img src="{{ URL::to('/') }}/img/galeria7.png" width="400" height="300" alt="">
+                    <img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria7.png" width="400" height="300" alt="">
                 </a>                
             </div>
             <div class="col-xs-6 col-md-3">
                 <a href="{{ URL::to('/') }}/img/galeria8.png" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
-                    <img src="{{ URL::to('/') }}/img/galeria8.png" width="400" height="300" alt="">
+                    <img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria8.png" width="400" height="300" alt="">
                 </a>                
             </div>
             <div class="col-xs-6 col-md-3">
                 <a href="{{ URL::to('/') }}/img/galeria9.png" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
-                    <img src="{{ URL::to('/') }}/img/galeria9.png" alt="">
+                    <img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria9.png" alt="">
                 </a>                
             </div>
             <div class="col-xs-6 col-md-3">
                 <a href="{{ URL::to('/') }}/img/galeria10.png" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
-                    <img src="{{ URL::to('/') }}/img/galeria10.png" alt="">
+                    <img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria10.png" alt="">
                 </a>                
             </div>
             <div class="col-xs-6 col-md-3">
                 <a href="{{ URL::to('/') }}/img/galeria11.png" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
-                    <img src="{{ URL::to('/') }}/img/galeria11.png" alt="">
+                    <img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria11.png" alt="">
                 </a>                
             </div>
 			<!--<div class="row">

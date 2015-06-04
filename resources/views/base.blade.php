@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable = no">
 	<title>Laravel</title>
 	
 	
@@ -12,6 +12,8 @@
 	{!! HTML::style('css/appstyles.css'); !!}	
 	{!! HTML::style('css/jquery.bxslider.css'); !!}
 	{!! HTML::style('css/ekko-lightbox.min.css'); !!}
+	{!! HTML::style('css/bttrlazyloading.min.css'); !!}
+	{!! HTML::style('css/animate.min.css'); !!}
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
@@ -24,6 +26,10 @@
 	
 </head>
 <body>
+	<!-- Preloader -->
+	<div id="preloader">
+	    <div id="status">&nbsp;</div>
+	</div>
 	<div id='slider'>
 		<ul>
 			<li><a href="{{ URL::to('/') }}/home">Inicio</a></li>
@@ -31,8 +37,8 @@
 			<li><a href="{{ URL::to('/') }}/products">Productos</a></li>
 			<li><a href="{{ URL::to('/') }}/news">Noticias</a></li>
 			<li><a href="{{ URL::to('/') }}/locations">Sedes</a></li>
-			<li><a href="{{ URL::to('/') }}/gallery">Galeria</a></li>
-			<li><a href="{{ URL::to('/') }}/contact">Contactenos</a></li>
+			<li><a href="{{ URL::to('/') }}/gallery">Galería</a></li>
+			<li><a href="{{ URL::to('/') }}/contact">Contáctenos</a></li>
 		</ul>
 	</div>
 
@@ -60,8 +66,8 @@
 					<li><a href="{{ URL::to('/') }}/products">Productos</a></li>
 					<li><a href="{{ URL::to('/') }}/news">Noticias</a></li>
 					<li><a href="{{ URL::to('/') }}/locations">Sedes</a></li>
-					<li><a href="{{ URL::to('/') }}/gallery">Galeria</a></li>
-					<li><a href="{{ URL::to('/') }}/contact">Contactenos</a></li>		       
+					<li><a href="{{ URL::to('/') }}/gallery">Galería</a></li>
+					<li><a href="{{ URL::to('/') }}/contact">Contáctenos</a></li>		       
 			      </ul>
 			</nav>
 		</section>
@@ -79,10 +85,22 @@
 	<!-- Scripts -->
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>	
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+	{!! HTML::script('js/jquery.bttrlazyloading.min.js'); !!}
 	{!! HTML::script('js/jquery.slidereveal.js'); !!}
 	{!! HTML::script('js/jquery.bxslider.js'); !!}
 	{!! HTML::script('js/ekko-lightbox.min.js'); !!}
 	{!! HTML::script('js/test.js'); !!}
 	{!! HTML::script('js/modal.js'); !!}
+	{!! HTML::script('js/imageload.js'); !!}
+	
+	<script>
+		//<![CDATA[
+        $(window).load(function() { // makes sure the whole site is loaded
+            $('#status').fadeOut(); // will first fade out the loading animation
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+            $('body').delay(350).css({'overflow':'visible'});
+        })
+    //]]>
+	</script>
 </body>
 </html>

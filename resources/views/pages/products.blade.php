@@ -16,7 +16,7 @@
 
 			<figure class="cyber-brand">
 				<img src="{{ URL::to('/') }}/img/cyber_logo.png" alt="">
-			</figure>
+			</figure>		
 			<a href="{{ URL::to('/') }}/products/cyberlux"><span class="icon-keyboard-arrow-right arrow-right-cyber">				
 			</span></a>
 			<a class="brown-pro" href="{{ URL::to('/') }}/products/cyberlux"><h2>Línea Marrón</h2></a>
@@ -36,6 +36,7 @@
 			<figure class="cyber-brand">
 				<img src="{{ URL::to('/') }}/img/cyber_logo.png" alt="">
 			</figure>
+			<h1>Productos</h1>
 			<a href="{{ URL::to('/') }}/img/catalogo_cyberlux.pdf"><span class="icon-keyboard-arrow-right arrow-right-cyber">				
 			</span></a>
 			<a class="brown-pro" href="{{ URL::to('/') }}/img/catalogo_cyberlux.pdf"><h2>Línea Marrón</h2></a>
