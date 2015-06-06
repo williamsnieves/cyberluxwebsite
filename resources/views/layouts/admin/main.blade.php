@@ -1,4 +1,4 @@
-@extends('layouts.plane')
+
 
 @section('body')
  <div id="wrapper">
@@ -82,7 +82,7 @@
                                     </p>
                                    
                                         <div>
-                                        @include('widgets.progress', array('animated'=> true, 'class'=>'success', 'value'=>'40'))
+                                        
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                    
@@ -99,7 +99,7 @@
                                     </p>
                                    
                                         <div>
-                                        @include('widgets.progress', array('animated'=> true, 'class'=>'info', 'value'=>'20'))
+                                        
                                             <span class="sr-only">20% Complete</span>
                                         </div>
                                    
@@ -116,7 +116,7 @@
                                     </p>
                                     
                                         <div>
-                                        @include('widgets.progress', array('animated'=> true, 'class'=>'warning', 'value'=>'60'))
+                                            
                                             <span class="sr-only">60% Complete (warning)</span>
                                         </div>
                                    
@@ -132,8 +132,8 @@
                                         <span class="pull-right text-muted">80% Complete</span>
                                     </p>
                                     
-                                        <div>
-                                        @include('widgets.progress', array('animated'=> true,'class'=>'danger', 'value'=>'80'))
+                                        <div>                                        
+
                                             <span class="sr-only">80% Complete (danger)</span>
                                         </div>
                                     

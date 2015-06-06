@@ -45,14 +45,14 @@ Route::get('products/{name}/{product}', 'PageController@televisors');
 /* admin area */
 
 Route::get('admin', function () {
-  return redirect('/admin/dashboard');
+  return redirect('admin/dashboard');
 });
 
 Route::group([
   'namespace' => 'Admin'
   /*'middleware' => 'auth',*/
 ], function () {
-  Route::get('admin/dashboard', 'DashboardController');	
+  Route::get('admin/dashboard', 'DashboardController@index');	
   Route::resource('admin/news', 'NewsController');
 });
 
