@@ -54,6 +54,7 @@ Route::group([
 ], function () {
   Route::get('admin/dashboard', 'DashboardController@index');	
   Route::resource('admin/news', 'NewsController');
+  Route::resource('admin/editors', 'AdminUsersController');
 });
 
 Route::controllers([
