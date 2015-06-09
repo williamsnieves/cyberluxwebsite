@@ -16,7 +16,7 @@ class NewsController extends Controller {
 	{
 		//
 
-		return "index de las noticias";
+		
 	}
 
 	/**
@@ -54,7 +54,7 @@ class NewsController extends Controller {
 	{
 		//
 
-		return "muestro la noticia de un id";
+		
 	}
 
 	/**

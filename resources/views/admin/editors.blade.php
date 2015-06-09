@@ -1,13 +1,13 @@
 @extends('layouts.admin.plane')
 @section('titlesection')
-    Editors
-            <small>Create editors</small>
+    Editores
+            <small>Crear editores</small>
 @stop
 
 @section('breadcrumb')
     <li><a href="{{ URL::to('/') }}/admin/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="{{ URL::to('/') }}/admin/editors">Editors</a></li>
-    <li class="active">Create</li>
+    <li><a href="{{ URL::to('/') }}/admin/editors">Editores</a></li>
+    <li class="active">Crear</li>
 @stop
 @section('content')
 

@@ -16,7 +16,10 @@ class AdminUsersController extends Controller {
 	{
 		//
 
-		return "pupu";
+		//return "pupu";
+		$users = User::paginate(10)->setPath('/admin/editors');
+		//$users = User::simplePaginate(1);
+		return view('admin.editors_show')->with('users', $users);
 	}
 
 	/**
@@ -27,7 +30,7 @@ class AdminUsersController extends Controller {
 	public function create()
 	{
 		//
-		return view('admin.editors');
+		return view('admin.editors_createupdate');
 	}
 
 	/**
@@ -84,6 +87,9 @@ class AdminUsersController extends Controller {
 	public function edit($id)
 	{
 		//
+		$user = User::find($id);
+		return view('admin.editors_createupdate')->with('user', $user);
+
 	}
 
 	/**
@@ -92,9 +98,31 @@ class AdminUsersController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Request $request)
 	{
 		//
+		$user = User::find($id);
+		$user->name = $request->input('name');
+		$user->lastName = $request->input('lastname');
+		$user->email = $request->input('email');
+
+		if(!empty($request->input('editor')) && $request->input('editor')  == 'on'){
+			$user->isEditor = 1;
+		}else{
+			$user->isEditor = 0;
+		}
+
+		if(!empty($request->input('admin')) && $request->input('admin')  == 'on'){
+			$user->isAdmin = 1;
+		}else{
+			$user->isAdmin = 0;
+		}
+
+		$user->save();
+
+		return redirect()->route('admin.editors.edit', ['user' => $id])->with('message', 'Usuario actualizado');
+
+
 	}
 
 	/**
@@ -106,6 +134,13 @@ class AdminUsersController extends Controller {
 	public function destroy($id)
 	{
 		//
+
+		$user = User::find($id);
+		$user->delete();
+
+		return redirect()->route('admin.editors.index')->with('message', 'Usuario borrado');
+
+
 	}
 
 }
