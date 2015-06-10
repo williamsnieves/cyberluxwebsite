@@ -2,9 +2,15 @@
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\News;
+
 class TypeNews extends Model {
 
 	//
 	protected $table = 'type_news';
+
+	public function news(){
+		return $this->hasMany('News');
+	}
 
 }

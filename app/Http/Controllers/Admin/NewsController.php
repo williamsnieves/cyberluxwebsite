@@ -4,6 +4,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Models\TypeNews;
+use App\Models\News;
+use App\Models\User;
 
 class NewsController extends Controller {
 
@@ -16,6 +19,9 @@ class NewsController extends Controller {
 	{
 		//
 
+		$news = News::paginate(10)->setPath('/admin/news');
+		//$users = User::simplePaginate(1);
+		return view('admin.news_show')->with('news', $news);
 		
 	}
 
@@ -27,7 +33,9 @@ class NewsController extends Controller {
 	public function create()
 	{
 		//
-		return "formulario para crear las noticias";
+
+		$typenews = TypeNews::all();
+		return view('admin.news_createupdate')->with('typenews', $typenews);
 	}
 
 	
@@ -37,11 +45,21 @@ class NewsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+		$user = User::find(1);
+		$typenewsId = TypeNews::find($request->input('categorynews'));
 
-		return "hago post de la noticia";
+		$news = new News;
+		$news->title = $request->input('title');
+		$news->description = $request->input('description');
+		$news->typeNews()->associate($typenewsId);
+		$news->users()->associate($user);	
+
+		$news->save();
+
+		return redirect('admin/news')->with('message', 'La noticia se ha creado correctamente');
 	}
 
 	/**
@@ -66,8 +84,9 @@ class NewsController extends Controller {
 	public function edit($id)
 	{
 		//
-
-		return "formulario para editar la noticia de un id";
+		$typenews = TypeNews::all();
+		$news = News::find($id);
+		return view('admin.news_createupdate')->with(array('news' => $news, 'typenews' => $typenews));
 	}
 
 	/**
@@ -76,10 +95,21 @@ class NewsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Request $request)
 	{
 		//
-		return "edito la noticia de un id";
+		$user = User::find(1);
+		$typenewsId = TypeNews::find($request->input('categorynews'));
+
+		$news = News::find($id);
+		$news->title = $request->input('title');
+		$news->description = $request->input('description');
+		$news->typeNews()->associate($typenewsId);
+		$news->users()->associate($user);	
+
+		$news->save();
+
+		return redirect()->route('admin.news.index', ['news' => $id])->with('message', 'Noticia actualizada');
 	}
 
 	/**
@@ -91,7 +121,10 @@ class NewsController extends Controller {
 	public function destroy($id)
 	{
 		//
-		return "borro la noticia de un id";
+		$news = News::find($id);
+		$news->delete();
+
+		return redirect()->route('admin.news.index')->with('message', 'Noticia borrada');
 	}
 
 }

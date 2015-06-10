@@ -6,11 +6,22 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Support\Facades\Hash;
+use App\Models\TypeNews;
 
 class News extends Model {
 
 	//
 
+	 protected $fillable = ['type_news_id'];
+
 	protected $table = 'news';
+
+	public function typeNews(){
+		return $this->belongsTo('\App\models\TypeNews');
+	}
+
+	public function users(){
+		return $this->belongsTo('\App\models\User');
+	}
 
 }
