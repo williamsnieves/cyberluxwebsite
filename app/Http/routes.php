@@ -56,6 +56,8 @@ Route::group([
   Route::resource('admin/news', 'NewsController');
   Route::resource('admin/editors', 'AdminUsersController');
   Route::resource('admin/categorynews', 'TypeNewsController');
+  Route::resource('admin/pages', 'PageController');
+  Route::resource('admin/nodes', 'NodeController');
 });
 
 Route::controllers([

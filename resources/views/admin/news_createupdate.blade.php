@@ -48,7 +48,7 @@
 
               <div class="form-group">
                 {!! Form::label('inputDescription', 'Descripción de la noticia:') !!}
-                {!! Form::text('description', null, ["class" => "form-control", 'placeholder'=>'Ingresa descripción de la noticia', "id" => "inputDescription"]) !!}
+                {!! Form::textarea('description', null, ["class" => "form-control", 'placeholder'=>'Ingresa descripción de la noticia', "id" => "inputDescription"]) !!}
               </div>
 
               <div class="form-group">
