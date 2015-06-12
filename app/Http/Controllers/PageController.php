@@ -58,6 +58,9 @@ class PageController extends Controller {
 			case '2':			
 				return view('pages.news2');
 				break;
+			case '3':			
+				return view('pages.news3');
+				break;
 		}
 	}
 

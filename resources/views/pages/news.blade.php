@@ -8,7 +8,7 @@
 			<div>
 				<a href="{{ URL::to('/') }}/news/1">					
 					<h2>
-						CYBERLUX DE VENEZUELA APERTURA LINEA SU LINEA
+						CYBERLUX DE VENEZUELA APERTURA SU LÍNEA
 	DE ENSAMBLAJE DE AIRES ACONDICIONADO
 					</h2>
 				</a>
@@ -16,13 +16,13 @@
 					Destinada a la produccion  de equipos tipo Split y ventana marca FRIGILUX, Esta línea contara con una capacidad instalada de más de 500.000 Unds al año, generando más de 100 empleos directos entre obreros y técnicos especializados.
 				</p>
 				<span class="date-news">
-					15 Junio, 2015
+					12 Junio, 2015
 				</span>
 			</div>
 			<div>
 				<a href="{{ URL::to('/') }}/news/2">				
 					<h2>
-						FRIGiLUX PARTICIPA EN EL INTERCAMBIO DE ARMAS
+						FRIGILUX PARTICIPA EN EL INTERCAMBIO DE ARMAS
 	POR ELECTRODOMESTICOS.
 					</h2>
 				</a>
@@ -30,48 +30,25 @@
 					Desde enero hasta la fecha, el Ministerio para las Relaciones Interiores, Justicia y Paz, en coordinación con otras instancias en materia de seguridad, ha recibido más de 13.000 armas de fuego como parte del Plan Nacional de Desarme y del Plan Nacional de Pacificación.
 				</p>
 				<span class="date-news">
-					15 Junio, 2015
+					12 Junio, 2015
 				</span>
 			</div>
+
 			<div>
-				<a href="{{ URL::to('/') }}/products">				
+				<a href="{{ URL::to('/') }}/news/3">				
 					<h2>
-						Noticia 1
+						Cyberlux Venezuela se planteó exportar productos.
 					</h2>
 				</a>
 				<p>
-					Hibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare.
+					El presidente de Cyberlux Venezuela, Yaser Daga, ofreció detalles del primer encuentro empresarial “Hecho en Venezuela” que se realizó este miércoles donde se convocaron a varias empresas venezolanas para ensamblar electrodomésticos. En el evento estuvieron presentes empresas nacionales, internacionales y el Ministerio de Industria.
 				</p>
 				<span class="date-news">
-					15 Junio, 2015
+					12 Junio, 2015
 				</span>
 			</div>
-			<div>
-				<a href="{{ URL::to('/') }}/products">					
-					<h2>
-						Noticia 1
-					</h2>
-				</a>
-				<p>
-					Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
-				</p>
-				<span class="date-news">
-					15 Junio, 2015
-				</span>
-			</div>
-			<div>
-				<a href="{{ URL::to('/') }}/products">					
-					<h2>
-						Noticia 2
-					</h2>
-				</a>
-				<p>
-					Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
-				</p>
-				<span class="date-news">
-					15 Junio, 2015
-				</span>
-			</div>
+			
+			
 			<section class="col-xs-12 filter-tool" style="position:fixed; bottom:0;">
 				<ul class="col-md-12">
 					<li>				
@@ -152,7 +129,7 @@
 			<div>
 				<a href="{{ URL::to('/') }}/news/1">					
 					<h2>
-						CYBERLUX DE VENEZUELA APERTURA LINEA SU LINEA
+						CYBERLUX DE VENEZUELA APERTURA SU LÍNEA
 	DE ENSAMBLAJE DE AIRES ACONDICIONADO
 					</h2>
 				</a>
@@ -166,7 +143,7 @@
 			<div>
 				<a href="{{ URL::to('/') }}/news/2">				
 					<h2>
-						FRIGiLUX PARTICIPA EN EL INTERCAMBIO DE ARMAS
+						FRIGILUX PARTICIPA EN EL INTERCAMBIO DE ARMAS
 	POR ELECTRODOMESTICOS.
 					</h2>
 				</a>
@@ -177,73 +154,22 @@
 					15 Junio, 2015
 				</span>
 			</div>
-			<div>
-				<a href="{{ URL::to('/') }}/products">				
-					<h2>
-						Noticia 1
-					</h2>
-				</a>
-				<p>
-					Hibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare.
-				</p>
-				<span class="date-news">
-					15 Junio, 2015
-				</span>
-			</div>
-			<div>
-				<a href="{{ URL::to('/') }}/products">					
-					<h2>
-						Noticia 1
-					</h2>
-				</a>
-				<p>
-					Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
-				</p>
-				<span class="date-news">
-					15 Junio, 2015
-				</span>
-			</div>
-			<div>
-				<a href="{{ URL::to('/') }}/products">					
-					<h2>
-						Noticia 2
-					</h2>
-				</a>
-				<p>
-					Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
-				</p>
-				<span class="date-news">
-					15 Junio, 2015
-				</span>
-			</div>
-			<div>
-				<a href="{{ URL::to('/') }}/products">					
-					<h2>
-						Noticia 2
-					</h2>
-				</a>
-				<p>
-					Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
-				</p>
-				<span class="date-news">
-					15 Junio, 2015
-				</span>
-			</div>
 
 			<div>
-				<a href="{{ URL::to('/') }}/products">					
+				<a href="{{ URL::to('/') }}/news/3">				
 					<h2>
-						Noticia 2
+						Cyberlux Venezuela se planteó exportar productos.
 					</h2>
 				</a>
 				<p>
-					Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
+					El presidente de Cyberlux Venezuela, Yaser Daga, ofreció detalles del primer encuentro empresarial “Hecho en Venezuela” que se realizó este miércoles donde se convocaron a varias empresas venezolanas para ensamblar electrodomésticos. En el evento estuvieron presentes empresas nacionales, internacionales y el Ministerio de Industria.
 				</p>
 				<span class="date-news">
-					15 Junio, 2015
+					12 Junio, 2015
 				</span>
 			</div>
-			</div>
+			
+			
 		</section>
 	</div>
 </div>
