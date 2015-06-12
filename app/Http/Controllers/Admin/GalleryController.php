@@ -5,7 +5,9 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class \GalleryController extends Controller {
+use App\Models\Gallery;
+
+class GalleryController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,6 +17,11 @@ class \GalleryController extends Controller {
 	public function index()
 	{
 		//
+
+		$galleries = Gallery::paginate(10)->setPath('/admin/galleries');
+		//$users = User::simplePaginate(1);
+		return view('admin.galleries_show')->with('galleries', $galleries);
+
 	}
 
 	/**
@@ -25,6 +32,8 @@ class \GalleryController extends Controller {
 	public function create()
 	{
 		//
+
+		return view('admin.galleries_createupdate');
 	}
 
 	/**
@@ -32,10 +41,18 @@ class \GalleryController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+
+		$galleries = new Gallery;
+		$galleries->name = $request->input('name');			
+
+		$galleries->save();
+
+		return redirect('admin/galleries')->with('message', 'La galería se ha creado correctamente');
 	}
+	
 
 	/**
 	 * Display the specified resource.
@@ -57,6 +74,8 @@ class \GalleryController extends Controller {
 	public function edit($id)
 	{
 		//
+		$gallery = Gallery::find($id);			
+		return view('admin.galleries_createupdate')->with(array('gallery' => $gallery));
 	}
 
 	/**
@@ -65,9 +84,16 @@ class \GalleryController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Request $request)
 	{
 		//
+
+		$galleries = Gallery::find($id);
+		$galleries->name = $request->input('name');			
+
+		$galleries->save();
+
+		return redirect('admin/galleries')->with('message', 'La galería se ha actualizado correctamente');
 	}
 
 	/**
@@ -79,6 +105,10 @@ class \GalleryController extends Controller {
 	public function destroy($id)
 	{
 		//
+		$galleries =  Gallery::find($id);		
+		$galleries->delete();
+
+		return redirect()->route('admin.galleries.index')->with('message', 'Galería borrada');
 	}
 
 }

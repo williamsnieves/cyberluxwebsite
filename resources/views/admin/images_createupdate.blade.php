@@ -48,7 +48,8 @@
               <div class="form-group">
                 {!! Form::label('inputUrl', 'url de la imagen:') !!}
                 {!! Form::text('url', null, ["class" => "form-control", 'placeholder'=>'Ingresa título del nodo', "id" => "inputUrl"]) !!}
-              </div>            
+              </div>
+
                            
               
               
@@ -63,10 +64,10 @@
               <div class="form-group">
                 {!! Form::label('inputName', 'Nombre de la imagen:') !!}
                 {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre de la imagen', "id" => "inputName"]) !!}
-              </div>
+              </div>             
               <div class="form-group">
-                {!! Form::label('inputUrl', 'url de la imagen:') !!}
-                {!! Form::text('url', null, ["class" => "form-control", 'placeholder'=>'url de la imagen', "id" => "inputUrl"]) !!}
+                {!! Form::label('inputImage', 'Subir imagen:') !!}
+                {!! Form::file('image') !!}
               </div>
                 
                             

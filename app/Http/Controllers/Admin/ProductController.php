@@ -92,7 +92,7 @@ class ProductController extends Controller {
 		//
 
 		$categoryId = Category::find($request->input('categories'));
-		$product = Product::find($id);
+		$products = Product::find($id);
 		$products->name = $request->input('name');
 		$products->codproduct = $request->input('codproduct');		
 		$products->categories()->associate($categoryId);		

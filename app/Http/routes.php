@@ -62,7 +62,7 @@ Route::group([
   Route::resource('admin/brands', 'BrandController');
   Route::resource('admin/categories', 'CategoryController');
   Route::resource('admin/products', 'ProductController');
-  Route::resource('admin/producprices', 'ProductPriceController');
+  Route::resource('admin/productprices', 'ProductPriceController');
   Route::resource('admin/galleries', 'GalleryController');
 });
 

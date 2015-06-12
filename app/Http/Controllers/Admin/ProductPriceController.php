@@ -5,7 +5,10 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class \ProductPriceController extends Controller {
+use App\Models\Product;
+use App\Models\ProductPrice;
+
+class ProductPriceController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,6 +18,10 @@ class \ProductPriceController extends Controller {
 	public function index()
 	{
 		//
+
+		$productPrices = ProductPrice::paginate(10)->setPath('/admin/products');
+		//$users = User::simplePaginate(1);
+		return view('admin.product_prices_show')->with('productPrices', $productPrices);
 	}
 
 	/**
@@ -25,6 +32,9 @@ class \ProductPriceController extends Controller {
 	public function create()
 	{
 		//
+
+		$products = Product::lists('name', 'id');
+		return view('admin.product_prices_createupdate')->with(array('products' => $products));
 	}
 
 	/**
@@ -32,9 +42,19 @@ class \ProductPriceController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+
+		$productId = Product::find($request->input('products'));		
+		$productPrices = new ProductPrice;
+		$productPrices->price = $request->input('price');
+		$productPrices->tax = $request->input('tax');		
+		$productPrices->products()->associate($productId);		
+
+		$productPrices->save();
+
+		return redirect('admin/productprices')->with('message', 'El Precio del producto se ha creado correctamente');
 	}
 
 	/**
@@ -57,6 +77,10 @@ class \ProductPriceController extends Controller {
 	public function edit($id)
 	{
 		//
+
+		$products = Product::lists('name', 'id');
+		$productPrice = ProductPrice::find($id);			
+		return view('admin.product_prices_createupdate')->with(array('productPrice' => $productPrice, 'products' => $products));
 	}
 
 	/**
@@ -65,9 +89,19 @@ class \ProductPriceController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Request $request)
 	{
 		//
+
+		$productId = Product::find($request->input('products'));		
+		$productPrices = ProductPrice::find($id);
+		$productPrices->price = $request->input('price');
+		$productPrices->tax = $request->input('tax');		
+		$productPrices->products()->associate($productId);		
+
+		$productPrices->save();
+
+		return redirect('admin/productprices')->with('message', 'El Precio del producto se ha actualizado correctamente');
 	}
 
 	/**
@@ -79,6 +113,11 @@ class \ProductPriceController extends Controller {
 	public function destroy($id)
 	{
 		//
+
+		$productPrices =  ProductPrice::find($id);		
+		$productPrices->delete();
+
+		return redirect()->route('admin.productprices.index')->with('message', 'Precio de producto ('.$productPrices->products->name.') borrado');
 	}
 
 }

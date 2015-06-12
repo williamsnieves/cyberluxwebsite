@@ -8,4 +8,8 @@ class ProductPrice extends Model {
 
 	protected $table = 'product_prices';
 
+	public function products(){
+		return $this->belongsTo('\App\models\Product');
+	}
+
 }
