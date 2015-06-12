@@ -160,7 +160,7 @@
 			<div>
 				<a href="{{ URL::to('/') }}/news/3">				
 					<h2>
-						Cyberlux Venezuela se planteó exportar productos.
+						CYBERLUX VENEZUELA SE PLANTEÓ EXPORTAR PRODUCTOS.
 					</h2>
 				</a>
 				<p>
