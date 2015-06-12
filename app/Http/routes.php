@@ -58,6 +58,12 @@ Route::group([
   Route::resource('admin/categorynews', 'TypeNewsController');
   Route::resource('admin/pages', 'PageController');
   Route::resource('admin/nodes', 'NodeController');
+  Route::resource('admin/images', 'ImageController');
+  Route::resource('admin/brands', 'BrandController');
+  Route::resource('admin/categories', 'CategoryController');
+  Route::resource('admin/products', 'ProductController');
+  Route::resource('admin/producprices', 'ProductPriceController');
+  Route::resource('admin/galleries', 'GalleryController');
 });
 
 Route::controllers([

@@ -10,7 +10,7 @@
 
 @section('breadcrumb')
     <li><a href="{{ URL::to('/') }}/admin/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="{{ URL::to('/') }}/admin/pages">Nodes</a></li>
+    <li><a href="{{ URL::to('/') }}/admin/nodes">Nodes</a></li>
     <li class="active">Crear nodes</li>
 @stop
 @section('content')
@@ -43,24 +43,21 @@
             <div class="box-body">
               <div class="form-group">
                 {!! Form::label('inputName', 'Nombre del page:') !!}
-                {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre del page', "id" => "inputName"]) !!}
+                {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre del nodo', "id" => "inputName"]) !!}
               </div>
               <div class="form-group">
                 {!! Form::label('inputTitle', 'Nombre del page:') !!}
-                {!! Form::text('title', null, ["class" => "form-control", 'placeholder'=>'Ingresa título del page', "id" => "inputTitle"]) !!}
+                {!! Form::text('title', null, ["class" => "form-control", 'placeholder'=>'Ingresa título del nodo', "id" => "inputTitle"]) !!}
               </div>
               <div class="form-group">
                 {!! Form::label('inputContent', 'Contenido del page:') !!}
-                {!! Form::textarea('content', null, ["class" => "form-control", 'placeholder'=>'Ingresa descripción del page', "id" => "inputContent"]) !!}
+                {!! Form::textarea('content', null, ["class" => "form-control", 'placeholder'=>'Ingresa descripción del nodo', "id" => "inputContent"]) !!}
               </div>
 
               <div class="form-group">
-                {!! Form::label('inputTitle', 'Tipo de noticia:') !!}
-                <select name="pages" class="form-control">
-                  @foreach ($pages as $page)
-                    <option value="{{$page->id}}">{{$page->name}}</option>
-                  @endforeach                 
-                </select>              
+                {!! Form::label('inputTitle', 'Sección:') !!}
+                {!! Form::select('pages', $pages, $node->pages_id , ['class' => 'form-control']) !!}
+                        
               </div>              
               
               
@@ -73,21 +70,21 @@
         {!! Form::open(['route' => 'admin.nodes.store']) !!}
             <div class="box-body">
               <div class="form-group">
-                {!! Form::label('inputName', 'Nombre del page:') !!}
-                {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre del page', "id" => "inputName"]) !!}
+                {!! Form::label('inputName', 'Nombre del nodo:') !!}
+                {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre del nodo', "id" => "inputName"]) !!}
               </div>
               <div class="form-group">
-                {!! Form::label('inputTitle', 'Nombre del page:') !!}
-                {!! Form::text('title', null, ["class" => "form-control", 'placeholder'=>'Ingresa título del page', "id" => "inputTitle"]) !!}
-              </div>
-
-              <div class="form-group">
-                {!! Form::label('inputContent', 'Contenido del page:') !!}
-                {!! Form::textarea('content', null, ["class" => "form-control", 'placeholder'=>'Ingresa descripción del page', "id" => "inputContent"]) !!}
+                {!! Form::label('inputTitle', 'Nombre del nodo:') !!}
+                {!! Form::text('title', null, ["class" => "form-control", 'placeholder'=>'Ingresa título del nodo', "id" => "inputTitle"]) !!}
               </div>
 
               <div class="form-group">
-                {!! Form::label('inputTitle', 'Tipo de noticia:') !!}
+                {!! Form::label('inputContent', 'Contenido del nodo:') !!}
+                {!! Form::textarea('content', null, ["class" => "form-control", 'placeholder'=>'Ingresa descripción del nodo', "id" => "inputContent"]) !!}
+              </div>
+
+              <div class="form-group">
+                {!! Form::label('inputTitle', 'Sección:') !!}
                 <select name="pages" class="form-control">
                   @foreach ($pages as $page)
                     <option value="{{$page->id}}">{{$page->name}}</option>

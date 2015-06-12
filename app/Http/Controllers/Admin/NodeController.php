@@ -39,7 +39,7 @@ class NodeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
 		$pagesId = Page::find($request->input('pages'));
@@ -74,10 +74,13 @@ class NodeController extends Controller {
 	public function edit($id)
 	{
 		//
+		//$pages = Node::with('page')->get();
+		$pages = Page::lists('name', 'id');
+		$node = Node::find($id);
+		//$pages = $node->pages;
 
-		$pages = Page::all();
-		$nodes = Node::find($id);
-		return view('admin.nodes_createupdate')->with(array('nodes' => $nodes, 'pages' => $pages));
+		//print_r($node);		
+		return view('admin.nodes_createupdate')->with(array('node' => $node, 'pages' => $pages));
 	}
 
 	/**
@@ -91,7 +94,7 @@ class NodeController extends Controller {
 		//
 
 		$pagesId = Page::find($request->input('pages'));
-		$nodes = Node::find($id);;
+		$nodes = Node::find($id);
 		$nodes->name = $request->input('name');
 		$nodes->title = $request->input('title');
 		$nodes->content = $request->input('content');
@@ -99,7 +102,7 @@ class NodeController extends Controller {
 
 		$nodes->save();
 
-		return redirect('admin/nodes', ['nodes' => $id])->with('message', 'Nodo actualizado');
+		return redirect()->route('admin.nodes.index')->with('message', 'Nodo actualizado');
 	}
 
 	/**
