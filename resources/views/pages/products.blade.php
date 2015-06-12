@@ -1,5 +1,7 @@
 @extends('base')
-
+@section('title')
+	Cyberlux - Productos
+@endsection
 @section('content')
 <div class="container">
 	<div class="row">

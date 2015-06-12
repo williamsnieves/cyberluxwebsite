@@ -1,5 +1,7 @@
 @extends('base')
-
+@section('title')
+	Cyberlux - Inicio
+@endsection
 @section('content')
 <div class="container">
 	<div class="row">
@@ -11,7 +13,7 @@
 				</figure>
 
 				<figure class="banner-main-desktop">
-					<img src="{{ URL::to('/') }}/img/banner-img-desktop.png" alt="">
+					<img src="{{ URL::to('/') }}/img/banner-img-desktop.jpg" alt="">
 				</figure>
 			</section>
 			<section class="events-side">
