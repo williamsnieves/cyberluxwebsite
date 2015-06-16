@@ -69,6 +69,9 @@
                 {!! Form::label('inputImage', 'Subir imagen:') !!}
                 {!! Form::file('image') !!}
               </div>
+
+              <button type="button" onclick="BrowseServer('id_of_the_target_input');">Pick Image</button>
+    <input type="text" id="id_of_the_target_input"/>
                 
                             
             </div>

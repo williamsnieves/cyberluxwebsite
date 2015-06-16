@@ -136,6 +136,7 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',
+		'Pqb\FilemanagerLaravel\FilemanagerLaravelServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -195,7 +196,11 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'HTML'     	=> 'Illuminate\Html\HtmlFacade',
 		'Form'      => 'Illuminate\Html\FormFacade',
+		'FilemanagerLaravel'=> 'Pqb\FilemanagerLaravel\Facades\FilemanagerLaravel',
 
 	],
+
+
+	
 
 ];

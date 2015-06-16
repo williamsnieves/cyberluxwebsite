@@ -101,6 +101,6 @@
             $('body').delay(350).css({'overflow':'visible'});
         })
     //]]>
-	</script>
+	</script>	
 </body>
 </html>

@@ -70,3 +70,9 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+Route::controller('filemanager', 'FilemanagerLaravelController');
+/*Route::group(array('middleware' => ''), function(){
+    Route::controller('filemanager', 'FilemanagerLaravelController');
+});*/
