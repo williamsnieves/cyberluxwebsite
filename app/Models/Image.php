@@ -10,6 +10,11 @@ class Image extends Model {
 		return $this->hasMany('\App\models\Product');
 	}
 
+
+	public function galleries(){
+		return $this->belongsToMany('\App\models\Gallery');
+	}
+
 	//
 
 }

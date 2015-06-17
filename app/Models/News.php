@@ -24,4 +24,8 @@ class News extends Model {
 		return $this->belongsTo('\App\models\User');
 	}
 
+	public function galleries(){
+		return $this->belongsTo('\App\models\Gallery');
+	}
+
 }

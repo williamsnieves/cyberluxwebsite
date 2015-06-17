@@ -47,9 +47,11 @@ class ImageController extends Controller {
 		$image = new Image;
 		$image->name = $request->input('name');
 		$image->url = $request->input('url');
-		$image->type = $request->input('type');		
+		$image->type = $request->input('type');	
 
+		
 		$image->save();
+		
 
 		return redirect('admin/images')->with('message', 'La imagen se ha creado correctamente');
 	}
@@ -113,6 +115,13 @@ class ImageController extends Controller {
 		$image->delete();
 
 		return redirect()->route('admin.images.index')->with('message', 'Imagen borrada');
+	}
+
+	public function getAllImages(){
+		$images = Image::all();
+		print_r($images);
+
+		return $images->toArray();
 	}
 
 }

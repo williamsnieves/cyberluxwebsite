@@ -49,6 +49,8 @@
             <th>precio</th>                   
             <th>Fecha de Creación</th>     
             <th>Editar</th>
+            <th>Agregar Imagenes</th>
+            <th>Editar Imagenes</th>
             <th>Eliminar</th>            
           </tr>
           @foreach ($galleries as $gallery)
@@ -58,6 +60,16 @@
             <td>{{date('F d, Y', strtotime($gallery->created_at))}}</td>           
             <td>
               <a href="{{ URL::to('/') }}/admin/galleries/{{$gallery->id}}/edit" class="btn btn-default">
+                  <i class="fa fa-edit"></i>
+              </a>
+            </td>
+            <td>
+              <a href="{{ URL::to('/') }}/admin/galleries/{{$gallery->id}}/images" class="btn btn-default">
+                  <i class="fa fa-edit"></i>
+              </a>
+            </td>
+            <td>
+              <a href="{{ URL::to('/') }}/admin/galleries/{{$gallery->id}}/images/edit" class="btn btn-default">
                   <i class="fa fa-edit"></i>
               </a>
             </td>

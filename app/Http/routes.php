@@ -52,7 +52,7 @@ Route::group([
   'namespace' => 'Admin'
   /*'middleware' => 'auth',*/
 ], function () {
-  Route::get('admin/dashboard', 'DashboardController@index');	
+  Route::get('admin/dashboard', 'DashboardController@index');  	
   Route::resource('admin/news', 'NewsController');
   Route::resource('admin/editors', 'AdminUsersController');
   Route::resource('admin/categorynews', 'TypeNewsController');
@@ -63,8 +63,16 @@ Route::group([
   Route::resource('admin/categories', 'CategoryController');
   Route::resource('admin/products', 'ProductController');
   Route::resource('admin/productprices', 'ProductPriceController');
+  Route::get('admin/galleries/{id}/images', 'GalleryController@getAddImages');
+  Route::get('admin/galleries/{id}/images/edit', 'GalleryController@getEditImages');
+  Route::post('admin/galleries/images', ['as' => 'admin.galleries.postSaveImages', 'uses' => 'GalleryController@postSaveImages']);
+  Route::post('admin/galleries/images/edit', ['as' => 'admin.galleries.putEditImages', 'uses' => 'GalleryController@putEditImages']);
   Route::resource('admin/galleries', 'GalleryController');
+  Route::get('admin/images/', 'AjaxController@getAllImages');
+
 });
+
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

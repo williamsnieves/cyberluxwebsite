@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Page;
+use App\Models\Gallery;
 
 class PageController extends Controller {
 
@@ -30,7 +31,9 @@ class PageController extends Controller {
 	public function create()
 	{
 		//
-		return view('admin.pages_createupdate');
+
+		$gallery = Gallery::lists('name', 'id');
+		return view('admin.pages_createupdate')->with(array('galleries' => $gallery));
 	}
 
 	/**
@@ -43,11 +46,14 @@ class PageController extends Controller {
 		//
 
 		$pages = new Page;
+
+		$galleryId = Gallery::find($request->input('galleries'));
 		$pages->name = $request->input('name');
 		$pages->title = $request->input('title');
 		$pages->content = $request->input('content');
+		$pages->galleries()->associate($galleryId);
 
-		$pages->save();
+		$pages->save();	
 
 		return redirect('admin/pages')->with('message', 'La sección se ha creado correctamente');
 	}
@@ -74,7 +80,8 @@ class PageController extends Controller {
 		//
 
 		$page = Page::find($id);
-		return view('admin.pages_createupdate')->with('page', $page);
+		$gallery = Gallery::lists('name', 'id');
+		return view('admin.pages_createupdate')->with(array('page' => $page, 'galleries' => $gallery));
 	}
 
 	/**
@@ -88,9 +95,13 @@ class PageController extends Controller {
 		//
 
 		$pages =  Page::find($id);
+		$galleryId = Gallery::find($request->input('galleries'));
 		$pages->name = $request->input('name');
 		$pages->title = $request->input('title');
 		$pages->content = $request->input('content');
+
+		$pages->galleries()->associate($galleryId);
+
 
 		$pages->save();
 

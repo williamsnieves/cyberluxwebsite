@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\TypeNews;
 use App\Models\News;
 use App\Models\User;
+use App\Models\Gallery;
 
 class NewsController extends Controller {
 
@@ -35,7 +36,8 @@ class NewsController extends Controller {
 		//
 
 		$typenews = TypeNews::all();
-		return view('admin.news_createupdate')->with('typenews', $typenews);
+		$gallery = Gallery::lists('name', 'id');
+		return view('admin.news_createupdate')->with(array('typenews' => $typenews, 'galleries' => $gallery));
 	}
 
 	
@@ -50,13 +52,13 @@ class NewsController extends Controller {
 		//
 		$user = User::find(1);
 		$typenewsId = TypeNews::find($request->input('categorynews'));
-
+		$galleryId = Gallery::find($request->input('galleries'));
 		$news = new News;
 		$news->title = $request->input('title');
 		$news->description = $request->input('description');
 		$news->typeNews()->associate($typenewsId);
 		$news->users()->associate($user);	
-
+		$news->galleries()->associate($galleryId);
 		$news->save();
 
 		return redirect('admin/news')->with('message', 'La noticia se ha creado correctamente');
@@ -84,9 +86,10 @@ class NewsController extends Controller {
 	public function edit($id)
 	{
 		//
-		$typenews = TypeNews::all();
+		$typenews = TypeNews::lists('name', 'id');
 		$news = News::find($id);
-		return view('admin.news_createupdate')->with(array('news' => $news, 'typenews' => $typenews));
+		$gallery = Gallery::lists('name', 'id');
+		return view('admin.news_createupdate')->with(array('news' => $news, 'typenews' => $typenews, 'galleries' => $gallery));
 	}
 
 	/**
@@ -100,12 +103,13 @@ class NewsController extends Controller {
 		//
 		$user = User::find(1);
 		$typenewsId = TypeNews::find($request->input('categorynews'));
-
+		$galleryId = Gallery::find($request->input('galleries'));
 		$news = News::find($id);
 		$news->title = $request->input('title');
 		$news->description = $request->input('description');
 		$news->typeNews()->associate($typenewsId);
-		$news->users()->associate($user);	
+		$news->users()->associate($user);
+		$news->galleries()->associate($galleryId);	
 
 		$news->save();
 

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Gallery;
 
+use App\Models\Image;
+
 class GalleryController extends Controller {
 
 	/**
@@ -33,7 +35,8 @@ class GalleryController extends Controller {
 	{
 		//
 
-		return view('admin.galleries_createupdate');
+		$images = Image::lists('name','id');
+		return view('admin.galleries_createupdate')->with(array('images' => $images));
 	}
 
 	/**
@@ -44,9 +47,9 @@ class GalleryController extends Controller {
 	public function store(Request $request)
 	{
 		//
-
+		
 		$galleries = new Gallery;
-		$galleries->name = $request->input('name');			
+		$galleries->name = $request->input('name');		
 
 		$galleries->save();
 
@@ -87,7 +90,6 @@ class GalleryController extends Controller {
 	public function update($id, Request $request)
 	{
 		//
-
 		$galleries = Gallery::find($id);
 		$galleries->name = $request->input('name');			
 
@@ -110,5 +112,46 @@ class GalleryController extends Controller {
 
 		return redirect()->route('admin.galleries.index')->with('message', 'Galería borrada');
 	}
+
+	public function getAddImages($id){
+
+		$gallerypost =  Gallery::find($id);
+		return view('admin.galleries_addimages')->with('gallerypost', $gallerypost);
+	}
+
+	public function postSaveImages(Request $request){	
+
+		//return $request->input('items');	
+		$galleryid = $request->input('galleryid');
+		$galleries = Gallery::find($galleryid);
+		$myarray = $request->input('items');
+		$galleries->images()->attach($myarray);
+
+		return redirect('admin/galleries')->with('message', 'Se agregaron imagenes a la galería');
+
+	}
+
+	public function getEditImages($id){
+
+		$gallery =  Gallery::find($id);
+		
+		return view('admin.galleries_addimages')->with(array('gallery' => $gallery));
+	}
+
+	public function putEditImages(Request $request){	
+
+		
+		//return $request->input('items');	
+		
+		$galleryid = $request->input('galleryid');
+		$galleries = Gallery::find($galleryid);	
+		$galleries->images()->detach();	
+		$myarray = $request->input('items');
+		$galleries->images()->attach($myarray);
+
+		return redirect('admin/galleries')->with('message', 'Se actualizaron imagenes en la galería');
+
+	}
+
 
 }

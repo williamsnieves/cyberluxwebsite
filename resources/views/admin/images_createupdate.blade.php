@@ -14,7 +14,20 @@
     <li class="active">Crear imagenes</li>
 @stop
 @section('content')
+ @if($errors->has())
+    <div class='alert alert-danger'>
+        @foreach ($errors->all('<p>:message</p>') as $message)
+            {!! $message !!}
+        @endforeach
+    </div>
+@endif
 
+@if (Session::has('message'))            
+    <div class="alert alert-success alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4>  <i class="icon fa fa-check"></i> {{ Session::get('message') }}</h4>              
+    </div>
+@endif
 <div class="row">
             <!-- left column -->
   <div class="col-md-12">
@@ -23,32 +36,26 @@
       <div class="box-header">
         <h3 class="box-title">Formulario para crear imagenes</h3>
       </div><!-- /.box-header -->
-        @if($errors->has())
-            <div class='alert alert-danger'>
-                @foreach ($errors->all('<p>:message</p>') as $message)
-                    {!! $message !!}
-                @endforeach
-            </div>
-        @endif
- 
-        @if (Session::has('message'))            
-            <div class="alert alert-success alert-dismissable">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <h4>  <i class="icon fa fa-check"></i> {{ Session::get('message') }}</h4>              
-            </div>
-        @endif
+       
       <!-- form start -->
       @if(isset($image))
-        {!! Form::model($image, ['route' => ['admin.images.update', $image->id], 'method' => 'patch']) !!}                 
+        {!! Form::model($image, ['route' => ['admin.images.update', $image->id], 'method' => 'patch']) !!}
+        {!! Form::token() !!}                 
             <div class="box-body">
               <div class="form-group">
                 {!! Form::label('inputName', 'Nombre de la imagen:') !!}
                 {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre del nodo', "id" => "inputName"]) !!}
               </div>
+
+              {!! Form::hidden('type', 'jpg', array('id' => 'type')) !!}
+
+              <button style = "margin-bottom: 1em;" type="button" class="btn btn-primary" onclick="BrowseServer('id_of_the_target_input');">Subir imagen o seleccionar imagen</button>
+
               <div class="form-group">
-                {!! Form::label('inputUrl', 'url de la imagen:') !!}
-                {!! Form::text('url', null, ["class" => "form-control", 'placeholder'=>'Ingresa título del nodo', "id" => "inputUrl"]) !!}
+                {!! Form::label('id_of_the_target_input', 'Url de la imagen:') !!}
+                {!! Form::text('url', null, ["class" => "form-control", "id" => "id_of_the_target_input"]) !!}
               </div>
+              
 
                            
               
@@ -60,23 +67,26 @@
         {!! Form::close() !!}
       @else  
         {!! Form::open(['route' => 'admin.images.store']) !!}
+        {!! Form::token() !!}
             <div class="box-body">
               <div class="form-group">
                 {!! Form::label('inputName', 'Nombre de la imagen:') !!}
                 {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre de la imagen', "id" => "inputName"]) !!}
-              </div>             
-              <div class="form-group">
-                {!! Form::label('inputImage', 'Subir imagen:') !!}
-                {!! Form::file('image') !!}
               </div>
 
-              <button type="button" onclick="BrowseServer('id_of_the_target_input');">Pick Image</button>
-    <input type="text" id="id_of_the_target_input"/>
-                
-                            
-            </div>
+              {!! Form::hidden('type', 'jpg', array('id' => 'type')) !!}
+
+              <button style = "margin-bottom: 1em;" type="button" class="btn btn-primary" onclick="BrowseServer('id_of_the_target_input');">Subir imagen</button>
+
+              <div class="form-group">
+                {!! Form::label('id_of_the_target_input', 'Url de la imagen:') !!}
+                {!! Form::text('url', null, ["class" => "form-control", "id" => "id_of_the_target_input"]) !!}
+              </div>              
+             
+            </div>            
+
             <div class="box-footer">
-              {!! Form::submit('Guardar', ["class" => "btn btn-primary"]) !!}            
+              {!! Form::submit('Guardar', ["class" => "btn btn-primary", "id"=>"btnout"]) !!}            
             </div>
         {!! Form::close() !!}
       @endif

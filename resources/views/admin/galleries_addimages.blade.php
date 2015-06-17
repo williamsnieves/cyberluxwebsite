@@ -1,10 +1,10 @@
 @extends('layouts.admin.plane')
 @section('titlesection')
-    Galerías
+    Agregar Imagenes
             @if(isset($typenews))
-              <small>Actualizar galerías</small>
+              <small>Cambiar imagenes</small>
             @else
-              <small>Agregar galerías</small>
+              <small>Agregar imagenes a la galería</small>
             @endif
 @stop
 
@@ -38,25 +38,38 @@
       </div><!-- /.box-header -->        
       <!-- form start -->
       @if(isset($gallery))
-        {!! Form::model($gallery, ['route' => ['admin.galleries.update', $gallery->id], 'method' => 'patch']) !!}                 
+        {!! Form::model($gallery, ['route' => ['admin.galleries.putEditImages']]) !!}  
+            {!! Form::hidden('galleryid', $gallery->id) !!}               
             <div class="box-body">
               <div class="form-group">
-                {!! Form::label('inputName', 'Nombre de la galería:') !!}
-                {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre de la galería', "id" => "inputName"]) !!}
-              </div> 
+                <select name="items[]" class="form-control" id="inputImages" multiple="multiple">
+                 
+                </select>
+              </div>
+
+              <div class="form-group">
+                  <ul class="thumbnail" style="list-style:none; display: inline-block;">                    
+                   @foreach ($gallery->images as $image)
+                      <li style="display: inline-block;"><img width="64" height="64" src="{{$image->url}}" alt=""></li>
+                   @endforeach
+                  </ul>
+              </div>
             </div>
             <div class="box-footer">
               {!! Form::submit('Actualizar', ["class" => "btn btn-primary"]) !!}            
             </div>
         {!! Form::close() !!}
       @else  
-        {!! Form::open(['route' => 'admin.galleries.store']) !!}
-            
-            <div class="box-body">
+        {!! Form::open(['route' => ['admin.galleries.postSaveImages']]) !!}
+        {!! Form::hidden('galleryid', $gallerypost->id) !!}
+            <div class="box-body">              
               <div class="form-group">
-                {!! Form::label('inputName', 'Nombre de la galería:') !!}
-                {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre de la galería', "id" => "inputName"]) !!}
-              </div>
+                <select name="items[]" class="form-control" id="inputImages" multiple="multiple">
+                 
+                </select>
+              </div> 
+
+                 
             </div>
             <div class="box-footer">
               {!! Form::submit('Guardar', ["class" => "btn btn-primary"]) !!}            

@@ -51,7 +51,7 @@
               </div>
               <div class="form-group">
                 {!! Form::label('inputContent', 'Contenido del page:') !!}
-                {!! Form::textarea('content', null, ["class" => "form-control", 'placeholder'=>'Ingresa descripción del nodo', "id" => "inputContent"]) !!}
+                {!! Form::textarea('content', null, ["class" => "form-control ckeditor", 'placeholder'=>'Ingresa descripción del nodo', "id" => "inputContent"]) !!}
               </div>
 
               <div class="form-group">
@@ -80,7 +80,7 @@
 
               <div class="form-group">
                 {!! Form::label('inputContent', 'Contenido del nodo:') !!}
-                {!! Form::textarea('content', null, ["class" => "form-control", 'placeholder'=>'Ingresa descripción del nodo', "id" => "inputContent"]) !!}
+                {!! Form::textarea('content', null, ["class" => "form-control ckeditor", 'placeholder'=>'Ingresa descripción del nodo', "id" => "inputContent"]) !!}
               </div>
 
               <div class="form-group">

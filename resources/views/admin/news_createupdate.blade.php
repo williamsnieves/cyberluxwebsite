@@ -48,17 +48,18 @@
 
               <div class="form-group">
                 {!! Form::label('inputDescription', 'Descripción de la noticia:') !!}
-                {!! Form::textarea('description', null, ["class" => "form-control", 'placeholder'=>'Ingresa descripción de la noticia', "id" => "inputDescription"]) !!}
+                {!! Form::textarea('description', null, ["class" => "form-control ckeditor", 'placeholder'=>'Ingresa descripción de la noticia', "id" => "inputDescription"]) !!}
               </div>
 
               <div class="form-group">
                 {!! Form::label('inputTitle', 'Tipo de noticia:') !!}
-                <select name="categorynews" class="form-control">
-                  @foreach ($typenews as $singletypenews)
-                    <option value="{{$singletypenews->id}}">{{$singletypenews->name}}</option>
-                  @endforeach                 
-                </select>              
+                {!! Form::select('categorynews', $typenews, $news->type_news_id , ['class' => 'form-control']) !!}                              
               </div>
+
+              <div class="form-group">
+                {!! Form::label('inputTitle', 'Selecciona una galería:') !!}
+                {!! Form::select('galleries', $galleries, $news->galleries_id , ['class' => 'form-control']) !!}
+              </div> 
               
             </div>
             <div class="box-footer">
@@ -75,7 +76,7 @@
 
               <div class="form-group">
                 {!! Form::label('inputDescription', 'Descripción de la noticia:') !!}
-                {!! Form::textarea('description', null, ["class" => "form-control", 'placeholder'=>'Ingresa descripción de la noticia', "id" => "inputDescription"]) !!}
+                {!! Form::textarea('description', null, ["class" => "form-control ckeditor", 'placeholder'=>'Ingresa descripción de la noticia', "id" => "inputDescription"]) !!}
               </div>
 
               <div class="form-group">
@@ -85,8 +86,14 @@
                     <option value="{{$singletypenews->id}}">{{$singletypenews->name}}</option>
                   @endforeach                 
                 </select>
+              </div>
+
+              <div class="form-group">
+                {!! Form::label('inputTitle', 'Selecciona una galería:') !!}
+                {!! Form::select('galleries', $galleries, null , ['class' => 'form-control']) !!}
               </div>              
             </div>
+
             <div class="box-footer">
               {!! Form::submit('Guardar', ["class" => "btn btn-primary"]) !!}            
             </div>

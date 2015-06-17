@@ -28,6 +28,8 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="{{ asset('/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" />
 
+    <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -264,6 +266,11 @@
     <script src="{{ asset('/plugins/slimScroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
     <!-- FastClick -->
     <script src="{{ asset('/plugins/fastclick/fastclick.min.js') }}"></script>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+
+    <script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
+    <script src="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('/dist/js/app.min.js') }}" type="text/javascript"></script>    
     
@@ -272,6 +279,11 @@
     
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('/dist/js/demo.js') }}" type="text/javascript"></script>
+
+    <script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
+    <script src="{{ asset('/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}" type="text/javascript"></script>
+
+    <script src="{{ asset('/dist/js/dynamicselect.js') }}" type="text/javascript"></script>
 
     <script type="text/javascript">
       // File Picker modification for FCK Editor v2.0 - www.fckeditor.net
@@ -305,6 +317,16 @@
           document.getElementById(urlobj).value = url ;
           oWindow = null;
      }
+
+      
      </script>
+
+     <script type="text/javascript">
+      
+        CKEDITOR.replace('.ckeditor'); 
+    
+              
+        
+    </script>
   </body>
 </html>

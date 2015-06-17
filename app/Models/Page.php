@@ -10,4 +10,8 @@ class Page extends Model {
 	public function nodes(){
 		return $this->hasMany('\App\models\Node');
 	}
+
+	public function galleries(){
+		return $this->belongsTo('\App\models\Gallery');
+	}
 }
