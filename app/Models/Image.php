@@ -15,6 +15,10 @@ class Image extends Model {
 		return $this->belongsToMany('\App\models\Gallery');
 	}
 
+	public function categories(){
+		return $this->hasMany('\App\models\Category');
+	}
+
 	//
 
 }

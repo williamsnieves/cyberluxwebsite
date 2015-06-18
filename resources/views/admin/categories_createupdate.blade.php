@@ -46,7 +46,7 @@
                 {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre de la marca', "id" => "inputName"]) !!}
               </div>
               <div class="form-group">
-                {!! Form::label('inputTitle', 'Sección:') !!}
+                {!! Form::label('inputTitle', 'Marca:') !!}
                 {!! Form::select('brands', $brands, $category->brands_id , ['class' => 'form-control']) !!}                        
               </div>            
                            
@@ -65,7 +65,7 @@
                 {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre de la categoría', "id" => "inputName"]) !!}
               </div>
               <div class="form-group">
-                {!! Form::label('inputTitle', 'Sección:') !!}
+                {!! Form::label('inputTitle', 'Marca:') !!}
                 {!! Form::select('brands', $brands, null , ['class' => 'form-control']) !!}                        
               </div>
                 

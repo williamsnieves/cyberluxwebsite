@@ -10,7 +10,7 @@
 
 @section('breadcrumb')
     <li><a href="{{ URL::to('/') }}/admin/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="{{ URL::to('/') }}/admin/products">Precios de los productos</a></li>
+    <li><a href="{{ URL::to('/') }}/admin/productprices">Precios de los productos</a></li>
     <li class="active">Crear precio de los productos</li>
 @stop
 @section('content')
