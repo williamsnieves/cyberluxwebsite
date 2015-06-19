@@ -63,12 +63,14 @@ Route::group([
   Route::resource('admin/categories', 'CategoryController');
   Route::resource('admin/products', 'ProductController');
   Route::resource('admin/productprices', 'ProductPriceController');
+  Route::resource('admin/productdetails', 'ProductDetailController');
+  Route::resource('admin/address', 'AddressController');
   Route::get('admin/galleries/{id}/images', 'GalleryController@getAddImages');
   Route::get('admin/galleries/{id}/images/edit', 'GalleryController@getEditImages');
   Route::post('admin/galleries/images', ['as' => 'admin.galleries.postSaveImages', 'uses' => 'GalleryController@postSaveImages']);
   Route::post('admin/galleries/images/edit', ['as' => 'admin.galleries.putEditImages', 'uses' => 'GalleryController@putEditImages']);
   Route::resource('admin/galleries', 'GalleryController');
-  Route::get('admin/images/', 'AjaxController@getAllImages');
+  Route::get('admin/imagesall', 'AjaxController@getAllImages');
 
 });
 

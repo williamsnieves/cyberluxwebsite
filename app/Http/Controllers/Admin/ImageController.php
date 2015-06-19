@@ -5,7 +5,9 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use App\Models\Image;
+use App\Models\CustomImage;
+
+use Image;
 
 class ImageController extends Controller {
 
@@ -18,7 +20,7 @@ class ImageController extends Controller {
 	{
 		//
 
-		$images = Image::paginate(10)->setPath('/admin/images');
+		$images = CustomImage::paginate(10)->setPath('/admin/images');
 		//$users = User::simplePaginate(1);
 		return view('admin.images_show')->with('images', $images);
 	}
@@ -43,12 +45,30 @@ class ImageController extends Controller {
 	public function store(Request $request)
 	{
 		//
-
-		$image = new Image;
+		/*$url = $request->input('url');
+		if(!empty($request->input('thumbnail')) && $request->input('thumbnail')  == 'on'){			
+			$path = public_path('filemanager/userfiles/productsthumbs/');
+			//$imagestool = new Image();
+			//print_r($imagestool);
+			//$imagestool
+			//$file = substr($url, 58);
+			$img = Image::make($url);
+			print_r($img);
+			//print_r($file);
+			//Image::make($url)->resize(100, 100)->save();
+		}*/
+		$image = new CustomImage;
 		$image->name = $request->input('name');
-		$image->url = $request->input('url');
-		$image->type = $request->input('type');	
+		$image->url = $request->input('url');		
 
+		$url = $request->input('url');
+		if(!empty($request->input('thumbnail')) && $request->input('thumbnail')  == 'on'){
+			$image->isThumbnail = 1;
+			$image->type = 'thumbnail';			
+		}else{
+			$image->isThumbnail = 0;
+			$image->type = 'normal';
+		}
 		
 		$image->save();
 		
@@ -77,7 +97,7 @@ class ImageController extends Controller {
 	{
 		//
 
-		$image = Image::find($id);
+		$image = CustomImage::find($id);
 		return view('admin.images_createupdate')->with('image', $image);
 	}
 
@@ -91,7 +111,7 @@ class ImageController extends Controller {
 	{
 		//
 
-		$image = Image::find($id);
+		$image = CustomImage::find($id);
 		$image->name = $request->input('name');
 		$image->url = $request->input('url');
 		$image->type = $request->input('type');		
@@ -111,17 +131,12 @@ class ImageController extends Controller {
 	{
 		//
 
-		$image = Image::find($id);
+		$image = CustomImage::find($id);
 		$image->delete();
 
 		return redirect()->route('admin.images.index')->with('message', 'Imagen borrada');
 	}
 
-	public function getAllImages(){
-		$images = Image::all();
-		print_r($images);
-
-		return $images->toArray();
-	}
+	
 
 }

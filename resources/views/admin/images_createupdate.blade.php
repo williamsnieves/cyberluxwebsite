@@ -49,6 +49,20 @@
 
               {!! Form::hidden('type', 'jpg', array('id' => 'type')) !!}
 
+              @if($image->isThumbnail == 1)             
+              <div class="checkbox">             
+                <label>
+                  {!! Form::checkbox('thumbnail', 1, true) !!} Thumbnail
+                </label>
+              </div>
+              @else
+              <div class="checkbox">             
+                <label>
+                  {!! Form::checkbox('thumbnail', null) !!} Thumbnail
+                </label>
+              </div>
+              @endif
+
               <button style = "margin-bottom: 1em;" type="button" class="btn btn-primary" onclick="BrowseServer('id_of_the_target_input');">Subir imagen o seleccionar imagen</button>
 
               <div class="form-group">
@@ -75,6 +89,12 @@
               </div>
 
               {!! Form::hidden('type', 'jpg', array('id' => 'type')) !!}
+
+              <div class="checkbox">             
+                <label>
+                  {!! Form::checkbox('thumbnail', null) !!} Thumbnail
+                </label>
+              </div>
 
               <button style = "margin-bottom: 1em;" type="button" class="btn btn-primary" onclick="BrowseServer('id_of_the_target_input');">Subir imagen</button>
 

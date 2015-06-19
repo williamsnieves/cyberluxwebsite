@@ -9,7 +9,7 @@ class Gallery extends Model {
 	protected $table = 'galleries';
 
 	public function images(){
-		return $this->belongsToMany('\App\models\Image');
+		return $this->belongsToMany('\App\models\CustomImage');
 	}
 
 	public function pages(){

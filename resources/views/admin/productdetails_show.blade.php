@@ -1,12 +1,12 @@
 @extends('layouts.admin.plane')
 @section('titlesection')
-    Categoría de productos
-            <small>Mostrar categoría</small>
+    Detalle de Productos
+            <small>Mostrar detalle de productos</small>
 @stop
 
 @section('breadcrumb')
     <li><a href="{{ URL::to('/') }}/admin/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li class="active">Ver categorías</li>
+    <li class="active">Ver detalle productos</li>
 @stop
 @section('content')
 @if($errors->has())
@@ -27,7 +27,7 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Categorías</h3>
+        <h3 class="box-title">Detalle Productos</h3>
         <div class="box-tools">
           <div class="input-group">
             <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
@@ -40,27 +40,27 @@
       </div><!-- /.box-header -->
 
       <div class="box-body table-responsive no-padding">
-        @if(!$categories->isEmpty())
+        @if(!$productdetails->isEmpty())
         <table class="table table-hover">
           <tr>
             <th>ID</th>
-            <th>Nombre</th>            
+            <th>Nombre de producto asociado</th>            
             <th>Fecha de Creación</th>     
             <th>Editar</th>
             <th>Eliminar</th>            
           </tr>
-          @foreach ($categories as $category)
+          @foreach ($productdetails as $productdetail)
           <tr>
-            <td>{{$category->id}}</td>
-            <td>{{$category->name}}</td> 
-            <td>{{date('F d, Y', strtotime($category->created_at))}}</td>           
+            <td>{{$productdetail->id}}</td>
+            <td>{{$productdetail->products->name}}</td> 
+            <td>{{date('F d, Y', strtotime($productdetail->created_at))}}</td>           
             <td>
-              <a href="{{ URL::to('/') }}/admin/categories/{{$category->id}}/edit" class="btn btn-default">
+              <a href="{{ URL::to('/') }}/admin/productdetails/{{$productdetail->id}}/edit" class="btn btn-default">
                   <i class="fa fa-edit"></i>
               </a>
             </td>
             <td>
-             {!! Form::open(array('route' => array('admin.categories.destroy', $category->id), 'method' => 'DELETE' , 'onsubmit' => 'return ConfirmDelete()')) !!}                
+             {!! Form::open(array('route' => array('admin.productdetails.destroy', $productdetail->id), 'method' => 'DELETE' , 'onsubmit' => 'return ConfirmDelete()')) !!}                
                 <button type="submit" class="btn btn-default">
                   <i class="fa fa-remove"></i>
                 </button>
@@ -70,7 +70,7 @@
           </tr>
           @endforeach       
         </table>
-        <?php echo $categories->render(); ?>
+        <?php echo $productdetails->render(); ?>
         @endif
       </div><!-- /.box-body -->
     </div><!-- /.box -->

@@ -22,11 +22,13 @@ function formatSelection(node) {
     return node.id;
 };
 
+
+
 $("#inputImages").select2({     
      /**templateResult: formatState*/
      tags: true,
      ajax: {
-         url: "http://"+base_url+"/admin/images",
+         url: "http://"+base_url+"/admin/imagesall",
          dataType: 'json',         
          processResults: function (data, page) {
            // parse the results into the format expected by Select2.
@@ -50,3 +52,5 @@ $("#inputImages").select2({
            
 
 });
+
+

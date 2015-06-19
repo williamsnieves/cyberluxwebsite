@@ -53,7 +53,10 @@
                 {!! Form::label('inputTitle', 'Sección:') !!}
                 {!! Form::select('categories', $categories, $product->categories_id , ['class' => 'form-control']) !!}                        
               </div>
-                 
+              <div class="form-group">
+                {!! Form::label('inputThumb', 'Actualizar imagen del producto:') !!}
+                {!! Form::select('images', $images, $product->images_id , ['class' => 'form-control select2thumbs', "id="=>"inputThumb"]) !!}                        
+              </div>   
                            
               
               
@@ -78,6 +81,10 @@
                 {!! Form::select('categories', $categories, null , ['class' => 'form-control']) !!}                        
               </div>
 
+              <div class="form-group">
+                {!! Form::label('inputThumb', 'Agregar imagen del producto:') !!}
+                {!! Form::select('images', $images, null , ['class' => 'form-control select2thumbs', "id="=>"inputThumb"]) !!}                        
+              </div>
               
                 
                             
@@ -91,4 +98,10 @@
   </div><!--/.col (left) -->
 </div>   <!-- /.row -->
 
+@stop
+
+@section('footerscript')
+    <script>
+      $(".select2thumbs").select2();
+    </script>
 @stop

@@ -36,4 +36,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		$this->password = Hash::make($string);
 	}
 
+	public function addresses(){
+		return $this->hasMany('\App\models\Address');
+	}
+
 }

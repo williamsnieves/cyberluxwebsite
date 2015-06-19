@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Gallery;
 
-use App\Models\Image;
+use App\Models\CustomImage;
 
 class GalleryController extends Controller {
 
@@ -35,7 +35,7 @@ class GalleryController extends Controller {
 	{
 		//
 
-		$images = Image::lists('name','id');
+		$images = CustomImage::lists('name','id');
 		return view('admin.galleries_createupdate')->with(array('images' => $images));
 	}
 

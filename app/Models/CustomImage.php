@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model {
+class CustomImage extends Model {
 
 	protected $table = 'images';
 
@@ -13,6 +13,10 @@ class Image extends Model {
 
 	public function galleries(){
 		return $this->belongsToMany('\App\models\Gallery');
+	}
+
+	public function productdetails(){
+		return $this->belongsToMany('\App\models\ProductDetail');
 	}
 
 	public function categories(){

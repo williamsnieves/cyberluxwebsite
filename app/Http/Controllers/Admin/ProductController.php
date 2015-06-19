@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\CustomImage;
 
 class ProductController extends Controller {
 
@@ -33,7 +34,9 @@ class ProductController extends Controller {
 		//
 		
 		$categories = Category::lists('name', 'id');
-		return view('admin.products_createupdate')->with(array('categories' => $categories));
+		//$images = CustomImage::lists('name', 'id');
+		$images = \DB::table('images')->where('isThumbnail', '1')->lists('name','id');
+		return view('admin.products_createupdate')->with(array('categories' => $categories, 'images' => $images));
 	}
 
 	/**
@@ -44,11 +47,13 @@ class ProductController extends Controller {
 	public function store(Request $request)
 	{
 		//
-		$categoryId = Category::find($request->input('categories'));		
+		$categoryId = Category::find($request->input('categories'));
+		$imageId = CustomImage::find($request->input('images'));		
 		$products = new Product;
 		$products->name = $request->input('name');
 		$products->codproduct = $request->input('codproduct');		
-		$products->categories()->associate($categoryId);		
+		$products->categories()->associate($categoryId);
+		$products->images()->associate($imageId);		
 
 		$products->save();
 
@@ -74,11 +79,12 @@ class ProductController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
-		
+		//		
 		$categories = Category::lists('name', 'id');
+		//$images = CustomImage::lists('name', 'id');
+		$images = \DB::table('images')->where('isThumbnail', '1')->lists('name','id');
 		$product = Product::find($id);			
-		return view('admin.products_createupdate')->with(array('product' => $product, 'categories' => $categories));
+		return view('admin.products_createupdate')->with(array('product' => $product, 'categories' => $categories, 'images' => $images));
 	}
 
 	/**
@@ -92,10 +98,12 @@ class ProductController extends Controller {
 		//
 
 		$categoryId = Category::find($request->input('categories'));
+		$imageId = CustomImage::find($request->input('images'));
 		$products = Product::find($id);
 		$products->name = $request->input('name');
 		$products->codproduct = $request->input('codproduct');		
-		$products->categories()->associate($categoryId);		
+		$products->categories()->associate($categoryId);
+		$products->images()->associate($imageId);		
 
 		$products->save();
 

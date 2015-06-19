@@ -328,5 +328,6 @@
               
         
     </script>
+    @yield('footerscript')
   </body>
 </html>

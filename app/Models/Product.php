@@ -13,7 +13,7 @@ class Product extends Model {
 	}
 
 	public function images(){
-		return $this->belongsTo('\App\models\Image');
+		return $this->belongsTo('\App\models\CustomImage');
 	}
 
 	public function productPrices(){

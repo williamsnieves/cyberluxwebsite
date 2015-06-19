@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Category;
 use App\Models\Brand;
+use App\Models\CustomImage;
 
 class CategoryController extends Controller {
 
@@ -33,7 +34,11 @@ class CategoryController extends Controller {
 	{
 		//
 		$brands = Brand::lists('name', 'id');
-		return view('admin.categories_createupdate')->with('brands', $brands);
+		//$thumbs = CustomImage::lists('name', 'id');
+		$thumbs = \DB::table('images')->where('isThumbnail', '1')->lists('name','id');
+		
+		//print_r($thumbs);
+		return view('admin.categories_createupdate')->with(array('brands' => $brands, 'thumbs' => $thumbs));
 	}
 
 	/**
@@ -46,9 +51,12 @@ class CategoryController extends Controller {
 		//
 
 		$brandId = Brand::find($request->input('brands'));
+		$imageId = CustomImage::find($request->input('images'));
 		$categories = new Category;
 		$categories->name = $request->input('name');		
 		$categories->brands()->associate($brandId);
+		$categories->images()->associate($imageId);
+
 
 		$categories->save();
 
@@ -77,8 +85,10 @@ class CategoryController extends Controller {
 		//
 
 		$brands = Brand::lists('name', 'id');
+		//$thumbs = CustomImage::lists('name', 'id');
+		$thumbs = \DB::table('images')->where('isThumbnail', '1')->lists('name','id');
 		$category = Category::find($id);			
-		return view('admin.categories_createupdate')->with(array('category' => $category, 'brands' => $brands));
+		return view('admin.categories_createupdate')->with(array('category' => $category, 'brands' => $brands, 'thumbs' => $thumbs));
 	}
 
 	/**
@@ -92,9 +102,11 @@ class CategoryController extends Controller {
 		//
 
 		$brandId = Brand::find($request->input('brands'));
+		$imageId = CustomImage::find($request->input('images'));
 		$categories = Category::find($id);
 		$categories->name = $request->input('name');		
 		$categories->brands()->associate($brandId);
+		$categories->images()->associate($imageId);
 
 		$categories->save();
 

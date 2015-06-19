@@ -4,7 +4,7 @@
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+              <img src="{{ URL::to('/') }}/img/usersilloete.png" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
               <p>Nombre usuario</p>             
@@ -95,7 +95,9 @@
                 <i class="fa fa-tag"></i><span>Productos</span><i class="fa fa-angle-left pull-right"></i>                
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ URL::to('/') }}/admin/products/create"><i class="fa fa-circle-o"></i>Agregar productos</a></li>                               
+                <li><a href="{{ URL::to('/') }}/admin/products/create"><i class="fa fa-circle-o"></i>Agregar productos</a></li>
+                <li><a href="{{ URL::to('/') }}/admin/productdetails"><i class="fa fa-circle-o"></i>Ver Detalle de productos</a></li>
+                <li><a href="{{ URL::to('/') }}/admin/productdetails/create"><i class="fa fa-circle-o"></i>Agregar detalle de productos</a></li>                               
               </ul>
             </li>  
             <li class="treeview">
@@ -113,6 +115,14 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ URL::to('/') }}/admin/galleries/create"><i class="fa fa-circle-o"></i>Agregar galería</a></li>                               
+              </ul>
+            </li> 
+            <li class="treeview">
+              <a href="#">                
+                <i class="fa fa-envelope"></i><span>Direcciones</span><i class="fa fa-angle-left pull-right"></i>                
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ URL::to('/') }}/admin/address/create"><i class="fa fa-circle-o"></i>Agregar direccion</a></li>                               
               </ul>
             </li>                                             
           </ul>
