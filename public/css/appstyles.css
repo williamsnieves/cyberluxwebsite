@@ -175,6 +175,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
   padding: 0 1.5em 0 1.5em;
 }
 
+.item-carousel-mobile img{
+    width: 100%;
+}
+
 /* section Home */
 
 /* footer */
@@ -1140,6 +1144,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
     .custom-nav-list li a{
       color: #000;
       text-decoration: none;
+      font-size: 0.96em;
     }
 
 
@@ -1540,6 +1545,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 }
 
 @media screen and (min-width: 1200px){
+    .custom-nav-list li a{    
+      font-size: 1em;
+    }
     .form-horizontal .control-label{
       margin: 0 2em 0 25em;
     }

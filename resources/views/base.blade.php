@@ -83,7 +83,8 @@
 	</footer>
 
 	<!-- Scripts -->
-	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>	
+	<!--<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>	
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
 	{!! HTML::script('js/jquery.bttrlazyloading.min.js'); !!}
 	{!! HTML::script('js/jquery.slidereveal.js'); !!}
@@ -92,6 +93,7 @@
 	{!! HTML::script('js/test.js'); !!}
 	{!! HTML::script('js/modal.js'); !!}
 	{!! HTML::script('js/imageload.js'); !!}
+	{!! HTML::script('js/jquery.bcSwipe.min.js'); !!}
 	
 	<script>
 		//<![CDATA[
@@ -102,5 +104,11 @@
         })
     //]]>
 	</script>	
+
+	<script>  
+		$(document).ready(function() {  
+		   $('.carousel').bcSwipe({ threshold: 50 });
+		});  
+	</script> 
 </body>
 </html>
