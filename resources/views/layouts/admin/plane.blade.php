@@ -30,6 +30,8 @@
 
     <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
 
+    <link href="{{ asset('/dist/css/datepicker.css') }}" rel="stylesheet" type="text/css" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -284,6 +286,7 @@
     <script src="{{ asset('/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}" type="text/javascript"></script>
 
     <script src="{{ asset('/dist/js/dynamicselect.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/dist/js/bootstrap-datepicker.js') }}" type="text/javascript"></script>
 
     <script type="text/javascript">
       // File Picker modification for FCK Editor v2.0 - www.fckeditor.net

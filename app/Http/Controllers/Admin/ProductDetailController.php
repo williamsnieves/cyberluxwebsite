@@ -120,7 +120,46 @@ class ProductDetailController extends Controller {
 		$ProductDetail =  ProductDetail::find($id);
 		$ProductDetail->delete();
 
-		return redirect()->route('admin.productdetails.index')->with('message', 'Dealle del producto ('.$ProductDetail->products->name.') borrada');
+		return redirect()->route('admin.productdetails.index')->with('message', 'Detalle del producto ('.$ProductDetail->products->name.') borrada');
 	}
 
+	public function getAddImages($id){
+
+		$productdetailpost =  ProductDetail::find($id);
+		return view('admin.productdetails_addimages')->with('productdetailpost', $productdetailpost);
+	}
+
+	public function postSaveImages(Request $request){	
+
+		//return $request->input('items');	
+		$productdetailid = $request->input('productdetailid');
+		$productdetails = ProductDetail::find($productdetailid);
+		$myarray = $request->input('images');
+		$productdetails->images()->attach($myarray);
+
+		return redirect('admin/productdetails')->with('message', 'Se agregaron imagenes a la galería');
+
+	}
+
+	public function getEditImages($id){
+
+		$productdetail =  ProductDetail::find($id);
+		
+		return view('admin.productdetails_addimages')->with(array('productdetail' => $productdetail));
+	}
+
+	public function putEditImages(Request $request){	
+
+		
+		//return $request->input('items');	
+		
+		$productdetailid = $request->input('productdetailid');
+		$productdetails = ProductDetail::find($productdetailid);	
+		$productdetails->images()->detach();	
+		$myarray = $request->input('images');
+		$productdetails->images()->attach($myarray);
+
+		return redirect('admin/productdetails')->with('message', 'Se actualizaron imagenes en la galería');
+
+   }
 }

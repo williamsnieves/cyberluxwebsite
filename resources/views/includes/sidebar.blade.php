@@ -29,7 +29,8 @@
                 <i class="fa fa-users"></i> <span>Usuarios</span> <i class="fa fa-angle-left pull-right"></i>                
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ URL::to('/') }}/admin/editors/create"><i class="fa fa-circle-o"></i>Agregar editores</a></li>                
+                <li><a href="{{ URL::to('/') }}/admin/editors/create"><i class="fa fa-circle-o"></i>Agregar editores</a></li> 
+                <li><a href="{{ URL::to('/') }}/admin/paymentprofiles/create"><i class="fa fa-circle-o"></i>Agregar perfil de pago</a></li>                
               </ul>
             </li>           
 
@@ -97,7 +98,9 @@
               <ul class="treeview-menu">
                 <li><a href="{{ URL::to('/') }}/admin/products/create"><i class="fa fa-circle-o"></i>Agregar productos</a></li>
                 <li><a href="{{ URL::to('/') }}/admin/productdetails"><i class="fa fa-circle-o"></i>Ver Detalle de productos</a></li>
-                <li><a href="{{ URL::to('/') }}/admin/productdetails/create"><i class="fa fa-circle-o"></i>Agregar detalle de productos</a></li>                               
+                <li><a href="{{ URL::to('/') }}/admin/productdetails/create"><i class="fa fa-circle-o"></i>Agregar detalle de productos</a></li>
+                <li><a href="{{ URL::to('/') }}/admin/paymentmethods/create"><i class="fa fa-circle-o"></i>Agregar metodos de pago</a></li>
+                <li><a href="{{ URL::to('/') }}/admin/bankaccounts/create"><i class="fa fa-circle-o"></i>Agregar cuentas bancarias</a></li>                               
               </ul>
             </li>  
             <li class="treeview">

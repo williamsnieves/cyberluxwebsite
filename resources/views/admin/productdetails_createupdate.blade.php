@@ -50,23 +50,10 @@
                 {!! Form::textarea('specialfeatures', null, ["class" => "form-control ckeditor", 'placeholder'=>'Ingresa las caracteristicas especiales', "id" => "inputFeatureSpecial"]) !!}
               </div>
               <div class="form-group">
-                {!! Form::label('inputThumb', 'Agregar imagen del producto:') !!}
-                {!! Form::select('products', $products, null , ['class' => 'form-control select2thumbs', "id="=>"inputThumb"]) !!}                        
+                {!! Form::label('inputThumb', 'Asociar producto:') !!}
+                {!! Form::select('products', $products, $productdetails->products_id , ['class' => 'form-control select2thumbs', "id="=>"inputThumb"]) !!}                        
               </div>
-              <div class="form-group">
-                {!! Form::label('inputImages', 'Agregar Imagenes:') !!}
-                <select name="items[]" class="form-control" id="inputImages" multiple="multiple">
-                 
-                </select>
-              </div>
-
-              <div class="form-group">
-                  <ul class="thumbnail" style="list-style:none; display: inline-block;">                    
-                   @foreach ($productdetails->images as $image)
-                      <li style="display: inline-block;"><img width="64" height="64" src="{{$image->url}}" alt=""></li>
-                   @endforeach
-                  </ul>
-              </div>
+              
             </div>
             <div class="box-footer">
               {!! Form::submit('Actualizar', ["class" => "btn btn-primary"]) !!}            
@@ -86,14 +73,7 @@
               <div class="form-group">
                 {!! Form::label('inputThumb', 'Asociar producto al detalle:') !!}
                 {!! Form::select('products', $products, null , ['class' => 'form-control select2thumbs', "id="=>"inputThumb"]) !!}                        
-              </div>              
-              <div class="form-group">
-              {!! Form::label('inputImages', 'Agregar Imagenes:') !!}
-                <select name="items[]" class="form-control" id="inputImages" multiple="multiple">
-                 
-                </select>
-              </div>  
-                            
+              </div>    
             </div>
             <div class="box-footer">
               {!! Form::submit('Guardar', ["class" => "btn btn-primary"]) !!}            

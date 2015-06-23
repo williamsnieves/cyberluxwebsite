@@ -58,6 +58,20 @@
                 {!! Form::label('inputState', 'Estado:') !!}
                 {!! Form::select('cities', $cities, $address->cities_id , ['class' => 'form-control select2thumbs', "id=" =>"inputState"]) !!}                        
               </div>
+
+              @if($address->isBilling == 1)
+              <div class="checkbox">
+                <label>
+                  {!! Form::checkbox('isbilling', 1, true) !!} Colocar como direccion de facturación
+                </label>
+              </div>
+              @else
+              <div class="checkbox">
+                <label>
+                  {!! Form::checkbox('isbilling', null) !!} Colocar como direccion de facturación
+                </label>
+              </div>
+              @endif
             </div>
             <div class="box-footer">
               {!! Form::submit('Actualizar', ["class" => "btn btn-primary"]) !!}            
@@ -82,6 +96,12 @@
               <div class="form-group">
                 {!! Form::label('inputState', 'Estado:') !!}
                 {!! Form::select('cities', $cities, null , ['class' => 'form-control select2thumbs', "id=" =>"inputState"]) !!}                        
+              </div>
+
+              <div class="checkbox">             
+                <label>
+                  {!! Form::checkbox('isbilling', null) !!} Colocar como direccion de facturación
+                </label>
               </div>
             </div>
                 

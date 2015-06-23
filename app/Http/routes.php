@@ -65,10 +65,17 @@ Route::group([
   Route::resource('admin/productprices', 'ProductPriceController');
   Route::resource('admin/productdetails', 'ProductDetailController');
   Route::resource('admin/address', 'AddressController');
+  Route::resource('admin/paymentmethods', 'PaymentMethodController');
+  Route::resource('admin/bankaccounts', 'AccountNumberController');
+  Route::resource('admin/paymentprofiles', 'PaymentProfileController');
   Route::get('admin/galleries/{id}/images', 'GalleryController@getAddImages');
   Route::get('admin/galleries/{id}/images/edit', 'GalleryController@getEditImages');
   Route::post('admin/galleries/images', ['as' => 'admin.galleries.postSaveImages', 'uses' => 'GalleryController@postSaveImages']);
   Route::post('admin/galleries/images/edit', ['as' => 'admin.galleries.putEditImages', 'uses' => 'GalleryController@putEditImages']);
+  Route::get('admin/productdetails/{id}/images', 'ProductDetailController@getAddImages');
+  Route::get('admin/productdetails/{id}/images/edit', 'ProductDetailController@getEditImages');
+  Route::post('admin/productdetails/images', ['as' => 'admin.productdetails.postSaveImages', 'uses' => 'ProductDetailController@postSaveImages']);
+  Route::post('admin/productdetails/images/edit', ['as' => 'admin.productdetails.putEditImages', 'uses' => 'ProductDetailController@putEditImages']);
   Route::resource('admin/galleries', 'GalleryController');
   Route::get('admin/imagesall', 'AjaxController@getAllImages');
 

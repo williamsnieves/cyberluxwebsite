@@ -54,7 +54,13 @@ class AddressController extends Controller {
 		$citiesId = City::find($request->input('cities'));
 		$address = new Address;
 		$address->address = $request->input('address');
-		$address->zipcode = $request->input('zipcode');		
+		$address->zipcode = $request->input('zipcode');	
+
+		if(!empty($request->input('isbilling')) && $request->input('isbilling')  == 'on'){
+			$address->isBilling = 1;
+		}else{
+			$address->isBilling = 0;
+		}	
 		$address->countries()->associate($countryId);
 		$address->cities()->associate($citiesId);
 		$address->users()->associate($user);
@@ -105,7 +111,12 @@ class AddressController extends Controller {
 		$citiesId = City::find($request->input('cities'));
 		$address = Address::find($id);
 		$address->address = $request->input('address');
-		$address->zipcode = $request->input('zipcode');		
+		$address->zipcode = $request->input('zipcode');
+		if(!empty($request->input('isbilling')) && $request->input('isbilling')  == 'on'){
+			$address->isBilling = 1;
+		}else{
+			$address->isBilling = 0;
+		}		
 		$address->countries()->associate($countryId);
 		$address->cities()->associate($citiesId);
 		$address->users()->associate($user);

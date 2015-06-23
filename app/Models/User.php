@@ -39,5 +39,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	public function addresses(){
 		return $this->hasMany('\App\models\Address');
 	}
+	public function paymentprofiles(){
+		return $this->hasMany('\App\models\PaymentProfile');
+	}
 
 }

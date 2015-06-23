@@ -1,12 +1,12 @@
 @extends('layouts.admin.plane')
 @section('titlesection')
-    Detalle de Productos
-            <small>Mostrar detalle de productos</small>
+    Numeros de cuenta
+            <small>Mostrar numeros de cuenta</small>
 @stop
 
 @section('breadcrumb')
     <li><a href="{{ URL::to('/') }}/admin/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li class="active">Ver detalle productos</li>
+    <li class="active">Ver numeros de cuenta</li>
 @stop
 @section('content')
 @if($errors->has())
@@ -27,7 +27,7 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Detalle Productos</h3>
+        <h3 class="box-title">Numeros de cuenta</h3>
         <div class="box-tools">
           <div class="input-group">
             <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
@@ -40,39 +40,31 @@
       </div><!-- /.box-header -->
 
       <div class="box-body table-responsive no-padding">
-        @if(!$productdetails->isEmpty())
+        @if(!$bankaccounts->isEmpty())
         <table class="table table-hover">
           <tr>
             <th>ID</th>
-            <th>Nombre de producto asociado</th>            
+            <th>Numero de cuenta</th>
+            <th>Banco</th> 
+            <th>Tipo de cuenta</th>            
             <th>Fecha de Creación</th>     
             <th>Editar</th>
-            <th>Agregar Imagenes</th>
-            <th>Editar Imagenes</th>
             <th>Eliminar</th>            
           </tr>
-          @foreach ($productdetails as $productdetail)
+          @foreach ($bankaccounts as $bankaccount)
           <tr>
-            <td>{{$productdetail->id}}</td>
-            <td>{{$productdetail->products->name}}</td> 
-            <td>{{date('F d, Y', strtotime($productdetail->created_at))}}</td>           
+            <td>{{$bankaccount->id}}</td>
+            <td>{{$bankaccount->number}}</td>
+            <td>{{$bankaccount->bank}}</td> 
+            <td>{{$bankaccount->type}}</td> 
+            <td>{{date('F d, Y', strtotime($bankaccount->created_at))}}</td>           
             <td>
-              <a href="{{ URL::to('/') }}/admin/productdetails/{{$productdetail->id}}/edit" class="btn btn-default">
+              <a href="{{ URL::to('/') }}/admin/bankaccounts/{{$bankaccount->id}}/edit" class="btn btn-default">
                   <i class="fa fa-edit"></i>
               </a>
             </td>
             <td>
-              <a href="{{ URL::to('/') }}/admin/productdetails/{{$productdetail->id}}/images" class="btn btn-default">
-                  <i class="fa fa-edit"></i>
-              </a>
-            </td>
-            <td>
-              <a href="{{ URL::to('/') }}/admin/productdetails/{{$productdetail->id}}/images/edit" class="btn btn-default">
-                  <i class="fa fa-edit"></i>
-              </a>
-            </td>
-            <td>
-             {!! Form::open(array('route' => array('admin.productdetails.destroy', $productdetail->id), 'method' => 'DELETE' , 'onsubmit' => 'return ConfirmDelete()')) !!}                
+             {!! Form::open(array('route' => array('admin.bankaccounts.destroy', $bankaccount->id), 'method' => 'DELETE' , 'onsubmit' => 'return ConfirmDelete()')) !!}                
                 <button type="submit" class="btn btn-default">
                   <i class="fa fa-remove"></i>
                 </button>
@@ -82,7 +74,7 @@
           </tr>
           @endforeach       
         </table>
-        <?php echo $productdetails->render(); ?>
+        <?php echo $bankaccounts->render(); ?>
         @endif
       </div><!-- /.box-body -->
     </div><!-- /.box -->
