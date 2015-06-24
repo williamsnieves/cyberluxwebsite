@@ -4,6 +4,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests\EditorForm;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Contracts\Auth\Registrar;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+
 use App\Models\User;
 class AdminUsersController extends Controller {
 
@@ -46,8 +49,8 @@ class AdminUsersController extends Controller {
 		$user->name = $request->input('name');
 		$user->lastName = $request->input('lastname');
 		$user->email = $request->input('email');
-		$user->password = $user->set_password($request->input('password'));
-		$user->set_password($user->password);
+		//$user->password = $user->set_password($request->input('password'));
+		$user->set_password($request->input('password'));
 
 		if(!empty($request->input('editor')) && $request->input('editor')  == 'on'){
 			$user->isEditor = 1;
@@ -62,6 +65,9 @@ class AdminUsersController extends Controller {
 		}
 
 		$user->save();
+
+		//$user->create($request->all());
+
 
 		return redirect('admin/editors/create')->with('message', 'El editor se ha creado correctamente');
 		

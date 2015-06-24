@@ -12,4 +12,8 @@ class PaymentMethod extends Model {
 		return $this->hasMany('\App\models\AccountNumber');
 	}
 
+	public function purchases(){
+		return $this->hasMany('\App\models\Purchase');
+	}
+
 }

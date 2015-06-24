@@ -12,4 +12,8 @@ class ShippingAddress extends Model {
 		return $this->belongsTo('\App\models\Address');
 	}
 
+	public function purchases(){
+		return $this->hasMany('\App\models\Purchase');
+	}
+
 }

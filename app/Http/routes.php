@@ -49,8 +49,8 @@ Route::get('admin', function () {
 });
 
 Route::group([
-  'namespace' => 'Admin'
-  /*'middleware' => 'auth',*/
+  'namespace' => 'Admin',
+  'middleware' => 'auth',
 ], function () {
   Route::get('admin/dashboard', 'DashboardController@index');  	
   Route::resource('admin/news', 'NewsController');
@@ -82,7 +82,7 @@ Route::group([
 });
 
 
-
+Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

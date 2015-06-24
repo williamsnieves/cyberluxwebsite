@@ -40,7 +40,8 @@
         @endif
       <!-- form start -->
       @if(isset($user))
-        {!! Form::model($user, ['route' => ['admin.editors.update', $user->id], 'method' => 'patch']) !!}                 
+        {!! Form::model($user, ['route' => ['admin.editors.update', $user->id], 'method' => 'patch']) !!}   
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">              
             <div class="box-body">
               <div class="form-group">
                 {!! Form::label('inputName', 'Nombre:') !!}
@@ -89,7 +90,8 @@
             </div>
         {!! Form::close() !!}
       @else  
-        {!! Form::open(['route' => 'admin.editors.store']) !!}
+        {!! Form::open(['route' => 'admin.editors.store']) !!}           
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="box-body">
               <div class="form-group">
                 {!! Form::label('inputName', 'Nombre:') !!}
@@ -105,7 +107,7 @@
               </div>
               <div class="form-group">
                 {!! Form::label('inputPassword', 'Password:') !!}
-                {!! Form::text('password', null, ["class" => "form-control", 'placeholder'=>'Password', "id" => "inputPassword"]) !!}
+                {!! Form::password('secret', array('class' => 'form-control')) !!}
               </div>
               <div class="checkbox">             
                 <label>

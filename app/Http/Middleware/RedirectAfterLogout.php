@@ -4,7 +4,7 @@ use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\RedirectResponse;
 
-class RedirectIfAuthenticated {
+class RedirectAfterLogout {
 
 	/**
 	 * The Guard implementation.
@@ -33,9 +33,9 @@ class RedirectIfAuthenticated {
 	 */
 	public function handle($request, Closure $next)
 	{
-		if ($this->auth->check())
+		if ($this->auth->logout())
 		{
-			return new RedirectResponse(url('/admin/dashboard'));
+			return new RedirectResponse(url('/auth/login'));
 		}
 
 		return $next($request);

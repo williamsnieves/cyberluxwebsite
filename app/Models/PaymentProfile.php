@@ -10,4 +10,12 @@ class PaymentProfile extends Model {
 	public function users(){
 		return $this->belongsTo('\App\models\User');
 	}
+
+	public function paymenthistories(){
+		return $this->hasMany('\App\models\PaymentHistory');
+	}
+
+	public function failedpayments(){
+		return $this->hasMany('\App\models\FailedPayment');
+	}
 }
