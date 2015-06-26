@@ -10,7 +10,7 @@
 
 @section('breadcrumb')
     <li><a href="{{ URL::to('/') }}/admin/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="{{ URL::to('/') }}/admin/address">Numeros de cuenta</a></li>
+    <li><a href="{{ URL::to('/') }}/admin/bankaccounts">Numeros de cuenta</a></li>
     <li class="active">Crear numeros de cuenta</li>
 @stop
 @section('content')
@@ -58,7 +58,7 @@
                 {!! Form::text('consideration', null, ["class" => "form-control", 'placeholder'=>'Ingresa alguna consideracion', "id" => "inputConsideration"]) !!}
               </div>
               <div class="form-group">
-                {!! Form::label('inputPayment', 'Asociar producto al detalle:') !!}
+                {!! Form::label('inputPayment', 'Asociar al metodo de pago:') !!}
                 {!! Form::select('payments', $paymentmethods, $accountnumber->payment_methods_id , ['class' => 'form-control', "id="=>"inputPayment"]) !!}                        
               </div>               
             </div>
@@ -86,7 +86,7 @@
                 {!! Form::text('consideration', null, ["class" => "form-control", 'placeholder'=>'Ingresa alguna consideracion', "id" => "inputConsideration"]) !!}
               </div>
               <div class="form-group">
-                {!! Form::label('inputPayment', 'Asociar producto al detalle:') !!}
+                {!! Form::label('inputPayment', 'Asociar al metodo de pago:') !!}
                 {!! Form::select('payments', $paymentmethods, null , ['class' => 'form-control', "id="=>"inputPayment"]) !!}                        
               </div>
             </div> 

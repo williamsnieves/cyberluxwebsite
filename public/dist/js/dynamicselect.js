@@ -5,11 +5,15 @@ host = window.location.host;
 
 base_url = host;
 
+
 function formatState (state) {
   if (!state.id) { return state.text; }
+  var url = protocol+"//"+base_url+"/filemanager/userfiles/"+state.text+".jpg";
+  console.log(state);
   var $state = $(
-    '<span><img src="'+state.url+'" /> ' + state.text + '</span>'
+    '<span><img width="50" height="50" src="'+url+'" />' + state.text + '</span>'
   );
+  
   return $state;
 };
 
@@ -25,7 +29,7 @@ function formatSelection(node) {
 
 
 $("#inputImages").select2({     
-     /**templateResult: formatState*/
+     templateResult: formatState,
      tags: true,
      ajax: {
          url: "http://"+base_url+"/admin/imagesall",
@@ -46,9 +50,10 @@ $("#inputImages").select2({
              results: results
            };
          },         
-         templateResult: formatState,
          cache: true
-   },
+         
+   }
+  
            
 
 });

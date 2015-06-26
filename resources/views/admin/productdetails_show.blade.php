@@ -23,6 +23,10 @@
       <h4>  <i class="icon fa fa-check"></i> {{ Session::get('message') }}</h4>              
     </div>
 @endif
+
+<a href="{{ URL::to('/') }}/admin/productdetails/create" class="btn btn-primary" style="margin-bottom:1em;">
+  Agregar detalle del producto
+</a>
 <div class="row">
   <div class="col-xs-12">
     <div class="box">

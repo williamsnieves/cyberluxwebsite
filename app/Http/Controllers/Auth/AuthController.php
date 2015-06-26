@@ -40,7 +40,7 @@ class AuthController extends Controller {
 	}
 
 
-	public function postLogin(Request $request)
+	/*public function postLogin(Request $request)
 	{
 
 		$userdata = array(
@@ -49,6 +49,6 @@ class AuthController extends Controller {
     	);
 		var_dump(\Auth::attempt($userdata));
 		
-	}
+	}*/
 
 }

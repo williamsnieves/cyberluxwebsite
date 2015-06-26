@@ -36,6 +36,7 @@ Route::get('news', 'PageController@news');
 Route::get('locations', 'PageController@locations');
 Route::get('gallery', 'PageController@gallery');
 Route::get('contact', 'PageController@contact');
+Route::post('contact', 'PageController@storecontact');
 Route::get('social', 'PageController@social');
 Route::get('news/{id}', 'PageController@newsdetail');
 Route::get('products/{name}', 'PageController@typeProducts');

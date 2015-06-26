@@ -83,7 +83,7 @@ class AccountNumberController extends Controller {
 		//
 		$paymentmethods = PaymentMethod::lists('name', 'id');
 		$accountnumber = AccountNumber::find($id);
-		$accountnumber->number = $accountnumber->decryptAccount($accountnumber->number);		
+		//$accountnumber->number = $accountnumber->decryptAccount($accountnumber->number);		
 		return view('admin.accounts_createupdate')->with(array('accountnumber' => $accountnumber ,'paymentmethods' => $paymentmethods));
 	}
 

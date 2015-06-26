@@ -49,8 +49,8 @@ class AdminUsersController extends Controller {
 		$user->name = $request->input('name');
 		$user->lastName = $request->input('lastname');
 		$user->email = $request->input('email');
-		//$user->password = $user->set_password($request->input('password'));
-		$user->set_password($request->input('password'));
+		$user->password = $request->input('password');
+		$user->set_password($user->password);
 
 		if(!empty($request->input('editor')) && $request->input('editor')  == 'on'){
 			$user->isEditor = 1;

@@ -1,7 +1,7 @@
 @extends('layouts.admin.plane')
 @section('titlesection')
     Pages
-            @if(isset($typenews))
+            @if(isset($page))
               <small>Actualizar pages</small>
             @else
               <small>Crear pages</small>
@@ -42,15 +42,15 @@
         {!! Form::model($page, ['route' => ['admin.pages.update', $page->id], 'method' => 'patch']) !!}                 
             <div class="box-body">
               <div class="form-group">
-                {!! Form::label('inputName', 'Nombre del page:') !!}
+                {!! Form::label('inputName', 'Nombre de la página en el admin:') !!}
                 {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre del page', "id" => "inputName"]) !!}
               </div>
               <div class="form-group">
-                {!! Form::label('inputTitle', 'Nombre del page:') !!}
+                {!! Form::label('inputTitle', 'Titulo de la página:') !!}
                 {!! Form::text('title', null, ["class" => "form-control", 'placeholder'=>'Ingresa título del page', "id" => "inputTitle"]) !!}
               </div>
               <div class="form-group">
-                {!! Form::label('inputContent', 'Contenido del page:') !!}
+                {!! Form::label('inputContent', 'Contenido de la pagina:') !!}
                 {!! Form::textarea('content', null, ["class" => "form-control ckeditor", 'placeholder'=>'Ingresa descripción del page', "id" => "inputContent"]) !!}
               </div>
               <div class="form-group">
@@ -67,21 +67,22 @@
         {!! Form::open(['route' => 'admin.pages.store']) !!}
             <div class="box-body">
               <div class="form-group">
-                {!! Form::label('inputName', 'Nombre del page:') !!}
+                {!! Form::label('inputName', 'Nombre de la página en el admin:') !!}
                 {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre del page', "id" => "inputName"]) !!}
               </div>
               <div class="form-group">
-                {!! Form::label('inputTitle', 'Nombre del page:') !!}
+                {!! Form::label('inputTitle', 'Titulo de la página:') !!}
                 {!! Form::text('title', null, ["class" => "form-control", 'placeholder'=>'Ingresa título del page', "id" => "inputTitle"]) !!}
               </div>
 
               <div class="form-group">
-                {!! Form::label('inputContent', 'Contenido del page:') !!}
+                {!! Form::label('inputContent', 'Contenido de la pagina:') !!}
                 {!! Form::textarea('content', null, ["class" => "form-control ckeditor", 'placeholder'=>'Ingresa descripción del page', "id" => "inputContent"]) !!}
               </div> 
 
               <div class="form-group">
-                {!! Form::select('galleries', $galleries, null , ['class' => 'form-control']) !!}
+                {!! Form::label('inputContent', 'Asociar galeria a la pagina:') !!}
+                {!! Form::select('galleries', array('default' => 'Selecciona') + $galleries, null , ['class' => 'form-control', 'placeholder'=>'Ingresa descripción del page'  ]) !!}
               </div>
                             
             </div>

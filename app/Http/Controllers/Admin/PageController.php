@@ -45,13 +45,16 @@ class PageController extends Controller {
 	{
 		//
 
-		$pages = new Page;
+		$pages = new Page;		
 
-		$galleryId = Gallery::find($request->input('galleries'));
 		$pages->name = $request->input('name');
 		$pages->title = $request->input('title');
-		$pages->content = $request->input('content');
-		$pages->galleries()->associate($galleryId);
+		$pages->content = $request->input('content');		
+
+		if($request->input('galleries') != 'default'){
+			$galleryId = Gallery::find($request->input('galleries'));
+			$pages->galleries()->associate($galleryId);			
+		}
 
 		$pages->save();	
 

@@ -1,7 +1,7 @@
 @extends('layouts.admin.plane')
 @section('titlesection')
     Marca
-            @if(isset($typenews))
+            @if(isset($brand))
               <small>Actualizar marca</small>
             @else
               <small>Crear marca</small>

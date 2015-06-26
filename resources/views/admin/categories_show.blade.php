@@ -23,6 +23,9 @@
       <h4>  <i class="icon fa fa-check"></i> {{ Session::get('message') }}</h4>              
     </div>
 @endif
+<a href="{{ URL::to('/') }}/admin/categories/create" class="btn btn-primary" style="margin-bottom:1em;">
+  Agregar Categorias
+</a>
 <div class="row">
   <div class="col-xs-12">
     <div class="box">

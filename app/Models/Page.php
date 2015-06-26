@@ -8,7 +8,7 @@ class Page extends Model {
 	protected $table = 'pages';
 
 	public function nodes(){
-		return $this->hasMany('\App\models\Node');
+		return $this->hasMany('\App\models\Node', 'pages_id');
 	}
 
 	public function galleries(){

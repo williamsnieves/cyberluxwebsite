@@ -1,7 +1,7 @@
 @extends('layouts.admin.plane')
 @section('titlesection')
     Categoría de Productos
-            @if(isset($typenews))
+            @if(isset($category))
               <small>Actualizar categoría</small>
             @else
               <small>Crear categoría</small>

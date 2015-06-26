@@ -5,6 +5,9 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use App\Models\Page;
+use App\Models\Node;
+
 class PageController extends Controller {
 
 	/**
@@ -23,7 +26,14 @@ class PageController extends Controller {
 	}
 
 	public function about(){
-		return view('pages.about');
+
+		//$pages = Page::where('name','nosotros')->get();					
+		$pages = Page::with('nodes')->where('name','nosotros')->get();
+		/*$pagesInstance = new Page();	
+		$pages = $pagesInstance->nodes()->where('name','nosotros')->get();*/
+		//dd($pages);
+
+		return view('pages.about')->with(array("pages" => $pages));
 	}
 
 	public function products(){
@@ -35,7 +45,8 @@ class PageController extends Controller {
 	}
 
 	public function locations(){
-		return view('pages.locations');
+		$pages = Page::with('nodes')->where('name','sedes')->get();
+		return view('pages.locations')->with(array("pages" => $pages));
 	}
 
 	public function gallery(){
@@ -46,8 +57,26 @@ class PageController extends Controller {
 		return view('pages.contact');
 	}
 
+	public function storecontact(Request $request){
+		
+		\Mail::send('emails.contact',
+        array(
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'user_message' => $request->get('message')
+        ), function($message)
+    {
+        $message->from('wj@wjgilmore.com');
+        $message->to('williamsnieves@gmail.com', 'Admin')->subject('TODOParrot Feedback');
+    });
+
+  		return redirect('contact')->with('message', 'Gracias por contactarnos!!!');
+
+	}
+
 	public function social(){
-		return view('pages.social');
+		$pages = Page::with('nodes')->where('name','social')->get();
+		return view('pages.social')->with(array("pages" => $pages));
 	}
 
 	public function newsdetail($id){

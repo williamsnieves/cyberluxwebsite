@@ -13,7 +13,8 @@
 			</div>
 
 			<h2>Contáctenos</h2>
-			<form class="form-contact-mobile">
+			<form action="/contact" method="POST" class="form-contact-mobile">
+			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			  <div class="form-group form-custom">
 			    <label for="inputEmail3" class="control-label custom-label-form">Su nombre:</label>
 			    <div class="custom-input-form">
@@ -39,23 +40,24 @@
 			  </div>
 			</form>
 
-			<form class="form-horizontal form-contact-desktop">
+			<form  action="/contact" method="POST" class="form-horizontal form-contact-desktop">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			  <div class="form-group form-custom">
 			    <label for="inputEmail3" class="col-md-3 col-lg-3 control-label custom-label-form">Su nombre:</label>
 			    <div class="col-md-5 col-lg-5 custom-input-form">
-			      <input type="email" class="form-control" id="inputEmail3" placeholder="Nombre">
+			      <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="Nombre">
 			    </div>
 			  </div>
 			  <div class="form-group form-custom">
 			    <label for="inputPassword3" class="col-md-3 control-label custom-label-form">Su correo:</label>
 			    <div class="col-md-5 custom-input-form">
-			      <input type="password" class="form-control" id="inputPassword3" placeholder="Correo">
+			      <input type="text" name="email" class="form-control" id="inputPassword3" placeholder="Correo">
 			    </div>
 			  </div>
 			  <div class="form-group form-custom">
 			    <label for="inputPassword3" class="col-md-3 control-label custom-label-form">Su mensaje:</label>
 			    <div class="col-md-5 custom-input-form">
-			      <textarea class="form-control" rows="6"></textarea>
+			      <textarea class="form-control" name="message" rows="6"></textarea>
 			    </div>
 			  </div>			  
 			  <div class="form-group">			    

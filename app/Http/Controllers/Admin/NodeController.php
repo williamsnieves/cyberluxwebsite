@@ -42,12 +42,12 @@ class NodeController extends Controller {
 	public function store(Request $request)
 	{
 		//
-		$pagesId = Page::find($request->input('pages'));
+		$pages = Page::find($request->input('pages'));
 		$nodes = new Node;
 		$nodes->name = $request->input('name');
 		$nodes->title = $request->input('title');
 		$nodes->content = $request->input('content');
-		$nodes->pages()->associate($pagesId);
+		$nodes->pages()->associate($pages);
 
 		$nodes->save();
 

@@ -1,7 +1,7 @@
 @extends('layouts.admin.plane')
 @section('titlesection')
     Nodes
-            @if(isset($typenews))
+            @if(isset($node))
               <small>Actualizar nodes</small>
             @else
               <small>Crear nodes</small>
@@ -42,11 +42,11 @@
         {!! Form::model($node, ['route' => ['admin.nodes.update', $node->id], 'method' => 'patch']) !!}                 
             <div class="box-body">
               <div class="form-group">
-                {!! Form::label('inputName', 'Nombre del page:') !!}
+                {!! Form::label('inputName', 'Nombre del nodo en el admin:') !!}
                 {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre del nodo', "id" => "inputName"]) !!}
               </div>
               <div class="form-group">
-                {!! Form::label('inputTitle', 'Nombre del page:') !!}
+                {!! Form::label('inputTitle', 'Titulo del nodo en la pagina:') !!}
                 {!! Form::text('title', null, ["class" => "form-control", 'placeholder'=>'Ingresa título del nodo', "id" => "inputTitle"]) !!}
               </div>
               <div class="form-group">
@@ -55,7 +55,7 @@
               </div>
 
               <div class="form-group">
-                {!! Form::label('inputTitle', 'Sección:') !!}
+                {!! Form::label('inputTitle', 'Página:') !!}
                 {!! Form::select('pages', $pages, $node->pages_id , ['class' => 'form-control']) !!}
                         
               </div>              
@@ -70,11 +70,11 @@
         {!! Form::open(['route' => 'admin.nodes.store']) !!}
             <div class="box-body">
               <div class="form-group">
-                {!! Form::label('inputName', 'Nombre del nodo:') !!}
+                {!! Form::label('inputName', 'Nombre del nodo en el admin:') !!}
                 {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre del nodo', "id" => "inputName"]) !!}
               </div>
               <div class="form-group">
-                {!! Form::label('inputTitle', 'Nombre del nodo:') !!}
+                {!! Form::label('inputTitle', 'Titulo del nodo en la pagina:') !!}
                 {!! Form::text('title', null, ["class" => "form-control", 'placeholder'=>'Ingresa título del nodo', "id" => "inputTitle"]) !!}
               </div>
 
@@ -84,7 +84,7 @@
               </div>
 
               <div class="form-group">
-                {!! Form::label('inputTitle', 'Sección:') !!}
+                {!! Form::label('inputTitle', 'Página:') !!}
                 <select name="pages" class="form-control">
                   @foreach ($pages as $page)
                     <option value="{{$page->id}}">{{$page->name}}</option>

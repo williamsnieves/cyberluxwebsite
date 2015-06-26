@@ -284,6 +284,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 
 .panel-title{
   float: left;
+  text-transform: uppercase;
 }
 
 .panel-mision{
@@ -1262,31 +1263,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
     .wrapper-about-desktop{
         display: block;
     }
-
-    .mision-box{
+    
+    .company-box{
       background: #000;
       color: #fff;
       padding: 1em 2em 1em 2em;
       text-align: justify;
       margin: 15em 0 1em 0;
-
     }
 
-    .mision-box h3{
-        text-transform: uppercase;
-        font-style: italic;
-        font-size: 1.3em;
+    .company-box:first-child{
+      margin-bottom: -14em
     }
-
-    .vision-box{
-      background: #000;
-      color: #fff;
-      padding: 1em 2em 1em 2em;
-      text-align: justify;
-      margin: 0 0 2em 0;
-    }
-
-    .vision-box h3{
+      
+    .company-box h3{
         text-transform: uppercase;
         font-style: italic;
         font-size: 1.3em;
@@ -1339,8 +1329,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 
     }
 
-    .last-box{      
-      margin: 0 0 2em 0;
+    .locations-box:first-child{
+     margin-bottom: -14em
+
     }
 
     .locations-box h3{

@@ -1,7 +1,7 @@
 @extends('layouts.admin.plane')
 @section('titlesection')
     Imagenes
-            @if(isset($typenews))
+            @if(isset($image))
               <small>Actualizar imagenes</small>
             @else
               <small>Crear imagenes</small>

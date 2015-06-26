@@ -10,8 +10,8 @@
 
 @section('breadcrumb')
     <li><a href="{{ URL::to('/') }}/admin/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="{{ URL::to('/') }}/admin/address">Direcciones</a></li>
-    <li class="active">Crear direccion</li>
+    <li><a href="{{ URL::to('/') }}/admin/paymentmethods">Metodos de pago</a></li>
+    <li class="active">Crear metodo de pago</li>
 @stop
 @section('content')
  @if($errors->has())
@@ -34,7 +34,7 @@
     <!-- general form elements -->
     <div class="box box-primary">
       <div class="box-header">
-        <h3 class="box-title">Formulario para crear direcciones</h3>
+        <h3 class="box-title">Formulario para crear metodos de pago</h3>
       </div><!-- /.box-header -->
        
       <!-- form start -->

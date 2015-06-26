@@ -107,7 +107,7 @@
               </div>
               <div class="form-group">
                 {!! Form::label('inputPassword', 'Password:') !!}
-                {!! Form::password('secret', array('class' => 'form-control')) !!}
+                {!! Form::password('password', array('class' => 'form-control')) !!}
               </div>
               <div class="checkbox">             
                 <label>

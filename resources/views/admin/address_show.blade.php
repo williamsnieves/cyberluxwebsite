@@ -23,6 +23,7 @@
       <h4>  <i class="icon fa fa-check"></i> {{ Session::get('message') }}</h4>              
     </div>
 @endif
+
 <div class="row">
   <div class="col-xs-12">
     <div class="box">

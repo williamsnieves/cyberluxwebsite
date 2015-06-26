@@ -12,7 +12,7 @@ class Node extends Model {
 
 
 	public function pages(){
-		return $this->belongsTo('\App\models\Page');
+		return $this->belongsTo('\App\models\Page', 'pages_id');
 	}
 
 }

@@ -9,7 +9,23 @@
     <li class="active">Ver marcas</li>
 @stop
 @section('content')
+@if($errors->has())
+    <div class='alert alert-danger'>
+        @foreach ($errors->all('<p>:message</p>') as $message)
+            {!! $message !!}
+        @endforeach
+    </div>
+@endif
 
+@if (Session::has('message'))            
+    <div class="alert alert-success alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4>  <i class="icon fa fa-check"></i> {{ Session::get('message') }}</h4>              
+    </div>
+@endif
+<a href="{{ URL::to('/') }}/admin/brands/create" class="btn btn-primary" style="margin-bottom:1em;">
+  Agregar Marcas
+</a>
 <div class="row">
   <div class="col-xs-12">
     <div class="box">
@@ -23,20 +39,7 @@
             </div>
           </div>
         </div>
-        @if($errors->has())
-            <div class='alert alert-danger'>
-                @foreach ($errors->all('<p>:message</p>') as $message)
-                    {!! $message !!}
-                @endforeach
-            </div>
-        @endif
- 
-        @if (Session::has('message'))            
-            <div class="alert alert-success alert-dismissable">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <h4>  <i class="icon fa fa-check"></i> {{ Session::get('message') }}</h4>              
-            </div>
-        @endif
+        
       </div><!-- /.box-header -->
 
       <div class="box-body table-responsive no-padding">
