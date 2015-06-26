@@ -8,7 +8,7 @@
 		<div class="col-xs-12 wrapper-news wrapper-news-mobile">
 			<h1>noticias</h1>
 			<div>
-				<a href="{{ URL::to('/') }}/news/1">					
+				<a href="{{ URL::to('/') }}/news/mi-primera-noticia">					
 					<h2>
 						CYBERLUX DE VENEZUELA APERTURA SU LÍNEA
 	DE ENSAMBLAJE DE AIRES ACONDICIONADO
@@ -129,7 +129,7 @@
 			<div class="col-md-8 wrapper-news" id="newsContentDesktop">
 				<h1>noticias</h1>
 			<div>
-				<a href="{{ URL::to('/') }}/news/1">					
+				<a href="{{ URL::to('/') }}/news/mi-primera-noticia">					
 					<h2>
 						CYBERLUX DE VENEZUELA APERTURA SU LÍNEA
 	DE ENSAMBLAJE DE AIRES ACONDICIONADO

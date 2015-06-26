@@ -109,6 +109,7 @@
 		$(document).ready(function() {  
 		   $('.carousel').bcSwipe({ threshold: 50 });
 		});  
-	</script> 
+	</script>
+	@yield('footerscript')
 </body>
 </html>

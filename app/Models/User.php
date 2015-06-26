@@ -55,4 +55,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->hasMany('\App\models\FailedPayment');
 	}
 
+	public function getId()
+	{
+	  return $this->id;
+	}
+
 }

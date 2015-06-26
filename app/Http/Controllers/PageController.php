@@ -66,8 +66,8 @@ class PageController extends Controller {
             'user_message' => $request->get('message')
         ), function($message)
     {
-        $message->from('wj@wjgilmore.com');
-        $message->to('williamsnieves@gmail.com', 'Admin')->subject('TODOParrot Feedback');
+        $message->from('admin@cyberlux.com');
+        $message->to('williamsnieves@gmail.com', 'Admin')->subject('Cotacto cyberlux');
     });
 
   		return redirect('contact')->with('message', 'Gracias por contactarnos!!!');
@@ -77,6 +77,11 @@ class PageController extends Controller {
 	public function social(){
 		$pages = Page::with('nodes')->where('name','social')->get();
 		return view('pages.social')->with(array("pages" => $pages));
+	}
+
+	public function showNews($slug){
+		var_dump("hoñaaaa");
+		return view('pages.news');
 	}
 
 	public function newsdetail($id){

@@ -17,7 +17,7 @@ class News extends Model {
 	protected $table = 'news';
 
 	public function typeNews(){
-		return $this->belongsTo('\App\models\TypeNews');
+		return $this->belongsTo('\App\models\TypeNews', 'type_news_id');
 	}
 
 	public function users(){
@@ -25,7 +25,7 @@ class News extends Model {
 	}
 
 	public function galleries(){
-		return $this->belongsTo('\App\models\Gallery');
+		return $this->belongsTo('\App\models\Gallery', 'galleries_id');
 	}
 
 }

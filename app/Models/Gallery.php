@@ -17,7 +17,7 @@ class Gallery extends Model {
 	}
 
 	public function news(){
-		return $this->hasMany('\App\models\News');
+		return $this->hasMany('\App\models\News', 'galleries_id');
 	}
 
 }

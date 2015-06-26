@@ -1,13 +1,13 @@
-You received a message from TODOParrot.com:
+Has recibido un correo desde la pagina de cyberlux.com.ve:
 
 <p>
-Name: {{ $name }}
+Nombre: {{ $name }}
 </p>
 
 <p>
-{{ $email }} ads
+Correo Electronico: {{ $email }} 
 </p>
 
 <p>
-{{ $user_message }}
+Mensaje: {{ $user_message }}
 </p>

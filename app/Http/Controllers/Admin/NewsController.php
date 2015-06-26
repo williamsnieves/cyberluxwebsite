@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Models\TypeNews;
+
+use Illuminate\Support\Str;
 use App\Models\News;
 use App\Models\User;
 use App\Models\Gallery;
@@ -50,15 +52,22 @@ class NewsController extends Controller {
 	public function store(Request $request)
 	{
 		//
-		$user = User::find(1);
-		$typenewsId = TypeNews::find($request->input('categorynews'));
-		$galleryId = Gallery::find($request->input('galleries'));
+		$user = \Auth::user();	
 		$news = new News;
 		$news->title = $request->input('title');
-		$news->description = $request->input('description');
-		$news->typeNews()->associate($typenewsId);
-		$news->users()->associate($user);	
-		$news->galleries()->associate($galleryId);
+		$news->slug = Str::slug($request->input('title'), '-');
+		$news->description = $request->input('description');		
+		$news->users()->associate($user);		
+
+		if($request->input('galleries') != 'default'){
+			$galleryId = Gallery::find($request->input('galleries'));
+			$news->galleries()->associate($galleryId);			
+		}
+
+		if($request->input('categorynews') != 'default'){
+			$typenewsId = TypeNews::find($request->input('categorynews'));
+			$news->typeNews()->associate($typenewsId);			
+		}
 		$news->save();
 
 		return redirect('admin/news')->with('message', 'La noticia se ha creado correctamente');

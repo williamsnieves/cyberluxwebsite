@@ -41,6 +41,7 @@ Route::get('social', 'PageController@social');
 Route::get('news/{id}', 'PageController@newsdetail');
 Route::get('products/{name}', 'PageController@typeProducts');
 Route::get('products/{name}/{product}', 'PageController@televisors');
+Route::get('news/{slug}', 'PageController@showNews')->where('slug', '[a-z0-9-]+');
 
 
 /* admin area */

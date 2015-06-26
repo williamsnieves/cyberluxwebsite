@@ -82,6 +82,7 @@
               <div class="form-group">
                 {!! Form::label('inputTitle', 'Tipo de noticia:') !!}
                 <select name="categorynews" class="form-control">
+                  <option value="default">Selecciona tipo de noticia</option>
                   @foreach ($typenews as $singletypenews)
                     <option value="{{$singletypenews->id}}">{{$singletypenews->name}}</option>
                   @endforeach                 
@@ -90,7 +91,7 @@
 
               <div class="form-group">
                 {!! Form::label('inputTitle', 'Selecciona una galería:') !!}
-                {!! Form::select('galleries', $galleries, null , ['class' => 'form-control']) !!}
+                {!! Form::select('galleries', array('default' => 'Selecciona') + $galleries, null , ['class' => 'form-control']) !!}
               </div>              
             </div>
 

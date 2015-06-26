@@ -10,7 +10,7 @@ class TypeNews extends Model {
 	protected $table = 'type_news';
 
 	public function news(){
-		return $this->hasMany('News');
+		return $this->hasMany('News', 'type_news_id');
 	}
 
 }
