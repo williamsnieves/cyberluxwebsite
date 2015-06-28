@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Page;
 use App\Models\Node;
+use App\Models\News;
 
 class PageController extends Controller {
 
@@ -79,9 +80,11 @@ class PageController extends Controller {
 		return view('pages.social')->with(array("pages" => $pages));
 	}
 
-	public function showNews($slug){
-		var_dump("hoñaaaa");
-		return view('pages.news');
+	public function showNews($slug){		
+		//$detailsnews = News::where('slug', '=', $slug)->firstOrFail();
+		$detailsnews = News::with('galleries')->with('typenews')->where('slug', '=', $slug)->firstOrFail();
+				
+		return view('pages.detailnews')->with(array("detailsnews" => $detailsnews));
 	}
 
 	public function newsdetail($id){

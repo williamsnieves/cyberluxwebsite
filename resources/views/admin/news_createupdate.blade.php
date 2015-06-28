@@ -47,18 +47,23 @@
               </div>
 
               <div class="form-group">
+                {!! Form::label('inputSummary', 'Summario de la noticia:') !!}
+                {!! Form::text('summary', null, ["class" => "form-control", 'placeholder'=>'Ingresa summario de la noticia', "id" => "inputSummary"]) !!}
+              </div>
+
+              <div class="form-group">
                 {!! Form::label('inputDescription', 'Descripción de la noticia:') !!}
                 {!! Form::textarea('description', null, ["class" => "form-control ckeditor", 'placeholder'=>'Ingresa descripción de la noticia', "id" => "inputDescription"]) !!}
               </div>
 
               <div class="form-group">
                 {!! Form::label('inputTitle', 'Tipo de noticia:') !!}
-                {!! Form::select('categorynews', $typenews, $news->type_news_id , ['class' => 'form-control']) !!}                              
+                {!! Form::select('categorynews', array('default' => 'Selecciona') + $typenews, $news->type_news_id , ['class' => 'form-control']) !!}                              
               </div>
 
               <div class="form-group">
                 {!! Form::label('inputTitle', 'Selecciona una galería:') !!}
-                {!! Form::select('galleries', $galleries, $news->galleries_id , ['class' => 'form-control']) !!}
+                {!! Form::select('galleries', array('default' => 'Selecciona') + $galleries, $news->galleries_id , ['class' => 'form-control']) !!}
               </div> 
               
             </div>
@@ -72,6 +77,11 @@
               <div class="form-group">
                 {!! Form::label('inputTitle', 'Título de la noticia:') !!}
                 {!! Form::text('title', null, ["class" => "form-control", 'placeholder'=>'Ingresa título de la noticia', "id" => "inputTitle"]) !!}
+              </div>
+
+              <div class="form-group">
+                {!! Form::label('inputSummary', 'Summario de la noticia:') !!}
+                {!! Form::text('summary', null, ["class" => "form-control", 'placeholder'=>'Ingresa summario de la noticia', "id" => "inputSummary"]) !!}
               </div>
 
               <div class="form-group">

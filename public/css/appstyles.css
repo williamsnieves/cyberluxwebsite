@@ -706,6 +706,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 }
 
 
+.container-news{
+  margin-bottom: 1em;
+}
+
 
 /* SECTION NEWS DETAILS*/
 
@@ -1417,6 +1421,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
      .gallery-details-new{
         margin: 13em 0 0 0;
      }
+
+     .container-news{
+      margin-bottom: 1em;
+    }
+
 
 
      /* gallery section */

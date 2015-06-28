@@ -38,10 +38,11 @@ Route::get('gallery', 'PageController@gallery');
 Route::get('contact', 'PageController@contact');
 Route::post('contact', 'PageController@storecontact');
 Route::get('social', 'PageController@social');
-Route::get('news/{id}', 'PageController@newsdetail');
+//Route::get('news/{id}', 'PageController@newsdetail');
+Route::get('news/{slug}', 'PageController@showNews')->where('slug', '[a-z0-9-]+');
 Route::get('products/{name}', 'PageController@typeProducts');
 Route::get('products/{name}/{product}', 'PageController@televisors');
-Route::get('news/{slug}', 'PageController@showNews')->where('slug', '[a-z0-9-]+');
+
 
 
 /* admin area */

@@ -55,6 +55,7 @@ class NewsController extends Controller {
 		$user = \Auth::user();	
 		$news = new News;
 		$news->title = $request->input('title');
+		$news->summary = $request->input('summary');
 		$news->slug = Str::slug($request->input('title'), '-');
 		$news->description = $request->input('description');		
 		$news->users()->associate($user);		
@@ -110,15 +111,24 @@ class NewsController extends Controller {
 	public function update($id, Request $request)
 	{
 		//
-		$user = User::find(1);
-		$typenewsId = TypeNews::find($request->input('categorynews'));
-		$galleryId = Gallery::find($request->input('galleries'));
+		$user = \Auth::user();		
 		$news = News::find($id);
 		$news->title = $request->input('title');
-		$news->description = $request->input('description');
-		$news->typeNews()->associate($typenewsId);
+		$news->slug = Str::slug($request->input('title'), '-');
+		$news->summary = $request->input('summary');
+		$news->description = $request->input('description');		
 		$news->users()->associate($user);
-		$news->galleries()->associate($galleryId);	
+		
+
+		if($request->input('galleries') != 'default'){
+			$galleryId = Gallery::find($request->input('galleries'));
+			$news->galleries()->associate($galleryId);			
+		}
+
+		if($request->input('categorynews') != 'default'){
+			$typenewsId = TypeNews::find($request->input('categorynews'));
+			$news->typeNews()->associate($typenewsId);			
+		}
 
 		$news->save();
 

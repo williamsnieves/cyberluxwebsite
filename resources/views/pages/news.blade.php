@@ -8,7 +8,7 @@
 		<div class="col-xs-12 wrapper-news wrapper-news-mobile">
 			<h1>noticias</h1>
 			<div>
-				<a href="{{ URL::to('/') }}/news/mi-primera-noticia">					
+				<a href="{{ URL::to('/') }}/news/cyberlux-de-venezuela-apertura-su-linea-de-ensamblaje-de-aires-acondicionado">					
 					<h2>
 						CYBERLUX DE VENEZUELA APERTURA SU LÍNEA
 	DE ENSAMBLAJE DE AIRES ACONDICIONADO
@@ -22,7 +22,7 @@
 				</span>
 			</div>
 			<div>
-				<a href="{{ URL::to('/') }}/news/2">				
+				<a href="{{ URL::to('/') }}/news/mi-primera-noticia">				
 					<h2>
 						FRIGILUX PARTICIPA EN EL INTERCAMBIO DE ARMAS
 	POR ELECTRODOMESTICOS.
@@ -37,7 +37,7 @@
 			</div>
 
 			<div>
-				<a href="{{ URL::to('/') }}/news/3">				
+				<a href="{{ URL::to('/') }}/news/cyberlux-venezuela-se-planteo-exportar-productos">				
 					<h2>
 						CYBERLUX VENEZUELA SE PLANTEÓ EXPORTAR PRODUCTOS.
 					</h2>
@@ -129,7 +129,7 @@
 			<div class="col-md-8 wrapper-news" id="newsContentDesktop">
 				<h1>noticias</h1>
 			<div>
-				<a href="{{ URL::to('/') }}/news/mi-primera-noticia">					
+				<a href="{{ URL::to('/') }}/news/cyberlux-de-venezuela-apertura-su-linea-de-ensamblaje-de-aires-acondicionado">					
 					<h2>
 						CYBERLUX DE VENEZUELA APERTURA SU LÍNEA
 	DE ENSAMBLAJE DE AIRES ACONDICIONADO
@@ -143,7 +143,7 @@
 				</span>
 			</div>
 			<div>
-				<a href="{{ URL::to('/') }}/news/2">				
+				<a href="{{ URL::to('/') }}/news/frigilux-participa-en-elintercambio-de-armas-por-electrodomesticos">				
 					<h2>
 						FRIGILUX PARTICIPA EN EL INTERCAMBIO DE ARMAS
 	POR ELECTRODOMESTICOS.
@@ -158,7 +158,7 @@
 			</div>
 
 			<div>
-				<a href="{{ URL::to('/') }}/news/3">				
+				<a href="{{ URL::to('/') }}/news/cyberlux-venezuela-se-planteo-exportar-productos">				
 					<h2>
 						CYBERLUX VENEZUELA SE PLANTEÓ EXPORTAR PRODUCTOS.
 					</h2>
