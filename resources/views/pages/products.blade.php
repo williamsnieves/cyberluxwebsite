@@ -29,14 +29,14 @@
 				<img src="{{ URL::to('/') }}/img/bg_products_desktop.png" alt="">
 			</figure>
 			<figure class="frigi-brand">
-				<img src="{{ URL::to('/') }}/img/frigi_logo.png" alt="">
+				<img src="{{ URL::to('/') }}/img/frigilux_desktop.png" alt="">
 			</figure>
 			<a href="{{ URL::to('/') }}/img/catalogo_frigilux.pdf"><span class="icon-keyboard-arrow-right-green arrow-right-frigi">				
 			</span></a>
 			<a class="white-pro" href="{{ URL::to('/') }}/img/catalogo_frigilux.pdf"><h2>Línea Blanca</h2></a>
 
 			<figure class="cyber-brand">
-				<img src="{{ URL::to('/') }}/img/cyber_logo.png" alt="">
+				<img src="{{ URL::to('/') }}/img/cyberlux_desktop.png" alt="">
 			</figure>
 			<h1>Productos</h1>
 			<a href="{{ URL::to('/') }}/img/catalogo_cyberlux.pdf"><span class="icon-keyboard-arrow-right arrow-right-cyber">				

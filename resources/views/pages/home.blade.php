@@ -70,12 +70,16 @@
 			</section>
 			<section class="events-side">
 				<h3 class="title-events">Eventos</h3>
-				<figure class="image-event-desktop">
-					<img src="{{ URL::to('/') }}/img/aire.jpg" alt="">
-				</figure>
-				<h4>
+				<a class="link-news-home" href="{{ URL::to('/') }}/news/1">
+					<figure class="image-event-desktop">
+						<img src="{{ URL::to('/') }}/img/aire.jpg" alt="">
+					</figure>
+				</a>
+				<a href="{{ URL::to('/') }}/news/1">
+					<h4>
 						CYBERLUX DE VENEZUELA APERTURA SU LINEA DE ENSAMBLAJE DE AIRES ACONDICIONADO
-				</h4>
+					</h4>
+				</a>
 				<p>
 					Destinada a la produccion  de equipos tipo Split y ventana marca FRIGILUX, Esta línea contara con una capacidad instalada de más de 500.000 Unds al año, generando más de 100 empleos directos entre obreros y técnicos especializados.
 				</p>

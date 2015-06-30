@@ -29,7 +29,7 @@
 			
 		</div>
 		@endforeach
-		<section class="col-md-12 wrapper-about wrapper-about-desktop">
+		<section class="col-md-12 wrapper-about wrapper-about-desktop bg-social">
 			@foreach ($pages as $page)
 			<div class="col-md-6">
 				@foreach ($page->nodes as $node)			

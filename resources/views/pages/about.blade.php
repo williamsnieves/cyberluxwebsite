@@ -57,7 +57,7 @@
 			@foreach ($pages as $page)
 			<div class="col-md-6">
 				@foreach ($page->nodes as $node)			
-				<div class="col-md-12">
+				<div class="col-md-12 boxes-mision">
 					<div class="company-box">
 						<h3>{{$node->title}}</h3>
 						{!! $node->content !!}

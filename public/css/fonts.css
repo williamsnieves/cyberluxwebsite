@@ -68,14 +68,32 @@
 	content: "\e607";
 	color: #000;
 	font-size: 5em;
-	text-shadow: 3px 2px 6px #000;
+	text-shadow: 3px 1px 8px rgba(0,0,0,0.8);
 }
+
+
 
 .icon-keyboard-arrow-right-green:before {
 	content: "\e607";
 	color: #1f9729;
 	font-size: 5em;
-	text-shadow: 3px 2px 6px #000;
+	text-shadow: 3px 1px 8px rgba(0,0,0,0.8);
+}
+
+@media screen and (min-width: 992px){
+	.icon-keyboard-arrow-right-green:before {
+		content: "\e607";
+		color: #1f9729;
+		font-size: 7em;
+		text-shadow: 3px 1px 8px rgba(0,0,0,0.8); 
+ 	}
+
+ 	.icon-keyboard-arrow-right:before {
+		content: "\e607";
+		color: #000;
+		font-size: 7em;
+		text-shadow: 3px 2px 6px #000;
+	}
 }
 
 

@@ -83,8 +83,10 @@
 	</footer>
 
 	<!-- Scripts -->
-	<!--<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->	
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>	
+	<!--<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
+	{!! HTML::script('js/react.min.js'); !!}
+	{!! HTML::script('js/JSXTransformer.js'); !!}	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>		
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
 	{!! HTML::script('js/jquery.bttrlazyloading.min.js'); !!}
 	{!! HTML::script('js/jquery.slidereveal.js'); !!}
