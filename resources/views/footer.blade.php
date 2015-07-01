@@ -41,8 +41,8 @@
 	          </form>
 			</li>			
 		</ul>
-		<hr class="separate-footer" />
-		<p>@2015 CYBERLUX. ALL RIGHT RESERVED Powered By <a href="http://www.3wvgroup.com/" target="_blank"><img src="{{ URL::to('/') }}/img/3wv_logo.png" alt=""></a> “It & Digital Media Solutions”</p>
+		<hr class="col-md-12 separate-footer" />
+		<p class="col-md-12" >@2015 CYBERLUX. ALL RIGHT RESERVED Powered By <a href="http://www.3wvgroup.com/" target="_blank"><img src="{{ URL::to('/') }}/img/3wv_logo.png" alt=""></a> “It & Digital Media Solutions”</p>
 	</section>
 </section>
 

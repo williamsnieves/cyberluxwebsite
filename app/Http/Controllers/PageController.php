@@ -68,8 +68,8 @@ class PageController extends Controller {
             'user_message' => $request->get('message')
         ), function($message)
     {
-        $message->from('info@ciberlux.com.ve');
-        $message->to('info@ciberlux.com.ve', 'Admin')->subject('Contacto cyberlux');
+        $message->from('info@cyberluxdevenezuela.com.ve');
+        $message->to('info@cyberluxdevenezuela.com.ve', 'Admin')->subject('Contacto cyberlux');
     });
 
   		return redirect('contact')->with('message', 'Gracias por contactarnos!!!');

@@ -234,14 +234,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
   width: 32px;
 }
 
-.separate-footer{
-  margin: 1em auto 0 auto;
-  width: 72%;
+.separate-footer{  
+  display: inline-block;
+  margin: 0 11em;
+  width: 73%;
 }
 
 .footer p{
   font-size: 0.8em;
-  margin: 1em;
+  margin: 1em 0;
   text-align: center;
 }
 
