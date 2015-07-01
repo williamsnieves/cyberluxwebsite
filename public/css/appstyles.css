@@ -55,7 +55,7 @@ img.brand-shape{
 
 #slider {
   background: #a4acb0;
-  z-index: 9999;
+  z-index: 10000;
   width: 180px;
   display: none;
 
@@ -114,6 +114,7 @@ img.brand-shape{
   position: absolute;
   right: 0;
   top: 0;
+  z-index: 999 !important;
 }
 
 .carousel-side{
@@ -248,6 +249,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 
 
 /* section About */
+
+.bg-about-mobile{
+        background: url(../img/bgaboutmobile.png);
+        background-size: 133%;
+        background-color: #f3f3f3;
+        margin-top: -1em;
+        background-repeat: no-repeat;
+}
+
+.bg-social-mobile{
+        background: url(../img/bgsocial-mobile.png);
+        margin-top: -1em;
+        background-repeat: no-repeat;
+}
+
+.bg-location-mobile{
+        background: url(../img/bglocation-mobile.png);
+        margin-top: -1em;
+        background-repeat: no-repeat;
+}
 
 .wrapper-about-mobile{
   display: block;
@@ -925,6 +946,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 /* gallery section */
 
 
+.modal{
+  z-index: 9999 !important;
+}
+
 .wrapper-gallery h1{
   text-align: right;
   font-size: 1.3em;
@@ -945,7 +970,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 
 .wrapper-gallery div a img{
   width: 100%;
-  height: 200px;
 }
 
 .wrapper-gallery{
@@ -964,17 +988,184 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
   font-weight: bold;
 }
 
+
+@media screen and (max-width: 378px){
+    .footer ul li{
+      padding: 0;
+    }
+}
+
+
 @media screen and (max-width: 411px){
     .social-commitment{
       font-size: 0.7em;
     }
 }
 
+/*backgrounds mobile*/
+
+@media screen and (max-width: 320px){
+    .bg-about-mobile{      
+      background-position-x: -7em;
+      background-position-y: 0em;
+      background-size: 133%;     
+      /* background-size: contain; */    
+   }
+
+   .bg-social-mobile{      
+      background-position-x: -7em;
+      background-position-y: 0em;
+      background-size: 133%;     
+      /* background-size: contain; */   
+      
+   }
+
+   .bg-location-mobile{      
+      background-position-x: -7em;
+      background-position-y: 0em;
+      background-size: 133%;     
+      /* background-size: contain; */   
+      
+   }
+}
+
+@media screen and (min-width: 320px){
+    .bg-about-mobile{      
+      background-position-x: -7em;
+      background-position-y: 0em;
+      background-size: 133%;     
+      /* background-size: contain; */
+      
+      
+   }
+
+   .bg-social-mobile{      
+      background-position-x: -7em;
+      background-position-y: 0em;
+      background-size: 133%;     
+      /* background-size: contain; */   
+      
+   }
+
+   .bg-location-mobile{      
+      background-position-x: -3em;
+      background-position-y: 0em;
+      background-size: 126%;     
+      /* background-size: contain; */   
+      
+   }
+}
+
+@media screen and (min-width: 378px){
+    .bg-about-mobile{      
+      background-position-x: -7em;
+      background-position-y: 0em;
+      background-size: 128%;    
+      
+   }
+
+   .bg-social-mobile{      
+      background-position-x: -7em;
+      background-position-y: 0em;
+      background-size: 128%;      
+      /* background-size: contain; */   
+      
+   }
+
+   .bg-location-mobile{      
+      background-position-x: -3em;
+      background-position-y: 0em;
+      background-size: 126%;     
+      /* background-size: contain; */   
+      
+   }
+}
+
+@media screen and (min-width: 414px){
+    .bg-about-mobile{      
+      background-position-x: -9em;
+      background-position-y: 0em;
+      background-size: 128%;    
+      
+   }
+
+   .bg-social-mobile{      
+      background-position-x: -8em;
+      background-position-y: -1em;
+      background-size: 128%;  
+   }
+
+   .bg-location-mobile{      
+      background-position-x: -3em;
+      background-position-y: 0em;
+      background-size: 126%;     
+      /* background-size: contain; */   
+      
+   }
+}
+
+@media screen and (min-width: 480px){
+    .bg-about-mobile{      
+      background-position-x: -8em;
+      background-position-y: 0em;
+      background-size: 113%;    
+      
+   }
+
+   .bg-social-mobile{      
+        background-position-x: -6em;
+        background-position-y: -6em;
+        background-size: 129%;
+   }
+
+   .bg-location-mobile{      
+      background-position-x: -3em;
+      background-position-y: 0em;
+      background-size: 126%;     
+      /* background-size: contain; */   
+      
+   }
+}
+
+@media screen and (min-width: 600px){
+    .bg-about-mobile{
+        background: url(../img/bg-about-tablet.png);
+        background-repeat: no-repeat;
+        background-position-x: -8em;
+        background-position-y: 0em;
+        background-size: 113%;
+        background-color: #f3f3f3;    
+      
+   }
+
+   .bg-social-mobile{      
+        background: url(../img/bg-social-tablet.png);
+        background-repeat: no-repeat;
+        background-position-x: -4em;
+        background-position-y: -1em;
+        background-size: 117%;
+   }
+
+   .bg-location-mobile{
+      background: url(../img/bg-location-tablet.png);
+      background-repeat: no-repeat;
+      background-position-x: -4em;
+      background-position-y: -1em;
+      background-size: 117%;
+      /* background-size: contain; */   
+      
+   }
+}
+
+
+
 
 
 /*MEDIA QUERIES FOR PRODUCTS SECTION*/
 
 @media screen and (min-width: 360px){
+
+   
   
     .arrow-right-frigi{      
       margin: 7em 0 0 0;
@@ -1056,6 +1247,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
     }
     .wrapper-contact form{
       margin: -9em 0 0 0;
+    }
+    .wrapper-news-details h1{
+      margin-top: 5em;
     }
 }
 
@@ -1268,15 +1462,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 
 
     /*  about section desktop */
+
+
     .wrapper-about-mobile{
         display: none;
     }
     .wrapper-about-desktop{
-        display: block;
-        background: url(../img/bgnosotros.png);
-        background-position-x: -21em;
-        background-position-y: -1em;
+        display: block;        
     }
+
+    .boxes-mision:first-child{
+       margin-top: 15em; 
+     }
+
+     .boxes-mision:last-child{
+       margin-top: 0; 
+     }
+
+     .company-box:last-child{
+        margin-top: 0; 
+     }
     
     .company-box{
       background: #000;
@@ -1362,6 +1567,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 
     .wrapper-news-desktop{
       display: block;
+      padding: 0;
     }
 
     .wrapper-filter-news{
@@ -1553,11 +1759,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 
       .wrapper-gallery div a img{
         width: 100%;
-        height: 200px;
+        height: 170px;
       }
 
       .lazy {
           display: none;
+      }
+
+      /* background sections */
+
+      .bg-about{
+        background: url(../img/bgnosotros.png);
+        background-position-x: -19em;
+        background-position-y: -1em;
+        margin-top: -1em;
       }
 
       .bg-social{
@@ -1565,7 +1780,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
         background-position-x: -1em !important;
         background-position-y: -8em !important;
       }
+
+      .bg-location{
+        background: url(../img/bglocation.png) !important;
+        background-position-x: -1em !important;
+        background-position-y: -6em !important;
+        margin-top: -1em;
+      }
 }
+
+@media screen and (min-width: 1024px){
+  .bg-about{        
+        background-position-x: -19em;
+        background-position-y: -1em;       
+  }
+}
+
 
 @media screen and (min-width: 1200px){
     .custom-nav-list li a{    

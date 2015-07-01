@@ -6,7 +6,7 @@
 <div class="container">
 	<div class="row">
 		@foreach ($pages as $page)
-		<div class="col-xs-12 wrapper-location wrapper-location-mobile">
+		<div class="col-xs-12 wrapper-location wrapper-location-mobile bg-location-mobile">
 			<h1>{{$page->title}}</h1>
 
 			{!! $page->content !!}
@@ -47,7 +47,7 @@
 			
 		</div>
 		@endforeach
-		<section class="col-md-12 wrapper-about wrapper-location-desktop">
+		<section class="col-md-12 wrapper-about wrapper-location-desktop bg-location">
 			@foreach ($pages as $page)
 			<div class="col-md-6">
 				@foreach ($page->nodes as $node)			

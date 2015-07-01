@@ -6,7 +6,7 @@
 <div class="container">
 	<div class="row">
 		@foreach ($pages as $page)
-		<div class="col-xs-12 wrapper-about wrapper-about-mobile">			
+		<div class="col-xs-12 wrapper-about wrapper-about-mobile bg-social-mobile">			
 			<h1>{{$page->title}}</h1>			
 			{!! $page->content !!}
 

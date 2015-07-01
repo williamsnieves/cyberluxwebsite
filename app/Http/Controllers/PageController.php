@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactFormRequest;
 
 use App\Models\Page;
 use App\Models\Node;
@@ -58,7 +59,7 @@ class PageController extends Controller {
 		return view('pages.contact');
 	}
 
-	public function storecontact(Request $request){
+	public function storecontact(ContactFormRequest $request){
 		
 		\Mail::send('emails.contact',
         array(
@@ -67,8 +68,8 @@ class PageController extends Controller {
             'user_message' => $request->get('message')
         ), function($message)
     {
-        $message->from('admin@cyberlux.com');
-        $message->to('williamsnieves@gmail.com', 'Admin')->subject('Cotacto cyberlux');
+        $message->from('info@ciberlux.com.ve');
+        $message->to('info@ciberlux.com.ve', 'Admin')->subject('Contacto cyberlux');
     });
 
   		return redirect('contact')->with('message', 'Gracias por contactarnos!!!');

@@ -22,7 +22,7 @@
 				</span>
 			</div>
 			<div>
-				<a href="{{ URL::to('/') }}/news/mi-primera-noticia">				
+				<a href="{{ URL::to('/') }}/news/frigilux-participa-en-elintercambio-de-armas-por-electrodomesticos">				
 					<h2>
 						FRIGILUX PARTICIPA EN EL INTERCAMBIO DE ARMAS
 	POR ELECTRODOMESTICOS.

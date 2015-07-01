@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-	'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+	'host' => env('MAIL_HOST', 'mail.cyberluxdevenezuela.com.ve'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
 	|
 	*/
 
-	'port' => env('MAIL_PORT', 465),
+	'port' => env('MAIL_PORT', 26),
 
 	/*
 	|--------------------------------------------------------------------------

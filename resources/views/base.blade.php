@@ -112,6 +112,28 @@
 		   $('.carousel').bcSwipe({ threshold: 50 });
 		});  
 	</script>
+
+	<script>
+
+		var size = $(window).width();
+		if(size < 1200 ){
+			$(".container").addClass("container-fluid");
+			$(".container-fluid").removeClass("container");
+		}else{
+			$(".container-fluid").addClass("container");
+			$(".container").removeClass("container-fluid");
+		} 		
+		$(window).resize(function() {
+			var size = $(window).width();
+			if(size < 1200 ){
+				$(".container").addClass("container-fluid");
+				$(".container-fluid").removeClass("container");
+			}else{
+				$(".container-fluid").addClass("container");
+				$(".container").removeClass("container-fluid");
+			}
+		})
+	</script>
 	@yield('footerscript')
 </body>
 </html>

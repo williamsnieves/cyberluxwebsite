@@ -5,11 +5,11 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		@foreach ($pages as $page)
-		<div class="col-xs-12 wrapper-about wrapper-about-mobile">			
+		@foreach ($pages as $page)		
+		<div class="col-xs-12 wrapper-about wrapper-about-mobile bg-about-mobile">			
+						
 			<h1>{{$page->title}}</h1>
-			{!! $page->content !!}
-			
+			{!! $page->content !!}			
 			
 			<div class="panel-group panel-mision" id="accordionMision" role="tablist" aria-multiselectable="true">
 			  <div class="panel panel-default">
@@ -53,7 +53,7 @@
 		</div>
 		@endforeach
 
-		<section class="col-md-12 wrapper-about wrapper-about-desktop">			
+		<section class="col-md-12 wrapper-about wrapper-about-desktop bg-about">			
 			@foreach ($pages as $page)
 			<div class="col-md-6">
 				@foreach ($page->nodes as $node)			

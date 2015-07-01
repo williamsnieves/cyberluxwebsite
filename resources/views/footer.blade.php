@@ -52,27 +52,35 @@
 		<ul class="col-md-12">
 			<li class="wrapper-footer-opc">
 				<h4 class="col-md-8 follow-text-desktop">Siguenos en Facebook: </h4>					
-				<figure class="col-md-4 icon-social-network">
-					<img src="{{ URL::to('/') }}/img/facebook.png" alt="">
-				</figure>
+				<a href="https://www.facebook.com/CyberluxDeVzla" target="_blank">
+					<figure class="col-md-4 icon-social-network">
+						<img src="{{ URL::to('/') }}/img/facebook.png" alt="">
+					</figure>
+				</a>
 			</li>
 			<li class="wrapper-footer-opc">
 				<h4 class="col-md-8 follow-text-desktop">Siguenos en Twitter: </h4>					
-				<figure class="col-md-4 icon-social-network">
-					<img src="{{ URL::to('/') }}/img/twitter.png" alt="">
-				</figure>
+				<a href="https://twitter.com/CyberluxDeVzla" target="_blank">
+					<figure class="col-md-4 icon-social-network">
+						<img src="{{ URL::to('/') }}/img/twitter.png" alt="">
+					</figure>
+				</a>
 			</li>
 			<li class="wrapper-footer-opc">
 				<h4 class="col-md-8 follow-text-desktop">Siguenos en Instagram: </h4>					
-				<figure class="col-md-4 icon-social-network">
-					<img src="{{ URL::to('/') }}/img/instagram.png" alt="">
-				</figure>
+				<a href="https://instagram.com/cyberluxdevzla/" target="_blank">					
+					<figure class="col-md-4 icon-social-network">
+						<img src="{{ URL::to('/') }}/img/instagram.png" alt="">
+					</figure>
+				</a>
 			</li>
 			<li class="wrapper-footer-opc">
 				<h4 class="col-md-8 follow-text-desktop">Siguenos en Youtube: </h4>					
-				<figure class="col-md-4 icon-social-network">
-					<img src="{{ URL::to('/') }}/img/youtube.png" alt="">
-				</figure>
+				<a href="https://www.youtube.com/channel/UC5ucwXwWU9GfmLOSbhOiZcQ" target="_blank">		
+					<figure class="col-md-4 icon-social-network">
+						<img src="{{ URL::to('/') }}/img/youtube.png" alt="">
+					</figure>
+				</a>
 			</li>			
 		</ul>
 		<hr class="separate-footer" />
