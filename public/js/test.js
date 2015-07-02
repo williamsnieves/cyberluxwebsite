@@ -10,7 +10,7 @@ $(function() {
 
       var newsHeight = $("#newsContentDesktop").height();
 
-      $(".wrapper-filter-news").height(newsHeight + 32);
+      $(".wrapper-filter-news").height(newsHeight + (newsHeight / 2));
 
       var url = window.location;
       // Will only work if string in href matches with location
@@ -40,7 +40,7 @@ $(function() {
 
           $(document).on("mousedown", function(){
             if(isDown){
-              isDown = fasle;
+              isDown = false;
               return;
             }else{
               slider.slideReveal("hide");

@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable = no">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable = no" />
 	<title>@yield('title')</title>
 	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
 	
-	
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-	{!! HTML::style('css/appstyles.css'); !!}	
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+	{!! HTML::style('css/fonts.css'); !!}
+	{!! HTML::style('css/appstyles.css'); !!}
 	{!! HTML::style('css/jquery.bxslider.css'); !!}
 	{!! HTML::style('css/ekko-lightbox.min.css'); !!}
 	{!! HTML::style('css/bttrlazyloading.min.css'); !!}
 	{!! HTML::style('css/animate.min.css'); !!}
 	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css' />
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
+	
+
+
 	
 </head>
 <body>
@@ -84,10 +87,12 @@
 
 	<!-- Scripts -->
 	<!--<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 	{!! HTML::script('js/react.min.js'); !!}
 	{!! HTML::script('js/JSXTransformer.js'); !!}	
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>		
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	{!! HTML::script('js/css3-mediaqueries.js'); !!}	
 	{!! HTML::script('js/jquery.bttrlazyloading.min.js'); !!}
 	{!! HTML::script('js/jquery.slidereveal.js'); !!}
 	{!! HTML::script('js/jquery.bxslider.js'); !!}
@@ -116,7 +121,8 @@
 	<script>
 
 		var size = $(window).width();
-		if(size < 1200 ){
+
+		if(size < 1500 ){
 			$(".container").addClass("container-fluid");
 			$(".container-fluid").removeClass("container");
 		}else{
@@ -125,7 +131,7 @@
 		} 		
 		$(window).resize(function() {
 			var size = $(window).width();
-			if(size < 1200 ){
+			if(size < 1500 ){
 				$(".container").addClass("container-fluid");
 				$(".container-fluid").removeClass("container");
 			}else{

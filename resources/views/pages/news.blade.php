@@ -170,6 +170,7 @@
 						12 Junio, 2015
 					</span>
 				</div>
+				
 			</div>
 			
 		</section>

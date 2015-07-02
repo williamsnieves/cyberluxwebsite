@@ -83,15 +83,15 @@
 @media screen and (min-width: 992px){
 	.icon-keyboard-arrow-right-green:before {
 		content: "\e607";
-		color: #1f9729;
-		font-size: 7em;
+		color: #1f9729;		
+		font-size: 90px;
 		text-shadow: 3px 1px 8px rgba(0,0,0,0.8); 
  	}
 
  	.icon-keyboard-arrow-right:before {
 		content: "\e607";
 		color: #000;
-		font-size: 7em;
+		font-size: 90px;
 		text-shadow: 3px 2px 6px #000;
 	}
 }

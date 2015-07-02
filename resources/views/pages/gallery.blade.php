@@ -11,58 +11,58 @@
 			<h2>Líneas de ensamblaje</h2>
 
 			<div class="col-xs-6 col-md-3">
-				<a href="{{ URL::to('/') }}/img/galeria1.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
+				<a href="{{ URL::to('/') }}/img/galeria1.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="" class="thumbnail custom-thumb-gallery">
       				<img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria1.jpg" width="400" height="300" alt="">
     			</a>    			
 			</div>
 			<div class="col-xs-6 col-md-3">
-				<a href="{{ URL::to('/') }}/img/galeria2.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
+				<a href="{{ URL::to('/') }}/img/galeria2.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="" class="thumbnail custom-thumb-gallery">
       				<img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria2.jpg" width="400" height="300" alt="">
     			</a>    			
 			</div>
 			<div class="col-xs-6 col-md-3">
-				<a href="{{ URL::to('/') }}/img/galeria3.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
+				<a href="{{ URL::to('/') }}/img/galeria3.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="" class="thumbnail custom-thumb-gallery">
       				<img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria3.jpg" width="400" height="300" alt="">
     			</a>
     			
 			</div>
 			<div class="col-xs-6 col-md-3">
-				<a href="{{ URL::to('/') }}/img/galeria4.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
+				<a href="{{ URL::to('/') }}/img/galeria4.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="" class="thumbnail custom-thumb-gallery">
       				<img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria4.jpg" width="400" height="300" alt="">
     			</a>    			
 			</div>
 			<div class="col-xs-6 col-md-3">
-				<a href="{{ URL::to('/') }}/img/galeria5.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
+				<a href="{{ URL::to('/') }}/img/galeria5.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="" class="thumbnail custom-thumb-gallery">
       				<img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria5.jpg" width="400" height="300" alt="">
     			</a>    			
 			</div>
 			<div class="col-xs-6 col-md-3">
-				<a href="{{ URL::to('/') }}/img/galeria6.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
+				<a href="{{ URL::to('/') }}/img/galeria6.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="" class="thumbnail custom-thumb-gallery">
       				<img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria6.jpg" width="400" height="300" alt="">
     			</a>    			
 			</div>
             <div class="col-xs-6 col-md-3">
-                <a href="{{ URL::to('/') }}/img/galeria7.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
+                <a href="{{ URL::to('/') }}/img/galeria7.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="" class="thumbnail custom-thumb-gallery">
                     <img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria7.jpg" width="400" height="300" alt="">
                 </a>                
             </div>
             <div class="col-xs-6 col-md-3">
-                <a href="{{ URL::to('/') }}/img/galeria8.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
+                <a href="{{ URL::to('/') }}/img/galeria8.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="" class="thumbnail custom-thumb-gallery">
                     <img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria8.jpg" width="400" height="300" alt="">
                 </a>                
             </div>
             <div class="col-xs-6 col-md-3">
-                <a href="{{ URL::to('/') }}/img/galeria9.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
+                <a href="{{ URL::to('/') }}/img/galeria9.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="" class="thumbnail custom-thumb-gallery">
                     <img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria9.jpg" alt="">
                 </a>                
             </div>
             <div class="col-xs-6 col-md-3">
-                <a href="{{ URL::to('/') }}/img/galeria10.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
+                <a href="{{ URL::to('/') }}/img/galeria10.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="" class="thumbnail custom-thumb-gallery">
                     <img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria10.jpg" alt="">
                 </a>                
             </div>
             <div class="col-xs-6 col-md-3">
-                <a href="{{ URL::to('/') }}/img/galeria11.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="People walking down stairs" class="thumbnail custom-thumb-gallery">
+                <a href="{{ URL::to('/') }}/img/galeria11.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="" class="thumbnail custom-thumb-gallery">
                     <img id="yourImg" class="bttrlazyloading" src="{{ URL::to('/') }}/img/galeria11.jpg" alt="">
                 </a>                
             </div>

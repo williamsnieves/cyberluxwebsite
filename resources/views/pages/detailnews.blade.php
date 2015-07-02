@@ -6,7 +6,7 @@
 <div class="container">
 	@if(isset($detailsnews->galleries))
 	<div class="row">
-		<div class="col-xs-12 wrapper-news-details wrapper-news-details-mobile">
+		<div class="col-xs-12 wrapper-news-details wrapper-news-details-mobile bg-news-mobile">
 			<h1>{{$detailsnews->title}}</h1>
 			<div class="container-news">
 				{!! $detailsnews->description !!}
@@ -29,7 +29,7 @@
 		</div>
 
 
-		<section class="col-md-12 wrapper-news-details wrapper-news-details-desktop">
+		<section class="col-md-12 wrapper-news-details wrapper-news-details-desktop bg-news">
 			
 			<div class="col-md-6 gallery-details-new">
 				<ul class="bxslider gallery-news">
@@ -56,7 +56,15 @@
 	</div>
 	@else
 	<div class="row">
-		<div class="col-xs-12 wrapper-news-details">
+		<div class="col-xs-12 wrapper-news-details wrapper-news-details-mobile bg-news-mobile">
+			<h1>{{$detailsnews->title}}</h1>
+			<div class="container-news">
+				{!! $detailsnews->description !!}
+			</div>	
+			
+		</div>
+
+		<div class="col-xs-12 wrapper-news-details wrapper-news-details-desktop bg-news">
 			<h1>{{$detailsnews->title}}</h1>
 			<div class="container-news">
 				{!! $detailsnews->description !!}
