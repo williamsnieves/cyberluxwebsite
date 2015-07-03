@@ -115,6 +115,35 @@ class PageController extends Controller {
 	}
 
 
+	public function getAllNews(Request $request){
+		$input = $request->input('search');     	 
+
+		if(!isset($input)){			
+			$detailsnews = News::with('galleries')->with('typenews')->get();
+		}else if($input == 'last'){
+			$detailsnews = News::with('galleries')->with('typenews')->take(10)->orderBy('created_at', 'desc')->get();
+		}else if($input == 'productos'){
+			$detailsnews = $this->getFilterNews($input);			
+		}else if($input == 'corporativas'){
+			$detailsnews = $this->getFilterNews($input);
+		}else if($input == 'eventos'){
+			$detailsnews = getFilterNews($input);
+		}else{
+			$detailsnews = News::with('galleries')->with('typenews')->where('title', 'LIKE', "%$input%")->get();
+		}
+
+
+		return $detailsnews;
+	}
+
+	public function getFilterNews($filterword){		
+		$detailsnewsfilter = News::whereHas('typenews', function($q) use ($filterword){
+			$q->where('name', '=', $filterword);
+		})->get();
+		return $detailsnewsfilter;
+	}
+
+
 	public function televisors($name, $product){
 		return view('pages.televisores');
 	}

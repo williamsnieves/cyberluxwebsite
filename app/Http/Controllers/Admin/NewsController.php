@@ -123,11 +123,17 @@ class NewsController extends Controller {
 		if($request->input('galleries') != 'default'){
 			$galleryId = Gallery::find($request->input('galleries'));
 			$news->galleries()->associate($galleryId);			
+		}else{
+			$galleryId = null;
+			$news->galleries_id = $galleryId;
 		}
 
 		if($request->input('categorynews') != 'default'){
 			$typenewsId = TypeNews::find($request->input('categorynews'));
 			$news->typeNews()->associate($typenewsId);			
+		}else{
+			$typenewsId = null;
+			$news->type_news_id = $typenewsId;
 		}
 
 		$news->save();

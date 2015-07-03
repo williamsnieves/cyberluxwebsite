@@ -8,7 +8,7 @@ var TaskList = React.createClass({
 
 		return (
             <ul>
-                { this.props.items.map(displayTask) }
+                { this.props.news.map(displayTask) }
             </ul>
         );
 	}
