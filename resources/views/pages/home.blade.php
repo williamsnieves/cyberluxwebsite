@@ -15,17 +15,24 @@
 					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
 					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="3"></li>					    
 					  </ol>
 
 					  <!-- Wrapper for slides -->
 					  <div class="carousel-inner" role="listbox">
-					    <div class="item active">					     
-							<img src="{{ URL::to('/') }}/img/banner-img-desktop.jpg" alt="">
+					   <div class="item item-carousel-mobile active">					     
+							<img src="{{ URL::to('/') }}/img/banner1.jpg" alt="">
 						  	      
 					    </div>
-					    <div class="item">
-					      <img src="{{ URL::to('/') }}/img/banner-img-desktop.jpg" alt="">
-					    </div>					   
+					    <div class="item item-carousel-mobile">
+					      <img src="{{ URL::to('/') }}/img/banner2.jpg" alt="">
+					    </div>			
+					    <div class="item item-carousel-mobile">
+					      <img src="{{ URL::to('/') }}/img/banner3.jpg" alt="">
+					    </div>
+					    <div class="item item-carousel-mobile">
+					      <img src="{{ URL::to('/') }}/img/banner4.jpg" alt="">
+					    </div>								   			   
 					  </div>
 
 					  <!-- Controls -->
@@ -42,8 +49,7 @@
 					  <!-- Indicators -->
 					  <ol class="carousel-indicators">
 					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>					    				    
 					  </ol>
 
 					  <!-- Wrapper for slides -->
@@ -54,7 +60,8 @@
 					    </div>
 					    <div class="item item-carousel-mobile">
 					      <img src="{{ URL::to('/') }}/img/products_banner.png" alt="">
-					    </div>					   
+					    </div>		
+					   
 					  </div>
 
 					  <!-- Controls -->
@@ -68,6 +75,7 @@
 					  </a>
 				</div>
 			</section>
+			<section class="separator-line separator-line-mobile"></section>
 			<section class="events-side">
 				<h3 class="title-events">Eventos</h3>
 				<a class="link-news-home" href="{{ URL::to('/') }}/news/1">

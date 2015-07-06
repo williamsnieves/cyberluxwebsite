@@ -90,9 +90,9 @@
 
 		<section class="col-md-12 wrapper-news-desktop">
 			<div class="col-md-4 wrapper-filter-news">
-				<div class="col-md-12">
+				<div class="col-md-12" id="filterbuttons">
 					<ul class="col-md-12 list-filter">
-					
+						
 					</ul>		
 				</div>
 				
@@ -144,6 +144,22 @@
 					</div>
 
 				</div>
+
+				<nav>
+				  <ul class="pagination">
+				    <li>
+				      <a href="#" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				   
+				    <li>
+				      <a href="#" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
+				  </ul>
+				</nav>
 				
 			</div>
 
@@ -156,8 +172,19 @@
 </div>
 @endsection
 @section('footerscript')
-
+<script>
+	$('.pagination li.line-news a').on('click', function(e){
+    e.preventDefault();
+    var url = $(this).attr('href');
+    alert(url);
+    /*$.post(url, $('#search').serialize(), function(data){
+        $('#posts').html(data);
+    });*/
+});
+</script>
 <script type="text/jsx" src="{{ URL::to('/') }}/js/components/FilterList.js"></script>
+<script type="text/jsx" src="{{ URL::to('/') }}/js/components/FilterSearch.js"></script>
+<script type="text/jsx" src="{{ URL::to('/') }}/js/components/FilterContainer.js"></script>
 <script type="text/jsx" src="{{ URL::to('/') }}/js/components/NewsList.js"></script>
 <script type="text/jsx" src="{{ URL::to('/') }}/js/components/NewsApp.js"></script>
 

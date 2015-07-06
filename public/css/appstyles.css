@@ -43,7 +43,12 @@ img.brand-shape{
 
 /* section Home */
 
-
+.separator-line{
+       height: 17px;
+        background: #e6e7eb;
+        background: rgba(230, 231, 235, 0.8);
+        opacity: 0.8;          
+}
 .image-event-desktop{
   display: none;
 }
@@ -1385,6 +1390,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 
 @media screen and (min-width: 992px){
 
+    .carousel-side{
+      margin-top: -5em;
+    }
+
+    .separator-line{
+         height: 17px;
+          background: #e6e7eb;
+          background: rgba(230, 231, 235, 0.8);
+          opacity: 0.8;
+          margin-top: -17px;
+    }
+
     .img.brand-shape{
       left: -0.1em;
     }
@@ -1453,7 +1470,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 
     .events-side{
       position: relative;
-      overflow: hidden;
+      overflow: hidden;      
     }
     .events-side:before{  
           content: "";

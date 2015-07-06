@@ -119,7 +119,8 @@ class PageController extends Controller {
 		$input = $request->input('search');     	 
 
 		if(!isset($input)){			
-			$detailsnews = News::with('galleries')->with('typenews')->get();
+			//$detailsnews = News::with('galleries')->with('typenews')->get();
+			$detailsnews = News::with('galleries')->with('typenews')->paginate(1)->setPath('/news/list/all');
 		}else if($input == 'last'){
 			$detailsnews = News::with('galleries')->with('typenews')->take(10)->orderBy('created_at', 'desc')->get();
 		}else if($input == 'productos'){
@@ -127,7 +128,7 @@ class PageController extends Controller {
 		}else if($input == 'corporativas'){
 			$detailsnews = $this->getFilterNews($input);
 		}else if($input == 'eventos'){
-			$detailsnews = getFilterNews($input);
+			$detailsnews = $this->getFilterNews($input);
 		}else{
 			$detailsnews = News::with('galleries')->with('typenews')->where('title', 'LIKE', "%$input%")->get();
 		}
