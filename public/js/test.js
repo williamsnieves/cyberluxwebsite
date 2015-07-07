@@ -1,4 +1,5 @@
 $(function() {
+      
       var isDown = false;
 
       $("#slider").show();

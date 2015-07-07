@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\CustomImage;
@@ -51,6 +51,7 @@ class ProductController extends Controller {
 		$imageId = CustomImage::find($request->input('images'));		
 		$products = new Product;
 		$products->name = $request->input('name');
+		$products->slug = Str::slug(Str::lower($request->input('name')), '-');
 		$products->codproduct = $request->input('codproduct');		
 		$products->categories()->associate($categoryId);
 		$products->images()->associate($imageId);		
@@ -101,6 +102,7 @@ class ProductController extends Controller {
 		$imageId = CustomImage::find($request->input('images'));
 		$products = Product::find($id);
 		$products->name = $request->input('name');
+		$products->slug = Str::slug(Str::lower($request->input('name')), '-');
 		$products->codproduct = $request->input('codproduct');		
 		$products->categories()->associate($categoryId);
 		$products->images()->associate($imageId);		

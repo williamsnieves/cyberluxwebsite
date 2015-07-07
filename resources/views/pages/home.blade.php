@@ -49,17 +49,27 @@
 					  <!-- Indicators -->
 					  <ol class="carousel-indicators">
 					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>					    				    
+					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="3"></li>					    				    
 					  </ol>
 
 					  <!-- Wrapper for slides -->
 					  <div class="carousel-inner" role="listbox">
 					    <div class="item item-carousel-mobile active">					     
-							<img src="{{ URL::to('/') }}/img/products_banner.png" alt="">
+							<img src="{{ URL::to('/') }}/img/banner1-tablet.jpg" alt="">
 						  	      
 					    </div>
 					    <div class="item item-carousel-mobile">
-					      <img src="{{ URL::to('/') }}/img/products_banner.png" alt="">
+					      <img src="{{ URL::to('/') }}/img/banner2-tablet.jpg" alt="">
+					    </div>
+
+					    <div class="item item-carousel-mobile">
+					      <img src="{{ URL::to('/') }}/img/banner3-tablet.jpg" alt="">
+					    </div>
+
+					    <div class="item item-carousel-mobile">
+					      <img src="{{ URL::to('/') }}/img/banner4-tablet.jpg" alt="">
 					    </div>		
 					   
 					  </div>

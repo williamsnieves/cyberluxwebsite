@@ -146,18 +146,8 @@
 				</div>
 
 				<nav>
-				  <ul class="pagination">
-				    <li>
-				      <a href="#" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				      </a>
-				    </li>
-				   
-				    <li>
-				      <a href="#" aria-label="Next">
-				        <span aria-hidden="true">&raquo;</span>
-				      </a>
-				    </li>
+				  <ul id="pagination" class="pagination">
+				    
 				  </ul>
 				</nav>
 				
@@ -173,14 +163,14 @@
 @endsection
 @section('footerscript')
 <script>
-	$('.pagination li.line-news a').on('click', function(e){
+	/*$('.pagination li.line-news a').on('click', function(e){
     e.preventDefault();
     var url = $(this).attr('href');
-    alert(url);
+    alert(url);*/
     /*$.post(url, $('#search').serialize(), function(data){
         $('#posts').html(data);
     });*/
-});
+
 </script>
 <script type="text/jsx" src="{{ URL::to('/') }}/js/components/FilterList.js"></script>
 <script type="text/jsx" src="{{ URL::to('/') }}/js/components/FilterSearch.js"></script>

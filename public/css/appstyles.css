@@ -1695,6 +1695,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
       margin: 1em 0 0 0;
     }
 
+    .pagination>.active>a,.pagination>.active>a:hover,.pagination>.active>a:focus{
+       background: #ccc !important;
+       border-color: #838383;
+    }
+
+    .pagination>.active a{
+      color: white !important;
+    }
+
+    .line-news a{
+      color: #838383 !important;
+    }
+
+    .pagination>li>a>span{
+      color: #ccc !important;
+    }
+
 
     /* detail news */
 
@@ -1846,6 +1863,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
 
       .lazy {
           display: none;
+      }
+
+      .custom-thumb img{
+        height: 177px !important;
       }
 
       /* background sections */

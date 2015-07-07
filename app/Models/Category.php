@@ -10,7 +10,7 @@ class Category extends Model {
 	protected $fillable = ['brands_id'];
 
 	public function brands(){
-		return $this->belongsTo('\App\models\Brand');
+		return $this->belongsTo('\App\models\Brand', 'brands_id');
 	}
 
 	public function products(){
@@ -19,7 +19,7 @@ class Category extends Model {
 
 
 	public function images(){
-		return $this->belongsTo('\App\models\CustomImage');
+		return $this->belongsTo('\App\models\CustomImage', 'images_id');
 	}
 
 }

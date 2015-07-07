@@ -9,6 +9,9 @@ use App\Http\Requests\ContactFormRequest;
 use App\Models\Page;
 use App\Models\Node;
 use App\Models\News;
+use App\Models\Brand;
+use App\Models\Category;
+use App\Models\Product;
 
 class PageController extends Controller {
 
@@ -39,7 +42,8 @@ class PageController extends Controller {
 	}
 
 	public function products(){
-		return view('pages.products');
+		$brands = Brand::all();
+		return view('pages.products')->with(array("brands" => $brands));
 	}
 
 	public function news(){
@@ -114,13 +118,25 @@ class PageController extends Controller {
 		}
 	}
 
+	public function categoryProducts($brand){
+		$categories = Category::whereHas('brands', function($q) use ($brand){
+			$q->where('name', '=', $brand);
+		})->with('images')->with('brands')->get();
+
+		$brands = Brand::where('name', '=', $brand)->get();
+
+		//return $brands;
+		return view('pages.categoryproducts')->with(array("categories" => $categories, "brands" => $brands));
+		
+	}
+
 
 	public function getAllNews(Request $request){
 		$input = $request->input('search');     	 
 
 		if(!isset($input)){			
 			//$detailsnews = News::with('galleries')->with('typenews')->get();
-			$detailsnews = News::with('galleries')->with('typenews')->paginate(1)->setPath('/news/list/all');
+			$detailsnews = News::with('galleries')->with('typenews')->paginate(10)->setPath('/news/list/all');
 		}else if($input == 'last'){
 			$detailsnews = News::with('galleries')->with('typenews')->take(10)->orderBy('created_at', 'desc')->get();
 		}else if($input == 'productos'){
@@ -130,7 +146,7 @@ class PageController extends Controller {
 		}else if($input == 'eventos'){
 			$detailsnews = $this->getFilterNews($input);
 		}else{
-			$detailsnews = News::with('galleries')->with('typenews')->where('title', 'LIKE', "%$input%")->get();
+			$detailsnews = News::with('galleries')->with('typenews')->where('title', 'LIKE', "%$input%")->paginate(10);
 		}
 
 
@@ -140,11 +156,26 @@ class PageController extends Controller {
 	public function getFilterNews($filterword){		
 		$detailsnewsfilter = News::whereHas('typenews', function($q) use ($filterword){
 			$q->where('name', '=', $filterword);
-		})->get();
+		})->paginate(10);
 		return $detailsnewsfilter;
 	}
 
+	public function listProducts($brand,$slug){
 
+		$products = Product::whereHas('categories', function($q) use ($slug){
+			$q->where('slug', '=', $slug);
+		})->with('categories')->with('images')->paginate(10);
+
+		$category = Category::where('slug', '=', $slug)->get();
+
+		//return $category;
+		return view('pages.listproducts')->with(array("products" => $products, 'category' => $category));
+
+	}
+
+	public function detailProducts($brand,$slug,$slugdetail){
+		
+	}
 	public function televisors($name, $product){
 		return view('pages.televisores');
 	}

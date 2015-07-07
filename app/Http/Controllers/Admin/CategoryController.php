@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 use App\Models\Category;
 use App\Models\Brand;
 use App\Models\CustomImage;
@@ -53,7 +53,8 @@ class CategoryController extends Controller {
 		$brandId = Brand::find($request->input('brands'));
 		$imageId = CustomImage::find($request->input('images'));
 		$categories = new Category;
-		$categories->name = $request->input('name');		
+		$categories->name = $request->input('name');
+		$categories->slug = Str::slug(Str::lower($request->input('name')), '-');
 		$categories->brands()->associate($brandId);
 		$categories->images()->associate($imageId);
 
@@ -100,11 +101,11 @@ class CategoryController extends Controller {
 	public function update($id, Request $request)
 	{
 		//
-
 		$brandId = Brand::find($request->input('brands'));
 		$imageId = CustomImage::find($request->input('images'));
 		$categories = Category::find($id);
-		$categories->name = $request->input('name');		
+		$categories->name = $request->input('name');
+		$categories->slug = Str::slug(Str::lower($request->input('name')), '-');		
 		$categories->brands()->associate($brandId);
 		$categories->images()->associate($imageId);
 

@@ -14,28 +14,122 @@ var NewsApp = React.createClass({
 		}
 	},
 
+	builtPaginator:function(result){
+
+		var urlpagination = protocol+"//"+base_url+"/news/list/all?page=";
+
+		var nextLink = result.next_page_url || "#";
+		var prevLink = result.prev_page_url || "#";	
+		
+		$("#pagination").append("<li><a href='"+prevLink+"' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>");
+		$("#pagination").append("<li><a href='"+nextLink+"' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>");
+
+		for(var i=1; i <= result.last_page; i++){
+			if(i == 1)
+				$("<li class='active line-news'><a href='"+urlpagination+i+"'>"+i+"</a></li>").insertBefore(".pagination > li:last-child" );
+			else
+				$("<li class='line-news'><a href='"+urlpagination+i+"'>"+i+"</a></li>").insertBefore(".pagination > li:last-child" );
+		}	
+	},
+
+	updatePaginator: function(result){
+		var urlpagination = protocol+"//"+base_url+"/news/list/all?page=";
+		$(".pagination").children().remove();
+
+		var nextLink = result.next_page_url || "#";
+		var prevLink = result.prev_page_url || "#";	
+
+		$("#pagination").append("<li><a href='"+prevLink+"' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>");
+		$("#pagination").append("<li><a href='"+nextLink+"' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>");
+
+		for(var i=1; i <= result.last_page; i++){
+			if(i == result.current_page )
+				$("<li class='active line-news'><a href='"+urlpagination+i+"'>"+i+"</a></li>").insertBefore(".pagination > li:last-child" );
+			else
+				$("<li class='line-news'><a href='"+urlpagination+i+"'>"+i+"</a></li>").insertBefore(".pagination > li:last-child" );
+		}
+
+	},
+
+	removePaginator: function(){
+		$(".pagination").children().remove();
+	},
+
+	getPagination: function(){
+		var self = this;
+		$("#pagination > li > a").on('click', function(e){
+	        e.preventDefault();
+	        var page = $(this).attr('href').split('page=')[1];	
+	        $(this).parent().siblings().removeClass('active');
+	        $(this).parent().toggleClass('active');
+	        $(this).parent().siblings().removeClass('active');			        
+
+	        self.getNews(page);
+		})
+	},
+
 	filterHandler: function(filterParam){
 		var url;
 		console.log(filterParam);
 
+		if(filterParam == 'last')
+			$("#pagination").hide();
+		else
+			$("#pagination").show();
+
 		if(filterParam != undefined){
 			url = protocol+"//"+base_url+"/news/list/all?search="+filterParam;
 			var self = this;
-			$.getJSON(url, function(result){
-				console.log("filtro ",result);
-				if(!result || !result.length){
-					self.setState({
-						news: []
-					})
-					return;				
-				}	
+			$.getJSON(url, function(result){				
+				
+				if(result.last_page > 0 && result.last_page <= 10)
+					$("#pagination").hide();
+				else if(result.last_page > 10)
+					$("#pagination").show();
+				else
+					$("#pagination").hide();
 
-				var news = result.map(function(newsparam){
-					return {
-						title: newsparam.title,
-						summary: newsparam.summary
+				if(filterParam != 'last'){
+					if(!result.data || !result.data.length){
+						self.setState({
+							news: []
+						})
+						return;				
 					}
-				});
+				}else{
+					if(!result || !result.length){
+						self.setState({
+							news: []
+						})
+						return;				
+					}
+				}							
+				
+
+				self.removePaginator();
+				self.builtPaginator(result);
+				self.getPagination();
+				
+				if(filterParam != 'last'){
+					var news = result.data.map(function(newsparam){
+						return {
+							title: newsparam.title,
+							slug: newsparam.slug,
+							created: newsparam.created_at,
+							summary: newsparam.summary
+						}
+					});
+				}else{
+					var news = result.map(function(newsparam){
+						return {
+							title: newsparam.title,
+							slug: newsparam.slug,
+							created: newsparam.created_at,
+							summary: newsparam.summary
+						}
+					});
+				}
+				
 
 				self.setState({
 					news: news
@@ -50,31 +144,16 @@ var NewsApp = React.createClass({
 					return;
 				}
 
-				console.log($(".pagination > li:first-child"));
-
-				console.log("res", result.total);
-
-				var urlpagination = result.next_page_url.substring(0, 20);
-
-				$(".pagination > li:first-child a").attr("href", result.prev_page_url);
-				$(".pagination > li:last-child a").attr("href", result.next_page_url);
-
-				for(var i=1; i <= result.total; i++){
-					if(i == 1)
-						$("<li class='active line-news'><a href='"+urlpagination+i+"'>"+i+"</a></li>").insertBefore(".pagination > li:last-child" );
-					else
-						$("<li class='line-news'><a href='"+urlpagination+i+"'>"+i+"</a></li>").insertBefore(".pagination > li:last-child" );
-				}
-
-				//$("ul.pagination li").first().siblings().append("<li><a href='#'>1</a></li>");
-
+				self.removePaginator();
+				self.builtPaginator(result);
+				self.getPagination();
 				
-				/*$("<li><a href='#'>1</a></li>").insertBefore(".pagination > li:last-child" );
-				$("<li><a href='#'>2</a></li>").insertBefore(".pagination > li:last-child" );*/
 
 				var news = result.data.map(function(newsparam){
 					return {
 						title: newsparam.title,
+						slug: newsparam.slug,
+						created: newsparam.created_at,
 						summary: newsparam.summary
 					}
 				});
@@ -84,6 +163,36 @@ var NewsApp = React.createClass({
 				})
 			})
 		}
+	},
+
+	getNews: function(page){
+		var self = this;
+		$.ajax({
+			url:  protocol+"//"+base_url+"/news/list/all?page="+page,
+			type: 'get',
+			beforeSend: function(){
+				//loader
+			},
+			success: function(result){
+				//off loader
+				console.log(result);
+				var news = result.data.map(function(newsparam){
+					return {
+						title: newsparam.title,
+						slug: newsparam.slug,
+						created: newsparam.created_at,
+						summary: newsparam.summary
+					}
+				});				
+
+				self.updatePaginator(result);
+				self.getPagination();
+
+				self.setState({
+					news: news
+				})
+			}
+		})
 	},
 
 	componentDidMount: function(){

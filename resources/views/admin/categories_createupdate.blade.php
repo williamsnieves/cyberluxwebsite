@@ -92,6 +92,19 @@
 
 @section('footerscript')
     <script>
-      $(".select2thumbs").select2();
+      function formatState (state) {
+        console.log("formatoooo", state.text)
+        if (!state.id) { return state.text; }
+        var url = protocol+"//"+base_url+"/filemanager/userfiles/caratulaproductos/"+state.text+".png";
+        console.log(state);
+        var $state = $(
+          '<span><img width="50" height="50" src="'+url+'" />' + state.text + '</span>'
+        );
+        
+        return $state;
+      };
+      $(".select2thumbs").select2({
+        templateResult: formatState
+      });
     </script>
 @stop

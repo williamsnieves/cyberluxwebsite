@@ -114,7 +114,13 @@ class ImageController extends Controller {
 		$image = CustomImage::find($id);
 		$image->name = $request->input('name');
 		$image->url = $request->input('url');
-		$image->type = $request->input('type');		
+		if(!empty($request->input('thumbnail')) && $request->input('thumbnail')  == 'on'){
+			$image->isThumbnail = 1;
+			$image->type = 'thumbnail';			
+		}else{
+			$image->isThumbnail = 0;
+			$image->type = 'normal';
+		}		
 
 		$image->save();
 

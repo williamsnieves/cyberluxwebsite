@@ -92,6 +92,8 @@
 	{!! HTML::script('js/JSXTransformer.js'); !!}	
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>		
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+	{!! HTML::script('js/moment-es.js'); !!}
 	{!! HTML::script('js/css3-mediaqueries.js'); !!}	
 	{!! HTML::script('js/jquery.bttrlazyloading.min.js'); !!}
 	{!! HTML::script('js/jquery.slidereveal.js'); !!}
