@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-12 wrapper-detailproducts">
 			@foreach($category as $categorys)
@@ -9,10 +9,10 @@
 			@endforeach
 			@foreach($products as $product)	
 				<div class="col-xs-6 col-md-3 wrapper-thumb">
-					<a href="{{ URL::to('/') }}/products/details/{{$product->slug}}" class="thumbnail custom-thumb">
+					<a href="{{ URL::to('/') }}/products/{{$brand}}/{{$categorys->name}}/{{$product->slug}}" class="thumbnail custom-thumb">
 	      				<img src="{{$product->images->url}}" alt="">
 	    			</a>
-	    			<a class="title-thumb" href="{{ URL::to('/') }}/products/details/{{$product->slug}}">{{strtoupper($product->name)}}</a>
+	    			<a class="title-thumb" href="{{ URL::to('/') }}/products/{{$brand}}/{{$categorys->name}}/{{$product->slug}}">{{strtoupper($product->name)}}</a>
 				</div>
 				<!--<div class="col-xs-6 col-md-3">
 					<a href="#" class="thumbnail custom-thumb">

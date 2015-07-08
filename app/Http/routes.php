@@ -44,6 +44,7 @@ Route::get('products/{name}', 'PageController@categoryProducts');
 Route::get('products/{name}/{slug}', 'PageController@listProducts')->where('slug', '[a-z0-9-]+');
 Route::get('products/{name}/{slug}/{slugdetail}', 'PageController@detailProducts')->where('slugdetail', '[a-z0-9-]+');
 Route::get('news/list/all', 'PageController@getAllNews');
+Route::get('search', 'PageController@search');
 
 
 

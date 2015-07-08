@@ -3,7 +3,7 @@
 	Cyberlux - Noticias
 @endsection
 @section('content')
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-12 wrapper-news-details wrapper-news-details-mobile">
 			<h1>CYBERLUX DE VENEZUELA APERTURA SU LINEA DE

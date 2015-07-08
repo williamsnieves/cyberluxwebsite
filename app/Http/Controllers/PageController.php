@@ -12,6 +12,7 @@ use App\Models\News;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductDetail;
 
 class PageController extends Controller {
 
@@ -169,15 +170,51 @@ class PageController extends Controller {
 		$category = Category::where('slug', '=', $slug)->get();
 
 		//return $category;
-		return view('pages.listproducts')->with(array("products" => $products, 'category' => $category));
+		return view('pages.listproducts')->with(array("products" => $products, 'category' => $category, 'brand'=>$brand));
 
 	}
 
 	public function detailProducts($brand,$slug,$slugdetail){
+
+		$product = ProductDetail::whereHas('products', function($q) use ($slugdetail){
+			$q->where('slug', '=', $slugdetail)->with('categories');
+		})->with('images')->with('products')->get();
+
+		$category = Category::find($product[0]->products->categories_id);
 		
+		return view('pages.detailproducts')->with(array("productdetail" => $product, "category" => $category));
 	}
+
 	public function televisors($name, $product){
 		return view('pages.televisores');
+	}
+
+	public function search(Request $request){
+		//print_r($request->input("search"));
+
+		$term = $request->input("search");
+
+		$news = News::where('title', 'LIKE', "%$term%")->select('title','slug')->get();
+
+		$products = Product::where('name', 'LIKE', "%$term%")->select('name','slug')->get();
+
+		$pages = Page::where('title', 'LIKE', "%$term%")->select('name','title')->get();
+
+		/*$news->push(["label" => "news"]);
+		$products->push(["label" => "products"]);
+		$pages->push(["label" => "pages"]);*/
+
+		//$results = array_unique(array_merge($news, $products));
+
+		$newsarray = $news->toArray();		
+		$productssarray = $products->toArray();
+		$pagesarray = $pages->toArray();
+
+		$results = array_merge($newsarray, $productssarray, $pagesarray);
+		return \Response::json($results);
+
+		/*$results = (object) array_merge(get_object_vars($news), get_object_vars($products));*/
+		return $results;
 	}
 
 	/**

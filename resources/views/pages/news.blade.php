@@ -3,7 +3,7 @@
 	Cyberlux - Noticias
 @endsection
 @section('content')
-<div class="container">
+<div class="container-fluid">
 	<div class="row elavation-desktop">
 		<div class="col-xs-12 wrapper-news wrapper-news-mobile">
 			<h1>noticias</h1>

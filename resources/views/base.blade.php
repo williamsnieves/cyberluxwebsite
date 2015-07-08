@@ -55,7 +55,7 @@
 			</span>
 		</div>
 	</nav>
-	<header class="container navbar-desktop">
+	<header class="container-fluid navbar-desktop">
 		<section class="row">
 			<img class="bg-brand" src="{{ URL::to('/') }}/img/bg-brand.png" alt="brand" />
 			<nav class="navbar navbar-default custom-wrapper-navbar">
@@ -124,12 +124,29 @@
 
 		var size = $(window).width();
 
+		/*if(size >= 1500){
+			$(".container-fluid").addClass("container");
+			$(".container").removeClass("container-fluid");
+			$(".container-fluid").show();
+		}
+
+		$(window).resize(function() {
+			var size = $(window).width();
+			if(size >= 1500 ){				
+				$(".container-fluid").addClass("container");
+				$(".container").removeClass("container-fluid");
+				$(".container-fluid").show();
+			}
+		})*/
+
+
 		if(size < 1500 ){
-			$(".container").addClass("container-fluid");
 			$(".container-fluid").removeClass("container");
+			$(".container").addClass("container-fluid");
 		}else{
 			$(".container-fluid").addClass("container");
 			$(".container").removeClass("container-fluid");
+			$(".container-fluid").show();
 		} 		
 		$(window).resize(function() {
 			var size = $(window).width();
@@ -138,7 +155,8 @@
 				$(".container-fluid").removeClass("container");
 			}else{
 				$(".container-fluid").addClass("container");
-				$(".container").removeClass("container-fluid");
+			$(".container").removeClass("container-fluid");
+			$(".container-fluid").show();
 			}
 		})
 	</script>

@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-12 wrapper-detailproducts">
 			<h1>televisores</h1>

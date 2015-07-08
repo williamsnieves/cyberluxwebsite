@@ -1,12 +1,12 @@
 @extends('base')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-12 wrapper-detailproducts">
 			<figure>
-			<img class="logo_desktop" src="{{ URL::to('/') }}/img/frigilux_desktop.png" alt="">
-			<img class="logo_mobile" src="{{ URL::to('/') }}/img/frigi_logo.png" alt="">
+				<img class="logo_desktop" src="{{ URL::to('/') }}/img/frigilux_desktop.png" alt="">
+				<img class="logo_mobile" src="{{ URL::to('/') }}/img/frigi_logo.png" alt="">
 			</figure>
 			<p>
 				Basándonos en la tendencia tecnológica, incorporamos a nuestro grupo de productos la línea marrón conocida como electrónica, la cual está conformada por electrodomésticos dirigidos al hogar o sector empresarial.

@@ -997,6 +997,56 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
   font-weight: bold;
 }
 
+/* DETAILS PRODUCTS */
+.custom-detail-products{
+  padding: 0;
+}
+.custom-detail-products h3{
+  text-decoration: underline;
+  text-align: right;
+  margin: 1em 0.8em 0 0;
+}
+
+.images-detail-product{
+  padding: 0;
+}
+
+.images-detail-product figure{
+    margin: 0;
+    padding: 0;
+}
+
+.images-detail-product figure img{
+    width: 100%;
+}
+
+.images-detail-product{
+  margin: 2em 0 0 0;
+}
+
+.box-specifications{
+  background: #818285;
+  color: white;
+  padding: 2em;
+}
+
+.feature-details{
+  padding: 0;
+}
+
+.box-feature h4{
+  color: #818285;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0 0 1em 1em;
+
+}
+
+.box-feature ul{
+  color: #818285;
+  padding: 0 0 0 2.5em;
+}
+
 
 @media screen and (max-width: 378px){
     .footer ul li{
@@ -1906,6 +1956,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
           margin-top: -1em;
       }
 
+
+      /* DETAILS PRODUCTS*/
+      .images-detail-product figure{
+          margin: 0 2em 0 5em;
+          padding: 0;
+      }
+
+      .images-detail-product figure img{
+          width: 100%;
+      }
+      
+      .images-detail-product{
+        margin: 2em 0 0 0;
+      }
+      .feature-details{
+        margin: 2em 0 0 0;
+        padding: 1em 0 0 1em;
+      }
+
+      .box-specifications{  
+        padding: 2em;
+      }
+     
+
+      .box-feature ul{       
+        padding: 0 0 0 1.5em;
+      }
+
+
   
 }
 
@@ -2010,3 +2089,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
      }
 }
 
+@media screen and (min-width: 1515px){
+  .container-fluid{
+    display: none;
+  }
+  
+}

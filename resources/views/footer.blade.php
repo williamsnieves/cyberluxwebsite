@@ -1,4 +1,4 @@
-<section class="container footer footer-desktop">
+<section class="container-fluid footer footer-desktop">
 	<section class="row">
 		<h4 class="col-md-12 follow-text-mobile">Siguenos en: </h4>		
 		<ul class="col-md-12">
@@ -35,9 +35,9 @@
 				</a>
 			</li>
 			<li id="search-list" class="wrapper-footer-opc">
-				<form action="" class="general-search-form">
-		            <span class="icon-search search-icon"></span>
-		            <input type="text" placeholder="Buscar" class="input custom-search custom-search-form" />				            
+				<form name="searchform" action="{{ URL::to('/') }}/search" class="general-search-form">
+		            <span onClick="document.forms['searchform'].submit()" class="icon-search search-icon"></span>
+		            <input type="text" placeholder="Buscar" name="search" class="input custom-search custom-search-form" />				            
 	          </form>
 			</li>			
 		</ul>

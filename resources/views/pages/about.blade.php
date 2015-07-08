@@ -3,7 +3,7 @@
 	Cyberlux - Nosotros
 @endsection
 @section('content')
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		@foreach ($pages as $page)		
 		<div class="col-xs-12 wrapper-about wrapper-about-mobile bg-about-mobile">			

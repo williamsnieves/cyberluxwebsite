@@ -3,7 +3,7 @@
     Cyberlux - Galería
 @endsection
 @section('content')
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<div id = "loading-area" class="col-xs-12 col-sm-12 col-md-12 wrapper-gallery">
 			<h1>Galería</h1>

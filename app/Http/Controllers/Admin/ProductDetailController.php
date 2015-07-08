@@ -82,7 +82,7 @@ class ProductDetailController extends Controller {
 
 		$products = Product::lists('name','id');
 		$productdetails = ProductDetail::find($id);
-		return view('admin.productdetails_createupdate')->with(array('products'=> $products, 'productdetails', $productdetails));
+		return view('admin.productdetails_createupdate')->with(array('products'=> $products, 'productdetails' => $productdetails));
 	}
 
 	/**

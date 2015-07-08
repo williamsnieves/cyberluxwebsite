@@ -3,7 +3,7 @@
 	Cyberlux - Sedes
 @endsection
 @section('content')
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		@foreach ($pages as $page)
 		<div class="col-xs-12 wrapper-location wrapper-location-mobile bg-location-mobile">
