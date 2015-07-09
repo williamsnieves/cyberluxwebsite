@@ -16,7 +16,7 @@
       <!-- small box -->
       <div class="small-box bg-aqua">
         <div class="inner">
-          <h3>150</h3>
+          <h3>{{$news}}</h3>
           <p>Noticias</p>
         </div>
         <div class="icon">
@@ -29,7 +29,7 @@
       <!-- small box -->
       <div class="small-box bg-green">
         <div class="inner">
-          <h3>53<sup style="font-size: 20px">%</sup></h3>
+          <h3>{{$pages}}</h3>
           <p>Paginas</p>
         </div>
         <div class="icon">
@@ -42,7 +42,7 @@
       <!-- small box -->
       <div class="small-box bg-yellow">
         <div class="inner">
-          <h3>44</h3>
+          <h3>{{$users}}</h3>
           <p>Usuarios</p>
         </div>
         <div class="icon">
@@ -55,7 +55,7 @@
       <!-- small box -->
       <div class="small-box bg-red">
         <div class="inner">
-          <h3>65</h3>
+          <h3>{{$nodes}}</h3>
           <p>Nodos</p>
         </div>
         <div class="icon">
@@ -70,7 +70,7 @@
       <!-- small box -->
       <div class="small-box bg-yellow">
         <div class="inner">
-          <h3>65</h3>
+          <h3>{{$images}}</h3>
           <p>Imagenes</p>
         </div>
         <div class="icon">
@@ -84,7 +84,7 @@
       <!-- small box -->
       <div class="small-box bg-purple">
         <div class="inner">
-          <h3>65</h3>
+          <h3>{{$brands}}</h3>
           <p>Marcas</p>
         </div>
         <div class="icon">
@@ -98,7 +98,7 @@
       <!-- small box -->
       <div class="small-box bg-green">
         <div class="inner">
-          <h3>65</h3>
+          <h3>{{$categories}}</h3>
           <p>Categorias</p>
         </div>
         <div class="icon">
@@ -112,7 +112,7 @@
       <!-- small box -->
       <div class="small-box bg-orange">
         <div class="inner">
-          <h3>65</h3>
+          <h3>{{$products}}</h3>
           <p>Productos</p>
         </div>
         <div class="icon">
@@ -125,7 +125,7 @@
       <!-- small box -->
       <div class="small-box bg-gray">
         <div class="inner">
-          <h3>65</h3>
+          <h3>{{$prices}}</h3>
           <p>Precio de los productos</p>
         </div>
         <div class="icon">
@@ -139,7 +139,7 @@
       <!-- small box -->
       <div class="small-box bg-red">
         <div class="inner">
-          <h3>65</h3>
+          <h3>{{$galleries}}</h3>
           <p>Galerias</p>
         </div>
         <div class="icon">

@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\CustomImage;
+use App\Http\Requests\ProductsValidationRequest;
 
 class ProductController extends Controller {
 
@@ -35,7 +36,7 @@ class ProductController extends Controller {
 		
 		$categories = Category::lists('name', 'id');
 		//$images = CustomImage::lists('name', 'id');
-		$images = \DB::table('images')->where('isThumbnail', '1')->lists('name','id');
+		$images = \DB::table('images')->where('isThumbnailProduct', '1')->lists('name','id');
 		return view('admin.products_createupdate')->with(array('categories' => $categories, 'images' => $images));
 	}
 
@@ -44,21 +45,38 @@ class ProductController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(ProductsValidationRequest $request)
 	{
-		//
-		$categoryId = Category::find($request->input('categories'));
-		$imageId = CustomImage::find($request->input('images'));		
-		$products = new Product;
-		$products->name = $request->input('name');
-		$products->slug = Str::slug(Str::lower($request->input('name')), '-');
-		$products->codproduct = $request->input('codproduct');		
-		$products->categories()->associate($categoryId);
-		$products->images()->associate($imageId);		
+		//		
 
-		$products->save();
+		$codproductvalid = Product::where('codproduct', '=', $request->input('codproduct'))->first();
 
-		return redirect('admin/products')->with('message', 'El producto se ha creado correctamente');
+		//die($codproductvalid);
+		if($codproductvalid){
+			return redirect('admin/products/create')->with('customexception', 'El codigo del producto ya existe no pueden repetirse');
+		}else{
+			$imageId = CustomImage::find($request->input('images'));		
+			$products = new Product;
+			$products->name = $request->input('name');
+			$products->slug = Str::slug(Str::lower($request->input('name')), '-');
+
+			$products->codproduct = $request->input('codproduct');	
+		
+			$products->images()->associate($imageId);
+
+			if($request->input('categories') != 'default'){
+				$categoryId = Category::find($request->input('categories'));
+				$products->categories()->associate($categoryId);
+			}else{
+				return redirect('admin/products/create')->with('customexception', 'Debes asociar el producto a una categoría');
+			}		
+
+			$products->save();
+
+			return redirect('admin/products')->with('message', 'El producto se ha creado correctamente');
+		}
+
+		
 	}
 
 	/**
@@ -83,7 +101,7 @@ class ProductController extends Controller {
 		//		
 		$categories = Category::lists('name', 'id');
 		//$images = CustomImage::lists('name', 'id');
-		$images = \DB::table('images')->where('isThumbnail', '1')->lists('name','id');
+		$images = \DB::table('images')->where('isThumbnailProduct', '1')->lists('name','id');
 		$product = Product::find($id);			
 		return view('admin.products_createupdate')->with(array('product' => $product, 'categories' => $categories, 'images' => $images));
 	}
@@ -94,22 +112,35 @@ class ProductController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $request)
+	public function update($id, ProductsValidationRequest $request)
 	{
 		//
 
-		$categoryId = Category::find($request->input('categories'));
-		$imageId = CustomImage::find($request->input('images'));
-		$products = Product::find($id);
-		$products->name = $request->input('name');
-		$products->slug = Str::slug(Str::lower($request->input('name')), '-');
-		$products->codproduct = $request->input('codproduct');		
-		$products->categories()->associate($categoryId);
-		$products->images()->associate($imageId);		
+		$codproductvalid = Product::where('codproduct', '=', $request->input('codproduct'))->first();
 
-		$products->save();
+		if($codproductvalid){
+			return redirect('admin/products/'.$id.'edit')->with('customexception', 'El codigo del producto ya existe no pueden repetirse');
+		}else{
+			$imageId = CustomImage::find($request->input('images'));
+			$products = Product::find($id);
+			$products->name = $request->input('name');
+			$products->slug = Str::slug(Str::lower($request->input('name')), '-');
+			$products->codproduct = $request->input('codproduct');
+			$products->images()->associate($imageId);
 
-		return redirect('admin/products')->with('message', 'El producto se ha actualizado correctamente');
+			if($request->input('categories') != 'default'){
+				$categoryId = Category::find($request->input('categories'));
+				$products->categories()->associate($categoryId);
+			}else{
+				return redirect('admin/products/'.$id.'edit')->with('customexception', 'Debes asociar el producto a una categoría');
+			}			
+
+			$products->save();
+
+			return redirect('admin/products')->with('message', 'El producto se ha actualizado correctamente');
+		}
+		
+		
 	}
 
 	/**

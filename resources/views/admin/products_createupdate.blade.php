@@ -30,6 +30,12 @@
                 @endforeach
             </div>
         @endif
+
+        @if (Session::has('customexception'))            
+            <div class='alert alert-danger'>
+               {{ Session::get('customexception') }}
+            </div>
+        @endif
  
         @if (Session::has('message'))            
             <div class="alert alert-success alert-dismissable">
@@ -51,7 +57,7 @@
               </div>
               <div class="form-group">
                 {!! Form::label('inputTitle', 'Sección:') !!}
-                {!! Form::select('categories', $categories, $product->categories_id , ['class' => 'form-control']) !!}                        
+                {!! Form::select('categories', array('default' => 'Selecciona el tipo de producto') + $categories, $product->categories_id , ['class' => 'form-control']) !!}                        
               </div>
               <div class="form-group">
                 {!! Form::label('inputThumb', 'Actualizar imagen del producto:') !!}
@@ -78,7 +84,7 @@
               </div>
               <div class="form-group">
                 {!! Form::label('inputCategory', 'Categorías:') !!}
-                {!! Form::select('categories', $categories, null , ['class' => 'form-control']) !!}                        
+                {!! Form::select('categories', array('default' => 'Selecciona el tipo de producto') + $categories, null , ['class' => 'form-control']) !!}                        
               </div>
 
               <div class="form-group">

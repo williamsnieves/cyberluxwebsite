@@ -47,18 +47,31 @@
                 {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre del nodo', "id" => "inputName"]) !!}
               </div>
 
-              {!! Form::hidden('type', 'jpg', array('id' => 'type')) !!}
+              @if($image->isThumbnail == 1 || $image->isThumbnail == '1')             
+              <div class="checkbox">                  
+                <label>
+                  {!! Form::checkbox('thumbnail', 1, true) !!} Caratula para el tipo de producto (* si se marca permitira elegir una imagen para el tipo de producto)
+                </label>
+              </div>
+              @else
+              <div class="checkbox">   
+                
+                <label>
+                  {!! Form::checkbox('thumbnail', null) !!} Caratula para el tipo de producto (* si se marca permitira elegir una imagen para el tipo de producto)
+                </label>
+              </div>
+              @endif
 
-              @if($image->isThumbnail == 1)             
+              @if($image->isThumbnailProduct == 1 || $image->isThumbnailProduct == '1')             
               <div class="checkbox">             
                 <label>
-                  {!! Form::checkbox('thumbnail', 1, true) !!} Thumbnail
+                  {!! Form::checkbox('thumbnail_product', 1, true) !!} Caratula del producto (* si se marca permitira elegir una imagen para el producto mas no es la imagen detallada)
                 </label>
               </div>
               @else
               <div class="checkbox">             
                 <label>
-                  {!! Form::checkbox('thumbnail', null) !!} Thumbnail
+                  {!! Form::checkbox('thumbnail_product', null) !!} Caratula del producto (* si se marca permitira elegir una imagen para el producto mas no es la imagen detallada)
                 </label>
               </div>
               @endif
@@ -66,7 +79,7 @@
               <button style = "margin-bottom: 1em;" type="button" class="btn btn-primary" onclick="BrowseServer('id_of_the_target_input');">Subir imagen o seleccionar imagen</button>
 
               <div class="form-group">
-                {!! Form::label('id_of_the_target_input', 'Url de la imagen:') !!}
+                {!! Form::label('id_of_the_target_input', 'Url de la imagen (*Este campo se llena al seleccionar la imagen del manejador de archivos):') !!}
                 {!! Form::text('url', null, ["class" => "form-control", "id" => "id_of_the_target_input"]) !!}
               </div>
               
@@ -88,18 +101,21 @@
                 {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre de la imagen', "id" => "inputName"]) !!}
               </div>
 
-              {!! Form::hidden('type', 'jpg', array('id' => 'type')) !!}
-
               <div class="checkbox">             
                 <label>
-                  {!! Form::checkbox('thumbnail', null) !!} Thumbnail
+                  {!! Form::checkbox('thumbnail', null) !!} Caratula para el tipo de producto (* si se marca permitira elegir una imagen para el tipo de producto)
+                </label>
+              </div>
+              <div class="checkbox">             
+                <label>
+                  {!! Form::checkbox('thumbnail_product', null) !!} Caratula del producto (* si se marca permitira elegir una imagen para el producto mas no es la imagen detallada)
                 </label>
               </div>
 
               <button style = "margin-bottom: 1em;" type="button" class="btn btn-primary" onclick="BrowseServer('id_of_the_target_input');">Subir imagen</button>
 
               <div class="form-group">
-                {!! Form::label('id_of_the_target_input', 'Url de la imagen:') !!}
+                {!! Form::label('id_of_the_target_input', 'Url de la imagen (*Este campo se llena al seleccionar la imagen del manejador de archivos):') !!}
                 {!! Form::text('url', null, ["class" => "form-control", "id" => "id_of_the_target_input"]) !!}
               </div>              
              

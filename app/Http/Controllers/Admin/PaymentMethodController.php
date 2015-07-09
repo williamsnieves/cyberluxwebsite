@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 
 use App\Models\PaymentMethod;
-
+use App\Http\Requests\PaymentValidationRequest;
 class PaymentMethodController extends Controller {
 
 	/**
@@ -40,7 +40,7 @@ class PaymentMethodController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(PaymentValidationRequest $request)
 	{
 		//	
 		
@@ -83,7 +83,7 @@ class PaymentMethodController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $request)
+	public function update($id, PaymentValidationRequest $request)
 	{
 		//
 

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Product;
 use App\Models\ProductPrice;
+use App\Http\Requests\ProductPriceValidationRequest;
 
 class ProductPriceController extends Controller {
 
@@ -42,7 +43,7 @@ class ProductPriceController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(ProductPriceValidationRequest $request)
 	{
 		//
 
@@ -89,7 +90,7 @@ class ProductPriceController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $request)
+	public function update($id, ProductPriceValidationRequest $request)
 	{
 		//
 

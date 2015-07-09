@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Models\TypeNews;
-
+use App\Http\Requests\NewsValidationRequest;
 use Illuminate\Support\Str;
 use App\Models\News;
 use App\Models\User;
@@ -49,7 +49,7 @@ class NewsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(NewsValidationRequest $request)
 	{
 		//
 		$user = \Auth::user();	
@@ -108,7 +108,7 @@ class NewsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $request)
+	public function update($id, NewsValidationRequest $request)
 	{
 		//
 		$user = \Auth::user();		

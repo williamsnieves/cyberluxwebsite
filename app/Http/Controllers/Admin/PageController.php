@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\PagesValidationRequest;
 use App\Models\Page;
 use App\Models\Gallery;
 
@@ -41,7 +41,7 @@ class PageController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(PagesValidationRequest $request)
 	{
 		//
 
@@ -55,6 +55,15 @@ class PageController extends Controller {
 			$galleryId = Gallery::find($request->input('galleries'));
 			$pages->galleries()->associate($galleryId);			
 		}
+
+		if($request->input('name') == 'nosotros')
+			$pages->link =  'about';
+
+		if($request->input('name') == 'sedes')
+			$pages->link =  'locations';
+
+		if($request->input('name') == 'social')
+			$pages->link =  'social';
 
 		$pages->save();	
 
@@ -93,7 +102,7 @@ class PageController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $request)
+	public function update($id, PagesValidationRequest $request)
 	{
 		//
 
@@ -103,7 +112,19 @@ class PageController extends Controller {
 		$pages->title = $request->input('title');
 		$pages->content = $request->input('content');
 
-		$pages->galleries()->associate($galleryId);
+		if($request->input('name') == 'nosotros')
+			$pages->link =  'about';
+
+		if($request->input('name') == 'sedes')
+			$pages->link =  'locations';
+
+		if($request->input('name') == 'social')
+			$pages->link =  'social';
+
+		if($request->input('galleries') != 'default'){
+			$galleryId = Gallery::find($request->input('galleries'));
+			$pages->galleries()->associate($galleryId);			
+		}
 
 
 		$pages->save();

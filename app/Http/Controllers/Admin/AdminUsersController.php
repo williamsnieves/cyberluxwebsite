@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use App\Http\Requests\EditorForm;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EditorValidationRequest;
 
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -41,7 +42,7 @@ class AdminUsersController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(EditorValidationRequest $request)
 	{
 		//
 
@@ -69,7 +70,7 @@ class AdminUsersController extends Controller {
 		//$user->create($request->all());
 
 
-		return redirect('admin/editors/create')->with('message', 'El editor se ha creado correctamente');
+		return redirect('admin/editors')->with('message', 'El editor se ha creado correctamente');
 		
 	}
 
@@ -104,7 +105,7 @@ class AdminUsersController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $request)
+	public function update($id, EditorValidationRequest $request)
 	{
 		//
 		$user = User::find($id);

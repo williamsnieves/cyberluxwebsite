@@ -4,6 +4,16 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Models\Page;
+use App\Models\Node;
+use App\Models\News;
+use App\Models\Brand;
+use App\Models\CustomImage;
+use App\Models\Category;
+use App\Models\Gallery;
+use App\Models\Product;
+use App\Models\ProductPrice;
+use App\Models\User;
 
 class DashboardController extends Controller {
 
@@ -16,7 +26,29 @@ class DashboardController extends Controller {
 	{
 		//
 		//return "estoy en el dashboard";
-		return view('admin.dashboard');
+		$users = User::count();
+		$pages = Page::count();
+		$nodes = Node::count();
+		$news = News::count();
+		$images = CustomImage::count();
+		$brands = Brand::count();
+		$categories = Category::count();
+		$products = Product::count();
+		$prices = ProductPrice::count();
+		$galleries = Gallery::count();
+		return view('admin.dashboard')->with(
+			array(
+				"users"=>$users, 
+				"pages" =>$pages, 
+				"nodes" =>$nodes, 
+				"news" =>$news, 
+				"images" =>$images, 
+				"brands" => $brands,
+				"categories" => $categories,
+				"products" => $products,
+				"prices" => $prices,
+				"galleries" => $galleries
+			));
 	}
 
 	/**

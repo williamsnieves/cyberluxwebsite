@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\GalleriesValidationRequest;
 use App\Models\Gallery;
 
 use App\Models\CustomImage;
@@ -44,7 +44,7 @@ class GalleryController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(GalleriesValidationRequest $request)
 	{
 		//
 		
@@ -87,7 +87,7 @@ class GalleryController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $request)
+	public function update($id, GalleriesValidationRequest $request)
 	{
 		//
 		$galleries = Gallery::find($id);

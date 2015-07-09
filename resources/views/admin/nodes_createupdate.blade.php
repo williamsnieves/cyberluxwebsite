@@ -30,7 +30,14 @@
                 @endforeach
             </div>
         @endif
- 
+        
+
+        @if (Session::has('customexception'))            
+            <div class='alert alert-danger'>
+                {{ Session::get('customexception') }}
+            </div>
+        @endif
+
         @if (Session::has('message'))            
             <div class="alert alert-success alert-dismissable">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -56,7 +63,7 @@
 
               <div class="form-group">
                 {!! Form::label('inputTitle', 'Página:') !!}
-                {!! Form::select('pages', $pages, $node->pages_id , ['class' => 'form-control']) !!}
+                {!! Form::select('pages', array('default' => 'Selecciona') + $pages, $node->pages_id , ['class' => 'form-control']) !!}
                         
               </div>              
               
@@ -86,6 +93,7 @@
               <div class="form-group">
                 {!! Form::label('inputTitle', 'Página:') !!}
                 <select name="pages" class="form-control">
+                  <option value="default">Selecciona la pagina</option>
                   @foreach ($pages as $page)
                     <option value="{{$page->id}}">{{$page->name}}</option>
                   @endforeach                 

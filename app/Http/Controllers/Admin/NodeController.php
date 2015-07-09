@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\NodesValidationRequest;
 use Illuminate\Http\Request;
 use App\Models\Node;
 use App\Models\Page;
@@ -39,15 +39,22 @@ class NodeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(NodesValidationRequest $request)
 	{
 		//
-		$pages = Page::find($request->input('pages'));
+		
 		$nodes = new Node;
 		$nodes->name = $request->input('name');
 		$nodes->title = $request->input('title');
 		$nodes->content = $request->input('content');
-		$nodes->pages()->associate($pages);
+
+		if($request->input('pages') != 'default'){
+			$pages = Page::find($request->input('pages'));
+			$nodes->pages()->associate($pages);
+		}else{
+			return redirect('admin/nodes/create')->with('customexception', 'Debes asociar el nodo a una página');
+		}
+		
 
 		$nodes->save();
 
@@ -89,16 +96,23 @@ class NodeController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $request)
+	public function update($id, NodesValidationRequest $request)
 	{
 		//
 
-		$pagesId = Page::find($request->input('pages'));
+		
 		$nodes = Node::find($id);
 		$nodes->name = $request->input('name');
 		$nodes->title = $request->input('title');
 		$nodes->content = $request->input('content');
-		$nodes->pages()->associate($pagesId);
+		
+
+		if($request->input('pages') != 'default'){
+			$pagesId = Page::find($request->input('pages'));
+			$nodes->pages()->associate($pagesId);
+		}else{
+			return redirect('admin/nodes/create')->with('customexception', 'Debes asociar el nodo a una página');
+		}
 
 		$nodes->save();
 

@@ -13,7 +13,8 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductDetail;
-
+use Illuminate\Support\Collection;
+use DB;
 class PageController extends Controller {
 
 	/**
@@ -194,27 +195,33 @@ class PageController extends Controller {
 
 		$term = $request->input("search");
 
-		$news = News::where('title', 'LIKE', "%$term%")->select('title','slug')->get();
+		$news = News::where('title', 'LIKE', "%$term%")->select('title','slug','label')->get();
 
-		$products = Product::where('name', 'LIKE', "%$term%")->select('name','slug')->get();
+		//$products = Product::where('name', 'LIKE', "%$term%")->select('name','slug','label')->get();
+		//$products = Product::with('categories')->where('name', 'LIKE', "%$term%")->get();
 
-		$pages = Page::where('title', 'LIKE', "%$term%")->select('name','title')->get();
+		$products = DB::table('products')
+            ->join('categories', 'categories.id', '=', 'products.categories_id')
+            ->join('brands', 'brands.id', '=', 'categories.brands_id')
+            ->select('products.*', 'categories.slug AS category', 'brands.name as brand')
+            ->where('products.name', 'LIKE', "%$term%")->get();
 
-		/*$news->push(["label" => "news"]);
-		$products->push(["label" => "products"]);
-		$pages->push(["label" => "pages"]);*/
-
-		//$results = array_unique(array_merge($news, $products));
+		$pages = Page::where('title', 'LIKE', "%$term%")->select('name','title','label','link')->get();
+		
 
 		$newsarray = $news->toArray();		
-		$productssarray = $products->toArray();
+		//$productssarray = $products->toArray();
 		$pagesarray = $pages->toArray();
 
-		$results = array_merge($newsarray, $productssarray, $pagesarray);
-		return \Response::json($results);
+		//$results = array_merge($newsarray, $productssarray, $pagesarray);
+		$results = array_merge($newsarray, $products, $pagesarray);
+		//$results_json = \Response::json(array("results" =>$results));
 
-		/*$results = (object) array_merge(get_object_vars($news), get_object_vars($products));*/
-		return $results;
+		$collection = new Collection($results);
+		
+		//return $collection;
+
+		return view('pages.search')->with(array("results" => $collection));
 	}
 
 	/**

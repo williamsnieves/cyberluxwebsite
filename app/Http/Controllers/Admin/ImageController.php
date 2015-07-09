@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\ImagesValidationRequest;
 use App\Models\CustomImage;
 
 use Image;
@@ -42,7 +42,7 @@ class ImageController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(ImagesValidationRequest $request)
 	{
 		//
 		/*$url = $request->input('url');
@@ -62,11 +62,19 @@ class ImageController extends Controller {
 		$image->url = $request->input('url');		
 
 		$url = $request->input('url');
-		if(!empty($request->input('thumbnail')) && $request->input('thumbnail')  == 'on'){
+		if(!empty($request->input('thumbnail')) || $request->input('thumbnail')  == 'on'){
 			$image->isThumbnail = 1;
 			$image->type = 'thumbnail';			
 		}else{
 			$image->isThumbnail = 0;
+			$image->type = 'normal';
+		}
+
+		if(!empty($request->input('thumbnail_product')) || $request->input('thumbnail_product')  == 'on'){
+			$image->isThumbnailProduct = 1;
+			$image->type = 'thumbnail';			
+		}else{
+			$image->isThumbnailProduct = 0;
 			$image->type = 'normal';
 		}
 		
@@ -107,20 +115,28 @@ class ImageController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $request)
+	public function update($id, ImagesValidationRequest $request)
 	{
 		//
 
 		$image = CustomImage::find($id);
 		$image->name = $request->input('name');
 		$image->url = $request->input('url');
-		if(!empty($request->input('thumbnail')) && $request->input('thumbnail')  == 'on'){
+		if(!empty($request->input('thumbnail')) || $request->input('thumbnail')  == 'on'){
 			$image->isThumbnail = 1;
 			$image->type = 'thumbnail';			
 		}else{
 			$image->isThumbnail = 0;
 			$image->type = 'normal';
-		}		
+		}
+
+		if(!empty($request->input('thumbnail_product')) || $request->input('thumbnail_product')  == 'on'){
+			$image->isThumbnailProduct = 1;
+			$image->type = 'thumbnail';			
+		}else{
+			$image->isThumbnailProduct = 0;
+			$image->type = 'normal';
+		}
 
 		$image->save();
 

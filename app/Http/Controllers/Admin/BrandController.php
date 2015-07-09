@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\BrandsValidationRequest;
 use Illuminate\Http\Request;
 
 use App\Models\Brand;
@@ -39,7 +39,7 @@ class BrandController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(BrandsValidationRequest $request)
 	{
 		//
 
@@ -83,7 +83,7 @@ class BrandController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $request)
+	public function update($id, BrandsValidationRequest $request)
 	{
 		//
 

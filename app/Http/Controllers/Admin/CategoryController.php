@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\CategoriesValidationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Category;
@@ -46,17 +46,25 @@ class CategoryController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(CategoriesValidationRequest $request)
 	{
 		//
 
-		$brandId = Brand::find($request->input('brands'));
+		
 		$imageId = CustomImage::find($request->input('images'));
 		$categories = new Category;
 		$categories->name = $request->input('name');
 		$categories->slug = Str::slug(Str::lower($request->input('name')), '-');
-		$categories->brands()->associate($brandId);
+
+		
 		$categories->images()->associate($imageId);
+
+		if($request->input('brands') != 'default'){
+			$brandId = Brand::find($request->input('brands'));
+			$categories->brands()->associate($brandId);
+		}else{
+			return redirect('admin/categories/create')->with('customexception', 'Debes asociar el tipo de producto a una marca');
+		}
 
 
 		$categories->save();
@@ -98,16 +106,22 @@ class CategoryController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $request)
+	public function update($id, CategoriesValidationRequest $request)
 	{
 		//
-		$brandId = Brand::find($request->input('brands'));
+		
 		$imageId = CustomImage::find($request->input('images'));
 		$categories = Category::find($id);
 		$categories->name = $request->input('name');
-		$categories->slug = Str::slug(Str::lower($request->input('name')), '-');		
-		$categories->brands()->associate($brandId);
+		$categories->slug = Str::slug(Str::lower($request->input('name')), '-');
 		$categories->images()->associate($imageId);
+
+		if($request->input('brands') != 'default'){
+			$brandId = Brand::find($request->input('brands'));
+			$categories->brands()->associate($brandId);
+		}else{
+			return redirect('admin/categories/'.$id.'/edit')->with('customexception', 'Debes asociar el tipo de producto a una marca');
+		}
 
 		$categories->save();
 

@@ -54,7 +54,7 @@
                 {!! Form::textarea('content', null, ["class" => "form-control ckeditor", 'placeholder'=>'Ingresa descripción del page', "id" => "inputContent"]) !!}
               </div>
               <div class="form-group">
-                {!! Form::select('galleries', $galleries, $page->galleries_id , ['class' => 'form-control']) !!}
+                {!! Form::select('galleries', array('default' => 'Selecciona') + $galleries, $page->galleries_id , ['class' => 'form-control']) !!}
               </div>
               
               

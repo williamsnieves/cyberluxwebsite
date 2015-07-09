@@ -10,6 +10,7 @@ use App\Models\ProductDetail;
 use App\Models\CustomImage;
 
 use App\Models\Product;
+use App\Http\Requests\ProductDetailValidationRequest;
 
 class ProductDetailController extends Controller {
 
@@ -44,7 +45,7 @@ class ProductDetailController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(ProductDetailValidationRequest $request)
 	{
 		//
 		$productId = Product::find($request->input('products'));
@@ -52,8 +53,8 @@ class ProductDetailController extends Controller {
 		$productdetails->features = $request->input('features');
 		$productdetails->specialfeatures = $request->input('specialfeatures');		
 		$productdetails->products()->associate($productId);
-		$myarray = $request->input('items');
-		$productdetails->images()->attach($myarray);
+		/*$myarray = $request->input('items');
+		$productdetails->images()->attach($myarray);*/
 		$productdetails->save();
 
 		return redirect('admin/productdetails')->with('message', 'El detalle del producto '.$productId->name.' se ha creado correctamente');
@@ -91,7 +92,7 @@ class ProductDetailController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $request)
+	public function update($id, ProductDetailValidationRequest $request)
 	{
 		//
 
@@ -100,8 +101,8 @@ class ProductDetailController extends Controller {
 		$productdetails->features = $request->input('features');
 		$productdetails->specialfeatures = $request->input('specialfeatures');		
 		$productdetails->products()->associate($productId);
-		$myarray = $request->input('items');
-		$productdetails->images()->attach($myarray);
+		/*$myarray = $request->input('items');
+		$productdetails->images()->attach($myarray);*/
 		$productdetails->save();
 
 		return redirect('admin/productdetails')->with('message', 'El detalle del producto '.$productId->name.' se ha creado correctamente');

@@ -30,6 +30,12 @@
                 @endforeach
             </div>
         @endif
+
+        @if (Session::has('customexception'))            
+            <div class='alert alert-danger'>
+                {{ Session::get('customexception') }}
+            </div>
+        @endif
  
         @if (Session::has('message'))            
             <div class="alert alert-success alert-dismissable">
@@ -47,7 +53,7 @@
               </div>
               <div class="form-group">
                 {!! Form::label('inputTitle', 'Marca:') !!}
-                {!! Form::select('brands', $brands, $category->brands_id , ['class' => 'form-control']) !!}                        
+                {!! Form::select('brands', array('default' => 'Selecciona la marca') + $brands, $category->brands_id , ['class' => 'form-control']) !!}                        
               </div> 
 
               <div class="form-group">
@@ -68,7 +74,7 @@
               </div>
               <div class="form-group">
                 {!! Form::label('inputTitle', 'Marca:') !!}
-                {!! Form::select('brands', $brands, null , ['class' => 'form-control']) !!}                        
+                {!! Form::select('brands', array('default' => 'Selecciona la marca') + $brands, null , ['class' => 'form-control']) !!}                        
               </div>
 
               <div class="form-group">
@@ -95,7 +101,7 @@
       function formatState (state) {
         console.log("formatoooo", state.text)
         if (!state.id) { return state.text; }
-        var url = protocol+"//"+base_url+"/filemanager/userfiles/caratulaproductos/"+state.text+".png";
+        var url = protocol+"//"+base_url+"/filemanager/userfiles/categorias/"+state.text+".png";
         console.log(state);
         var $state = $(
           '<span><img width="50" height="50" src="'+url+'" />' + state.text + '</span>'
