@@ -22,14 +22,14 @@ class ImagesValidationRequest extends Request {
 	public function rules()
 	{
 		return [
-		    'name' => 'required',		    	    	   
+		        	    	   
 		  ];
 	}
 
 	public function messages()
 	{
 	    return [
-	        'name.required' => 'Debes colocar un nombre de imagen y debe ser el mismo nombre de la imagen que vas a subir',	                        
+	                              
 	    ];
 	}
 

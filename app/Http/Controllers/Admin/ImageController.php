@@ -42,7 +42,7 @@ class ImageController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(ImagesValidationRequest $request)
+	public function store(Request $request)
 	{
 		//
 		/*$url = $request->input('url');
@@ -58,8 +58,10 @@ class ImageController extends Controller {
 			//Image::make($url)->resize(100, 100)->save();
 		}*/
 		$image = new CustomImage;
-		$image->name = $request->input('name');
-		$image->url = $request->input('url');		
+		//$image->name = $request->input('name');
+		$image->url = $request->input('url');
+		$image->name =  basename($request->input('url'));
+
 
 		$url = $request->input('url');
 		if(!empty($request->input('thumbnail')) || $request->input('thumbnail')  == 'on'){
@@ -115,13 +117,14 @@ class ImageController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, ImagesValidationRequest $request)
+	public function update($id, Request $request)
 	{
 		//
 
 		$image = CustomImage::find($id);
-		$image->name = $request->input('name');
+		//$image->name = $request->input('name');
 		$image->url = $request->input('url');
+		$image->name =  basename($request->input('url'));
 		if(!empty($request->input('thumbnail')) || $request->input('thumbnail')  == 'on'){
 			$image->isThumbnail = 1;
 			$image->type = 'thumbnail';			

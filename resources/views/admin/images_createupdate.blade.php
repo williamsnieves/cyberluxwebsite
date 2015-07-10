@@ -42,11 +42,7 @@
         {!! Form::model($image, ['route' => ['admin.images.update', $image->id], 'method' => 'patch']) !!}
         {!! Form::token() !!}                 
             <div class="box-body">
-              <div class="form-group">
-                {!! Form::label('inputName', 'Nombre de la imagen:') !!}
-                {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre del nodo', "id" => "inputName"]) !!}
-              </div>
-
+              <button style = "margin-bottom: 1em;" type="button" class="btn btn-primary" onclick="BrowseServer('id_of_the_target_input');">Subir imagen o seleccionar imagen</button>
               @if($image->isThumbnail == 1 || $image->isThumbnail == '1')             
               <div class="checkbox">                  
                 <label>
@@ -75,9 +71,6 @@
                 </label>
               </div>
               @endif
-
-              <button style = "margin-bottom: 1em;" type="button" class="btn btn-primary" onclick="BrowseServer('id_of_the_target_input');">Subir imagen o seleccionar imagen</button>
-
               <div class="form-group">
                 {!! Form::label('id_of_the_target_input', 'Url de la imagen (*Este campo se llena al seleccionar la imagen del manejador de archivos):') !!}
                 {!! Form::text('url', null, ["class" => "form-control", "id" => "id_of_the_target_input"]) !!}
@@ -95,12 +88,9 @@
       @else  
         {!! Form::open(['route' => 'admin.images.store']) !!}
         {!! Form::token() !!}
-            <div class="box-body">
-              <div class="form-group">
-                {!! Form::label('inputName', 'Nombre de la imagen:') !!}
-                {!! Form::text('name', null, ["class" => "form-control", 'placeholder'=>'Ingresa nombre de la imagen', "id" => "inputName"]) !!}
-              </div>
+            <div class="box-body">  
 
+              <button style = "margin-bottom: 1em;" type="button" class="btn btn-primary" onclick="BrowseServer('id_of_the_target_input');">Subir imagen</button>
               <div class="checkbox">             
                 <label>
                   {!! Form::checkbox('thumbnail', null) !!} Caratula para el tipo de producto (* si se marca permitira elegir una imagen para el tipo de producto)
@@ -111,9 +101,6 @@
                   {!! Form::checkbox('thumbnail_product', null) !!} Caratula del producto (* si se marca permitira elegir una imagen para el producto mas no es la imagen detallada)
                 </label>
               </div>
-
-              <button style = "margin-bottom: 1em;" type="button" class="btn btn-primary" onclick="BrowseServer('id_of_the_target_input');">Subir imagen</button>
-
               <div class="form-group">
                 {!! Form::label('id_of_the_target_input', 'Url de la imagen (*Este campo se llena al seleccionar la imagen del manejador de archivos):') !!}
                 {!! Form::text('url', null, ["class" => "form-control", "id" => "id_of_the_target_input"]) !!}

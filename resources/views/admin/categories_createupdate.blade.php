@@ -101,7 +101,7 @@
       function formatState (state) {
         console.log("formatoooo", state.text)
         if (!state.id) { return state.text; }
-        var url = protocol+"//"+base_url+"/filemanager/userfiles/categorias/"+state.text+".png";
+        var url = protocol+"//"+base_url+"/filemanager/userfiles/categorias/"+state.text;
         console.log(state);
         var $state = $(
           '<span><img width="50" height="50" src="'+url+'" />' + state.text + '</span>'

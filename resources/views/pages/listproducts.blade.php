@@ -7,13 +7,17 @@
 			@foreach($category as $categorys)
 				<h1>{{$categorys->name}}</h1>
 			@endforeach
-			@foreach($products as $product)	
-				<div class="col-xs-6 col-md-3 wrapper-thumb">
-					<a href="{{ URL::to('/') }}/products/{{$brand}}/{{$categorys->name}}/{{$product->slug}}" class="thumbnail custom-thumb">
+			@foreach($products as $key => $product)
+								
+					
+				<div class="col-xs-6 col-md-3">
+					<a href="{{ URL::to('/') }}/products/{{$brand}}/{{$categorys->slug}}/{{$product->slug}}" class="thumbnail custom-thumb">
 	      				<img src="{{$product->images->url}}" alt="">
 	    			</a>
-	    			<a class="title-thumb" href="{{ URL::to('/') }}/products/{{$brand}}/{{$categorys->name}}/{{$product->slug}}">{{strtoupper($product->name)}}</a>
+	    			<a class="title-thumb" href="{{ URL::to('/') }}/products/{{$brand}}/{{$categorys->slug}}/{{$product->slug}}">{{strtoupper($product->name)}}</a>
 				</div>
+					
+				
 				<!--<div class="col-xs-6 col-md-3">
 					<a href="#" class="thumbnail custom-thumb">
 	      				<img src="http://placehold.it/200X200" alt="">

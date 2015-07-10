@@ -285,7 +285,7 @@
     <script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
     <script src="{{ asset('/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}" type="text/javascript"></script>
 
-    <script src="{{ asset('/dist/js/dynamicselect.js') }}" type="text/javascript"></script>
+    
     <script src="{{ asset('/dist/js/bootstrap-datepicker.js') }}" type="text/javascript"></script>
 
     <script type="text/javascript">

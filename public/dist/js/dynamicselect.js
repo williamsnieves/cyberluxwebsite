@@ -8,7 +8,7 @@ base_url = host;
 
 function formatState (state) {
   if (!state.id) { return state.text; }
-  var url = protocol+"//"+base_url+"/filemanager/userfiles/"+state.text+".jpg";
+  var url = protocol+"//"+base_url+"/filemanager/userfiles/detalleproductos/"+state.text;
   console.log(state);
   var $state = $(
     '<span><img width="50" height="50" src="'+url+'" />' + state.text + '</span>'
