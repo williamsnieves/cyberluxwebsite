@@ -51,6 +51,7 @@
 			@endforeach
 			
 		</div>
+		<?php echo $products->render(); ?>
 	</div>
 </div>
 @endsection

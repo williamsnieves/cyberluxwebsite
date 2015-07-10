@@ -66,12 +66,12 @@
               </a>
             </td>
             <td>
-              <a href="{{ URL::to('/') }}/admin/productdetails/{{$productdetail->id}}/images" class="btn btn-default">
+              <a href="{{ URL::to('/') }}/admin/productdetails/{{$productdetail->id}}/images?filter=products" class="btn btn-default">
                   <i class="fa fa-edit"></i>
               </a>
             </td>
             <td>
-              <a href="{{ URL::to('/') }}/admin/productdetails/{{$productdetail->id}}/images/edit" class="btn btn-default">
+              <a href="{{ URL::to('/') }}/admin/productdetails/{{$productdetail->id}}/images/edit?filter=products" class="btn btn-default">
                   <i class="fa fa-edit"></i>
               </a>
             </td>

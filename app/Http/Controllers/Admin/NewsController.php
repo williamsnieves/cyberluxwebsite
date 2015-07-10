@@ -22,7 +22,7 @@ class NewsController extends Controller {
 	{
 		//
 
-		$news = News::paginate(10)->setPath('/admin/news');
+		$news = News::orderBy('created_at', 'desc')->paginate(10)->setPath('/admin/news');
 		//$users = User::simplePaginate(1);
 		return view('admin.news_show')->with('news', $news);
 		

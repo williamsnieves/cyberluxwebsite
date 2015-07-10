@@ -116,29 +116,25 @@ class ProductController extends Controller {
 	{
 		//
 
-		$codproductvalid = Product::where('codproduct', '=', $request->input('codproduct'))->first();
+		
+		$imageId = CustomImage::find($request->input('images'));
+		$products = Product::find($id);
+		$products->name = $request->input('name');
+		$products->slug = Str::slug(Str::lower($request->input('name')), '-');
+		$products->codproduct = $request->input('codproduct');
+		$products->images()->associate($imageId);
 
-		if($codproductvalid){
-			return redirect('admin/products/'.$id.'edit')->with('customexception', 'El codigo del producto ya existe no pueden repetirse');
+		if($request->input('categories') != 'default'){
+			$categoryId = Category::find($request->input('categories'));
+			$products->categories()->associate($categoryId);
 		}else{
-			$imageId = CustomImage::find($request->input('images'));
-			$products = Product::find($id);
-			$products->name = $request->input('name');
-			$products->slug = Str::slug(Str::lower($request->input('name')), '-');
-			$products->codproduct = $request->input('codproduct');
-			$products->images()->associate($imageId);
+			return redirect('admin/products/'.$id.'/edit')->with('customexception', 'Debes asociar el producto a una categoría');
+		}			
 
-			if($request->input('categories') != 'default'){
-				$categoryId = Category::find($request->input('categories'));
-				$products->categories()->associate($categoryId);
-			}else{
-				return redirect('admin/products/'.$id.'edit')->with('customexception', 'Debes asociar el producto a una categoría');
-			}			
+		$products->save();
 
-			$products->save();
-
-			return redirect('admin/products')->with('message', 'El producto se ha actualizado correctamente');
-		}
+		return redirect('admin/products')->with('message', 'El producto se ha actualizado correctamente');
+		
 		
 		
 	}

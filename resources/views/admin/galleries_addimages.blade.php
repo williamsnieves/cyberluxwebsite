@@ -41,11 +41,7 @@
         {!! Form::model($gallery, ['route' => ['admin.galleries.putEditImages']]) !!}  
             {!! Form::hidden('galleryid', $gallery->id) !!}               
             <div class="box-body">
-              <div class="form-group">
-                <select name="items[]" class="form-control" id="inputImages" multiple="multiple">
-                 
-                </select>
-              </div>
+              {!! Form::select('images[]', $images, null , ['class' => 'form-control select2thumbs', "id="=>"inputThumb", "multiple" =>"multiple"]) !!}
 
               <div class="form-group">
                   <ul class="thumbnail" style="list-style:none; display: inline-block;">                    
@@ -63,11 +59,7 @@
         {!! Form::open(['route' => ['admin.galleries.postSaveImages']]) !!}
         {!! Form::hidden('galleryid', $gallerypost->id) !!}
             <div class="box-body">              
-              <div class="form-group">
-                <select name="items[]" class="form-control" id="inputImages" multiple="multiple">
-                 
-                </select>
-              </div> 
+              {!! Form::select('images[]', $images, null , ['class' => 'form-control select2thumbs', "id="=>"inputThumb", "multiple" =>"multiple"]) !!}
 
                  
             </div>
@@ -92,7 +84,7 @@
       base_url = host;
       function formatState (state) {       
         if (!state.id) { return state.text; }
-        var url = protocol+"//"+base_url+"/filemanager/userfiles/detalleproductos/"+state.text;
+        var url = protocol+"//"+base_url+"/filemanager/userfiles/gallery/"+state.text;
         console.log(state);
         var $state = $(
           '<span><img width="50" height="50" src="'+url+'" />' + state.text + '</span>'
@@ -100,31 +92,8 @@
         
         return $state;
       };
-      $("#inputImages").select2({     
-         templateResult: formatState,
-         tags: true,
-         ajax: {
-             url: "http://"+base_url+"/admin/imagesall?filter=gallery",
-             dataType: 'json',         
-             processResults: function (data, page) {
-               // parse the results into the format expected by Select2.
-               // since we are using custom formatting functions we do not need to
-               // alter the remote JSON data
-               //console.log("midata",data);
-               var results = [];
-                $.each(data, function(index, item){
-                  results.push({
-                    id: item.id,
-                    text: item.name
-                  });
-                });
-               return {
-                 results: results
-               };
-             },         
-             cache: true
-             
-       }
-    });
+      $(".select2thumbs").select2({
+        templateResult: formatState
+      });
     </script>
 @stop

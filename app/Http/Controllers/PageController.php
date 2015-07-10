@@ -24,7 +24,13 @@ class PageController extends Controller {
 	 */
 	public function index()	{
 
-		return view('pages.home');
+		$newsmain = News::whereHas('typenews', function($c){
+			$c->where("name" , "=", "eventos");
+		})->orderBy("created_at", "desc")->take(1)->with('galleries')->with('typenews')->get();
+
+		//return $newsmain;
+
+		return view('pages.home')->with(array("newsmain" => $newsmain));
 	}
 
 	public function test()	{
@@ -90,7 +96,9 @@ class PageController extends Controller {
 	public function showNews($slug){		
 		//$detailsnews = News::where('slug', '=', $slug)->firstOrFail();
 		$detailsnews = News::with('galleries')->with('typenews')->where('slug', '=', $slug)->firstOrFail();
-				
+		
+
+		//return $detailsnews->galleries->images[0]['url'];
 		return view('pages.detailnews')->with(array("detailsnews" => $detailsnews));
 	}
 
@@ -181,7 +189,13 @@ class PageController extends Controller {
 			$q->where('slug', '=', $slugdetail)->with('categories');
 		})->with('images')->with('products')->get();
 
-		$category = Category::find($product[0]->products->categories_id);
+		//var_dump( );
+		if(!$product->count() <= 0)
+			$category = Category::find($product[0]->products->categories_id);
+		else{
+			$category =[];
+			$product =[];
+		}
 		
 		return view('pages.detailproducts')->with(array("productdetail" => $product, "category" => $category));
 	}

@@ -108,6 +108,12 @@
 
 @section('footerscript')
     <script>
+    var protocol,host, base_url;
+
+      protocol = window.location.protocol;
+      host = window.location.host;
+
+      base_url = host;
       function formatState (state) {       
         if (!state.id) { return state.text; }
         var url = protocol+"//"+base_url+"/filemanager/userfiles/listaproductos/"+state.text;

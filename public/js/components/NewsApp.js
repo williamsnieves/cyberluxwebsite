@@ -195,7 +195,8 @@ var NewsApp = React.createClass({
 		})
 	},
 
-	componentDidMount: function(){
+	componentDidMount: function(){		
+		
 		var self = this;
 		$(APP).on('last', function(e){
 			self.filterHandler('last');
@@ -247,12 +248,26 @@ var NewsApp = React.createClass({
 
 	},
 
+	componentDidUpdate: function(){
+		var newsHeight = $("#newsContentDesktop").height();
+
+		$(".wrapper-filter-news").height(newsHeight + (newsHeight / 2));
+
+	},
+
 	render: function() {
+
 		return (
 			<NewsList news={this.state.news} />
 		);
 	}
 
 });
+var size = $(window).width();
 
-React.render(<NewsApp />, document.getElementById("container-news"));
+console.log(size);
+
+if(size < 992)
+	React.render(<NewsApp />, document.getElementById("container-news-mobile"));
+else
+	React.render(<NewsApp />, document.getElementById("container-news"));

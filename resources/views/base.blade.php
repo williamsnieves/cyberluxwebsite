@@ -20,6 +20,7 @@
 	{!! HTML::style('css/ekko-lightbox.min.css'); !!}
 	{!! HTML::style('css/bttrlazyloading.min.css'); !!}
 	{!! HTML::style('css/animate.min.css'); !!}
+	{!! HTML::style('css/lightslider.css'); !!}
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css' />
 
@@ -103,6 +104,7 @@
 	{!! HTML::script('js/modal.js'); !!}
 	{!! HTML::script('js/imageload.js'); !!}
 	{!! HTML::script('js/jquery.bcSwipe.min.js'); !!}
+	{!! HTML::script('js/lightslider.js'); !!}
 	
 	<script>
 		//<![CDATA[

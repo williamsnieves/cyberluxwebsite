@@ -1,10 +1,10 @@
 @extends('layouts.admin.plane')
 @section('titlesection')
     Agregar Imagenes
-            @if(isset($typenews))
-              <small>Cambiar imagenes</small>
+            @if(isset($productdetail))
+              <small>Cambiar imagenes a {{$productdetail->products->name}}</small>
             @else
-              <small>Agregar imagenes a los productos</small>
+              <small>Agregar imagenes a los productos a {{$productdetailpost->products->name}}</small>
             @endif
 @stop
 
@@ -41,11 +41,7 @@
         {!! Form::model($productdetail, ['route' => ['admin.productdetails.putEditImages']]) !!}  
             {!! Form::hidden('productdetailid', $productdetail->id) !!}               
             <div class="box-body">
-              <div class="form-group">
-                <select name="images[]" class="form-control" id="inputImages" multiple="multiple">
-                 
-                </select>
-              </div>
+              {!! Form::select('images[]', $images, null , ['class' => 'form-control select2thumbs', "id="=>"inputThumb", "multiple" =>"multiple"]) !!}
 
               <div class="form-group">
                   <ul class="thumbnail" style="list-style:none; display: inline-block;">                    
@@ -62,15 +58,9 @@
       @else  
         {!! Form::open(['route' => ['admin.productdetails.postSaveImages']]) !!}
         {!! Form::hidden('productdetailid', $productdetailpost->id) !!}
-            <div class="box-body">              
-              <div class="form-group">
-                <select name="images[]" class="form-control" id="inputImages" multiple="multiple">
-                 
-                </select>
-              </div> 
-
-                 
-            </div>
+        {!! Form::label('inputThumb', 'Agregar imagen al detalle de producto:') !!}
+        {!! Form::select('images[]', $images, null , ['class' => 'form-control select2thumbs', "id="=>"inputThumb", "multiple" =>"multiple"]) !!}
+            
             <div class="box-footer">
               {!! Form::submit('Guardar', ["class" => "btn btn-primary"]) !!}            
             </div>
@@ -100,31 +90,8 @@
         
         return $state;
       };
-      $("#inputImages").select2({     
-         templateResult: formatState,
-         tags: true,
-         ajax: {
-             url: "http://"+base_url+"/admin/imagesall?filter=products",
-             dataType: 'json',         
-             processResults: function (data, page) {
-               // parse the results into the format expected by Select2.
-               // since we are using custom formatting functions we do not need to
-               // alter the remote JSON data
-               //console.log("midata",data);
-               var results = [];
-                $.each(data, function(index, item){
-                  results.push({
-                    id: item.id,
-                    text: item.name
-                  });
-                });
-               return {
-                 results: results
-               };
-             },         
-             cache: true
-             
-       }
-    });
+      $(".select2thumbs").select2({
+        templateResult: formatState
+      });
     </script>
 @stop

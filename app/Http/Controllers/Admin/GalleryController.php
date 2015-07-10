@@ -113,10 +113,13 @@ class GalleryController extends Controller {
 		return redirect()->route('admin.galleries.index')->with('message', 'Galería borrada');
 	}
 
-	public function getAddImages($id){
+	public function getAddImages($id, Request $request){
 
 		$gallerypost =  Gallery::find($id);
-		return view('admin.galleries_addimages')->with('gallerypost', $gallerypost);
+				
+		$image = \DB::table('images')->where("isThumbnailProduct", "=", "0")->where("isThumbnail", "=", "0")->lists('name','id');
+		
+		return view('admin.galleries_addimages')->with(array('gallerypost' => $gallerypost, 'images' =>$image));
 	}
 
 	public function postSaveImages(Request $request){	
@@ -124,7 +127,7 @@ class GalleryController extends Controller {
 		//return $request->input('items');	
 		$galleryid = $request->input('galleryid');
 		$galleries = Gallery::find($galleryid);
-		$myarray = $request->input('items');
+		$myarray = $request->input('images');
 		$galleries->images()->attach($myarray);
 
 		return redirect('admin/galleries')->with('message', 'Se agregaron imagenes a la galería');
@@ -133,9 +136,13 @@ class GalleryController extends Controller {
 
 	public function getEditImages($id){
 
-		$gallery =  Gallery::find($id);
+		$gallery =  Gallery::with('images')->find($id);
 		
-		return view('admin.galleries_addimages')->with(array('gallery' => $gallery));
+		$image = \DB::table('images')->where("isThumbnailProduct", "=", "0")->where("isThumbnail", "=", "0")->lists('name','id');
+		
+		//return $gallery;
+		
+		return view('admin.galleries_addimages')->with(array('gallery' => $gallery, 'images' =>$image));
 	}
 
 	public function putEditImages(Request $request){	
@@ -146,7 +153,7 @@ class GalleryController extends Controller {
 		$galleryid = $request->input('galleryid');
 		$galleries = Gallery::find($galleryid);	
 		$galleries->images()->detach();	
-		$myarray = $request->input('items');
+		$myarray = $request->input('images');
 		$galleries->images()->attach($myarray);
 
 		return redirect('admin/galleries')->with('message', 'Se actualizaron imagenes en la galería');

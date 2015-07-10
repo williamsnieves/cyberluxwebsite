@@ -124,10 +124,13 @@ class ProductDetailController extends Controller {
 		return redirect()->route('admin.productdetails.index')->with('message', 'Detalle del producto ('.$ProductDetail->products->name.') borrada');
 	}
 
-	public function getAddImages($id){
+	public function getAddImages($id, Request $request){
 
 		$productdetailpost =  ProductDetail::find($id);
-		return view('admin.productdetails_addimages')->with('productdetailpost', $productdetailpost);
+		if($request->input('filter') == 'products'){			
+			$image = \DB::table('images')->where('isThumbnailProduct', '1')->lists('name','id');
+		}
+		return view('admin.productdetails_addimages')->with(array('productdetailpost' => $productdetailpost, 'images' =>$image));
 	}
 
 	public function postSaveImages(Request $request){	
@@ -142,11 +145,15 @@ class ProductDetailController extends Controller {
 
 	}
 
-	public function getEditImages($id){
+	public function getEditImages($id, Request $request){
 
 		$productdetail =  ProductDetail::find($id);
+
+		if($request->input('filter') == 'products'){			
+			$image = \DB::table('images')->where('isThumbnailProduct', '1')->lists('name','id');
+		}
 		
-		return view('admin.productdetails_addimages')->with(array('productdetail' => $productdetail));
+		return view('admin.productdetails_addimages')->with(array('productdetail' => $productdetail, 'images' => $image));
 	}
 
 	public function putEditImages(Request $request){	

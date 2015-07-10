@@ -4,25 +4,25 @@
 @endsection
 @section('content')
 <div class="container-fluid">
-	@if(isset($detailsnews->galleries))
+	@if(isset($detailsnews->galleries))	
 	<div class="row">
 		<div class="col-xs-12 wrapper-news-details wrapper-news-details-mobile bg-news-mobile">
 			<h1>{{$detailsnews->title}}</h1>
-			<div class="container-news">
+
+			<div class="container-news">							
 				{!! $detailsnews->description !!}
 			</div>			
-			
-				<ul class="bxslider gallery-news">
-				  <li><img src="{{ URL::to('/') }}/img/aire.jpg" /></li>
-				  <li><img src="{{ URL::to('/') }}/img/aire2-thumb.jpg" /></li>
-				  <li><img src="{{ URL::to('/') }}/img/aire-thumb.jpg" /></li>
+				
+				<ul class="bxslider bx-mobile gallery-news">
+				  @foreach($detailsnews->galleries->images as $image)
+				  	<li><img src="{{$image->url}}" /></li>
+				  @endforeach
 				</ul>
 
-				<div id="bx-pager" class="gallery-news-thumbs">
-				  <a data-slide-index="0" href=""><img width="73" height="73" src="{{ URL::to('/') }}/img/aire.jpg"/></a>
-				  <a data-slide-index="1" href=""><img width="73" height="73" src="{{ URL::to('/') }}/img/aire2-thumb.jpg" /></a>
-				  <a data-slide-index="2" href=""><img width="73" height="73" src="{{ URL::to('/') }}/img/aire-thumb.jpg" /></a>
-
+				<div id="bx-pager-mobile" class="gallery-news-thumbs">
+				  @foreach($detailsnews->galleries->images as $key => $image)
+				  	 <a data-slide-index="{{$key}}" href=""><img width="73" height="73" src="{{$image->url}}"/></a>
+				  @endforeach
 				</div>
 			
 			
@@ -32,17 +32,16 @@
 		<section class="col-md-12 wrapper-news-details wrapper-news-details-desktop bg-news">
 			
 			<div class="col-md-6 gallery-details-new">
-				<ul class="bxslider gallery-news">
-				  <li><img src="{{ URL::to('/') }}/img/aire.jpg" /></li>
-				  <li><img src="{{ URL::to('/') }}/img/aire2-thumb.jpg" /></li>
-				  <li><img src="{{ URL::to('/') }}/img/aire-thumb.jpg" /></li>
+				<ul class="bxslider gallery-news" id="imageGallery">
+				  @foreach($detailsnews->galleries->images as $image)
+				  	<li><img src="{{$image->url}}" /></li>
+				  @endforeach				  
 				</ul>
 
 				<div id="bx-pager" class="gallery-news-thumbs">
-				  <a data-slide-index="0" href=""><img width="73" height="73" src="{{ URL::to('/') }}/img/aire.jpg"/></a>
-				  <a data-slide-index="1" href=""><img width="73" height="73" src="{{ URL::to('/') }}/img/aire2-thumb.jpg" /></a>
-				  <a data-slide-index="2" href=""><img width="73" height="73" src="{{ URL::to('/') }}/img/aire-thumb.jpg" /></a>
-
+				  @foreach($detailsnews->galleries->images as $key => $image)
+				  	 <a data-slide-index="{{$key}}" href=""><img width="73" height="73" src="{{$image->url}}"/></a>
+				  @endforeach	
 				</div>
 			</div>
 		
@@ -74,4 +73,24 @@
 	</div>
 	@endif
 </div>
+@endsection
+
+@section('content')
+<script>
+	var size = $(window).width();
+
+	if(size < 992){
+		$('.bxslider').bxSlider({
+			  adaptiveHeight: true,
+	          pagerCustom: '#bx-pager-mobile'
+	    });
+	}else{
+		$('.bxslider').bxSlider({
+	          adaptiveHeight: true,
+	          pagerCustom: '#bx-pager'
+
+	    });
+	}
+	
+</script>
 @endsection
