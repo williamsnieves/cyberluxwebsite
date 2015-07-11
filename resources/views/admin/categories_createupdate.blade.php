@@ -58,7 +58,7 @@
 
               <div class="form-group">
                 {!! Form::label('inputThumb', 'Actualizar Imagen de la categoría:') !!}
-                {!! Form::select('images', $thumbs, $category->images_id , ['class' => 'form-control select2thumbs', "id=" =>"inputThumb"]) !!}                        
+                {!! Form::select('images', $thumbs, $category->images_id , ['class' => 'form-control select2thumbs']) !!}                        
               </div>
             </div>
             <div class="box-footer">
@@ -79,7 +79,7 @@
 
               <div class="form-group">
                 {!! Form::label('inputThumb', 'Agregar Imagen de la categoría:') !!}
-                {!! Form::select('images', $thumbs, null , ['class' => 'form-control select2thumbs', "id="=>"inputThumb"]) !!}                        
+                {!! Form::select('images', $thumbs, null , ['class' => 'form-control select2thumbs']) !!}                        
               </div>
                 
                             
@@ -98,11 +98,15 @@
 
 @section('footerscript')
     <script>
-      function formatState (state) {
-        console.log("formatoooo", state.text)
+    var protocol,host, base_url;
+
+      protocol = window.location.protocol;
+      host = window.location.host;
+
+      base_url = host;
+      function formatState (state) {       
         if (!state.id) { return state.text; }
-        var url = protocol+"//"+base_url+"/filemanager/userfiles/categorias/"+state.text;
-        console.log(state);
+        var url = protocol+"//"+base_url+"/filemanager/userfiles/categorias/"+state.text;       
         var $state = $(
           '<span><img width="50" height="50" src="'+url+'" />' + state.text + '</span>'
         );

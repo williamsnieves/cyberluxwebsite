@@ -38,6 +38,7 @@ class CategoryController extends Controller {
 		$thumbs = \DB::table('images')->where('isThumbnail', '1')->lists('name','id');
 		
 		//print_r($thumbs);
+		//return $thumbs;
 		return view('admin.categories_createupdate')->with(array('brands' => $brands, 'thumbs' => $thumbs));
 	}
 

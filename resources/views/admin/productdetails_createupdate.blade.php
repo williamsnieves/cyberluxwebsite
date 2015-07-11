@@ -42,16 +42,16 @@
         {!! Form::model($productdetails, ['route' => ['admin.productdetails.update', $productdetails->id], 'method' => 'patch']) !!}                 
             <div class="box-body">
               <div class="form-group">
+                {!! Form::label('inputThumb', 'Asociar producto:') !!}
+                {!! Form::select('products', $products, $productdetails->products_id , ['class' => 'form-control select2thumbs', "id="=>"inputThumb"]) !!}                        
+              </div>
+              <div class="form-group">
                 {!! Form::label('inputFeature', 'Características generales:') !!}
                 {!! Form::textarea('features', null, ["class" => "form-control ckeditor", 'placeholder'=>'Ingresa las caracteristicas generales', "id" => "inputFeature"]) !!}
               </div>              
               <div class="form-group">
                 {!! Form::label('inputFeatureSpecial', 'Características especiales:') !!}
                 {!! Form::textarea('specialfeatures', null, ["class" => "form-control ckeditor", 'placeholder'=>'Ingresa las caracteristicas especiales', "id" => "inputFeatureSpecial"]) !!}
-              </div>
-              <div class="form-group">
-                {!! Form::label('inputThumb', 'Asociar producto:') !!}
-                {!! Form::select('products', $products, $productdetails->products_id , ['class' => 'form-control select2thumbs', "id="=>"inputThumb"]) !!}                        
               </div>
               
             </div>
@@ -63,6 +63,10 @@
         {!! Form::open(['route' => 'admin.productdetails.store']) !!}
             <div class="box-body">
               <div class="form-group">
+                {!! Form::label('inputThumb', 'Asociar producto al detalle:') !!}
+                {!! Form::select('products', $products, null , ['class' => 'form-control select2thumbs', "id="=>"inputThumb"]) !!}                        
+              </div>    
+              <div class="form-group">
                 {!! Form::label('inputFeature', 'Características generales:') !!}
                 {!! Form::textarea('features', null, ["class" => "form-control ckeditor", 'placeholder'=>'Ingresa las caracteristicas generales', "id" => "inputFeature"]) !!}
               </div>              
@@ -70,10 +74,6 @@
                 {!! Form::label('inputFeatureSpecial', 'Características especiales:') !!}
                 {!! Form::textarea('specialfeatures', null, ["class" => "form-control ckeditor", 'placeholder'=>'Ingresa las caracteristicas especiales', "id" => "inputFeatureSpecial"]) !!}
               </div>
-              <div class="form-group">
-                {!! Form::label('inputThumb', 'Asociar producto al detalle:') !!}
-                {!! Form::select('products', $products, null , ['class' => 'form-control select2thumbs', "id="=>"inputThumb"]) !!}                        
-              </div>    
             </div>
             <div class="box-footer">
               {!! Form::submit('Guardar', ["class" => "btn btn-primary"]) !!}            
