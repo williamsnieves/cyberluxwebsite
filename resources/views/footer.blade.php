@@ -20,7 +20,7 @@
 			</li>
 			<li class="wrapper-footer-opc">
 				<h4 class="col-md-8 follow-text-desktop">Siguenos en Instagram: </h4>
-				<a href="https://instagram.com/cyberluxdevzla/" target="_blank">					
+				<a href="https://instagram.com/cyberlux_vzla/" target="_blank">					
 					<figure class="col-md-4 icon-social-network">
 						<img src="{{ URL::to('/') }}/img/instagram.png" alt="">
 					</figure>
@@ -68,7 +68,7 @@
 			</li>
 			<li class="wrapper-footer-opc">
 				<h4 class="col-md-8 follow-text-desktop">Siguenos en Instagram: </h4>					
-				<a href="https://instagram.com/cyberluxdevzla/" target="_blank">					
+				<a href="https://instagram.com/cyberlux_vzla/" target="_blank">					
 					<figure class="col-md-4 icon-social-network">
 						<img src="{{ URL::to('/') }}/img/instagram.png" alt="">
 					</figure>
