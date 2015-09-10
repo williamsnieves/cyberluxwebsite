@@ -53,13 +53,15 @@ class AdminUsersController extends Controller {
 		$user->password = $request->input('password');
 		$user->set_password($user->password);
 
-		if(!empty($request->input('editor')) && $request->input('editor')  == 'on'){
+		$inputEditor = $request->input('editor');
+        $inputAdmin = $request->input('admin');
+		if(!empty($inputEditor) && $request->input('editor')  == 'on'){
 			$user->isEditor = 1;
 		}else{
 			$user->isEditor = 0;
 		}
 
-		if(!empty($request->input('admin')) && $request->input('admin')  == 'on'){
+		if(!empty($inputAdmin) && $request->input('admin')  == 'on'){
 			$user->isAdmin = 1;
 		}else{
 			$user->isAdmin = 0;
@@ -113,13 +115,15 @@ class AdminUsersController extends Controller {
 		$user->lastName = $request->input('lastname');
 		$user->email = $request->input('email');
 
-		if(!empty($request->input('editor')) && $request->input('editor')  == 'on'){
+		$inputEditor = $request->input('editor');
+        $inputAdmin = $request->input('admin');
+		if(!empty($inputEditor) && $request->input('editor')  == 'on'){
 			$user->isEditor = 1;
 		}else{
 			$user->isEditor = 0;
 		}
 
-		if(!empty($request->input('admin')) && $request->input('admin')  == 'on'){
+		if(!empty($inputAdmin) && $request->input('admin')  == 'on'){
 			$user->isAdmin = 1;
 		}else{
 			$user->isAdmin = 0;
