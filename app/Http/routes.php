@@ -28,6 +28,7 @@
 });
 
 Route::get('user/{id}', 'UserController@index');*/
+Route::get('/', 'PageController@index');
 Route::get('home', 'PageController@index');
 Route::get('test', 'PageController@test');
 Route::get('about', 'PageController@about');

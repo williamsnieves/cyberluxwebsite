@@ -161,6 +161,24 @@
 			$(".container-fluid").show();
 			}
 		})
+
+
+		var size = $(window).width();
+
+		if(size > 1024 ){
+		
+		}
+		$(window).resize(function() {
+			var size = $(window).width();
+			if(size < 1500 ){
+				$(".container").addClass("container-fluid");
+				$(".container-fluid").removeClass("container");
+			}else{
+				$(".container-fluid").addClass("container");
+			$(".container").removeClass("container-fluid");
+			$(".container-fluid").show();
+			}
+		})
 	</script>
 	@yield('footerscript')
 </body>
